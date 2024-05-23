@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그림자놀이</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('home') }}" class="back-button">&lt;</a>
+            <h1>그림자놀이</h1>
+        </div>
+        <div class="content">
+            <img src="{{ url_for('static', filename='game1.png') }}" alt="Shadow Play">
+            <p>손으로 동물이나 모양을 표현하는 놀이입니다</p>
+            <div class="play-button">
+                <a href="#"><img src="{{ url_for('static', filename='play.png') }}" alt="Play"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

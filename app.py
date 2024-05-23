@@ -1,20 +1,18 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def home():
     return render_template('index.html')
 
-@app.route('/detail')
-def detail():
-    return render_template('detail.html')
+@app.route('/game1')
+def game1():
+    return render_template('game1.html')
 
-@app.route('/back')
-def back():
-    return redirect(url_for('index'))
+@app.route('/game2')
+def game2():
+    return render_template('game2.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-

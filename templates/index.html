@@ -1,22 +1,28 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  </head>
-  <body>
+    <title>i-SON</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
     <div class="container">
-      <div class="header">Name</div>
-      <div class="content">
-        <div class="box"><a href="{{ url_for('detail') }}">그림자놀이</a></div>
-        <div class="box"><a href="{{ url_for('detail') }}">두더지잡기</a></div>
-        <div class="box"><a href="{{ url_for('detail') }}">산성비</a></div>
-      </div>
+        <div class="header">
+            <h1>i-SON</h1>
+            <p>지금 바로 시작해보세요!</p>
+        </div>
+        <div class="categories">
+            <h2>Game Categories</h2>
+            <div class="content">
+                <div class="box blue"><a href="{{ url_for('game1') }}">그림자놀이</a></div>
+                <div class="box white"><a href="{{ url_for('game2') }}">두더지잡기</a></div>
+                <div class="box">산성비</div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='main.png') }}" alt="Hands">
+        </div>
     </div>
-  </body>
+</body>
 </html>
-
-
-
