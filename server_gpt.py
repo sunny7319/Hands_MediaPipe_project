@@ -1,8 +1,6 @@
 from flask import Flask, request, redirect
 
-
 app = Flask(__name__)
-
 
 nextId = 4
 topics = [
@@ -11,13 +9,16 @@ topics = [
     {'id': 3, 'title': 'JavaScript', 'body': 'JavaScript is ...'}
 ]
 
-
 def template(contents, content, id=None):
     contextUI = ''
     if id != None:
         contextUI = f'''
             <li><a href="/update/{id}/">update</a><li>
-            <li><form action="/delete/{id}/" method="POST"><input type="submit" value="delete"><form></li>
+            <li>
+                <form action="/delete/{id}/" method="POST">
+                    <input type="submit" value="delete">
+                </form>
+            </li>
         '''
     return f'''<!doctype html>
     <html>
@@ -35,7 +36,6 @@ def template(contents, content, id=None):
     </html>
     '''
 
-
 def getContents():
     liTags = ''
     for topic in topics:
@@ -43,11 +43,9 @@ def getContents():
     
     return liTags
 
-
 @app.route('/')
 def index():
     return template(getContents(), '<h2>Welcome</h2>Hello, Web')
-
 
 @app.route('/read/<int:id>/')
 def read(id):
@@ -60,7 +58,6 @@ def read(id):
             break
 
     return template(getContents(), f'<h2>{title}</h2>{body}', id)
-
 
 @app.route('/create/', methods=['GET', 'POST'])
 def create():
@@ -83,7 +80,6 @@ def create():
         url = '/read/' + str(nextId) + '/'
         nextId += 1
         return redirect(url)
-
 
 @app.route('/update/<int:id>/', methods=['GET', 'POST'])
 def update(id):
@@ -109,12 +105,11 @@ def update(id):
         body = request.form['body']
         for topic in topics:
             if id == topic['id']:
-                title = topic['title']
-                body = topic['body']
+                topic['title'] = title
+                topic['body'] = body
                 break
         url = '/read/' + str(id) + '/'
         return redirect(url)
-    
 
 @app.route('/delete/<int:id>/', methods=['POST'])
 def delete(id):
@@ -124,5 +119,4 @@ def delete(id):
             break
     return redirect('/')
 
-
-app.run(port=5001, debug=True)
+app.run(debug=True)
