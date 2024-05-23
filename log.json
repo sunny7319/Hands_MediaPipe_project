@@ -1,0 +1,1 @@
+{"time": "2024-05-23 13:27:06,144", "level": "INFO", "message": "Test endpoint accessed with data: {'key': 'value'}", "path": "C:\\Users\\BIG3-07\\Hands_MediaPipe_project\\server_gpt.py", "func": "test", "line": 161, "request": "POST http://127.0.0.1:5000/test", "ip": "127.0.0.1"}
