@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <form action="/update/{{ topic.id }}/" method="POST">
+        <p><input type="text" name="title" placeholder="title" value="{{ topic.title }}"></p>
+        <p><textarea name="body" placeholder="body">{{ topic.body }}</textarea></p>
+        <p><input type="submit" value="update"></p>
+    </form>
+{% endblock %}
