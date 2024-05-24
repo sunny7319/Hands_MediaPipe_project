@@ -94,10 +94,11 @@ def create():
         global nextId
         title = request.form['title']
         body = request.form['body']
-        newTopic = {'id': nextId, 'title': title, 'body': body}
-        topics.append(newTopic)
+        new_topic = Topic(title=title, body=body)  # 새로운 Topic 객체 생성
+        db.session.add(new_topic)
+        db.session.commit()
+        nextId = new_topic.id + 1  # 다음 ID 업데이트
         url = '/read/' + str(nextId) + '/'
-        nextId += 1
         return redirect(url)
 
 
