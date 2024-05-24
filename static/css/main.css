@@ -117,6 +117,7 @@ img {
     border: none;
     background-color: #c8edfd;
     align-items: center;
+    cursor: pointer;
 }
 
 .button2 {
@@ -132,14 +133,17 @@ img {
     border: 1px solid #000;
     background-color: #ffffff;
     align-items: center;
+    cursor: pointer;
 }
 
 .button13:hover {
     background-color: #AB957B;
+    cursor: pointer;
 }
 
 .button2:hover {
     background-color: #AB957B;
+    cursor: pointer;
 }
 
 
