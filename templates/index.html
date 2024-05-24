@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Proj Main Menu</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href='https://fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <style>
+            .title {
+                font-family: 'Fredoka One';
+            }
+            .category {
+                font-family: Montserrat;
+                font-size: calc(1rem + 2vw);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <div class="title-bar">
+                <p class="title">i-SON</p>
+                <p>지금 바로 시작해보세요!</p>
+                <p class="category"><b>Game Categories</b></p>
+            </div>
+            <div class="logo-box">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+            </div>
+        </div>
+        <div class="main-button">
+            <button type="button" class="button">그림자<br>놀이</button>
+            <button type="button" class="button">두더지<br>잡기</button>
+            <button type="button" class="button">산성비</button>
+        </div>
+    </body>
+</html>
