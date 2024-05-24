@@ -1,28 +1,36 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>i-SON</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>i-SON</h1>
-            <p>지금 바로 시작해보세요!</p>
-        </div>
-        <div class="categories">
-            <h2>Game Categories</h2>
-            <div class="content">
-                <div class="box blue"><a href="{{ url_for('game1') }}">그림자놀이</a></div>
-                <div class="box white"><a href="{{ url_for('game2') }}">두더지잡기</a></div>
-                <div class="box">산성비</div>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Proj Main Menu</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href='https://fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <style>
+            .title {
+                font-family: 'Fredoka One';
+            }
+            .category {
+                font-family: Montserrat;
+                font-size: calc(1rem + 2vw);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <div class="title-bar">
+                <p class="title">i-SON</p>
+                <p>지금 바로 시작해보세요!</p>
+                <p class="category"><b>Game Categories</b></p>
+            </div>
+            <div class="logo-box">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
             </div>
         </div>
-        <div class="image">
-            <img src="{{ url_for('static', filename='main.png') }}" alt="Hands">
+        <div class="main-button">
+            <button type="button" class="button">그림자<br>놀이</button>
+            <button type="button" class="button">두더지<br>잡기</button>
+            <button type="button" class="button">산성비</button>
         </div>
-    </div>
-</body>
+    </body>
 </html>
