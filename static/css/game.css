@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    min-height: 100vh;
+    max-width: 100vh; 
+    margin: 0 auto;
+    background-color: rgb(146, 139, 144, 0.08);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.back-button {
+    margin-right: 10px;
+}
+
+.title {
+    font-family: 'Cafe24Ssurround';
+    font-size: calc(1rem + 5vw);
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.play {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.description {
+    font-family: 'MaplestoryOTFBold';
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.play-button {
+    width: 50px;
+    height: 50px;
+    background-color: #42a5f5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}

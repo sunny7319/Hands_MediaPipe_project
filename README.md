@@ -1,11 +1,36 @@
 # Hands_MediaPipe_project
 
-your_project/  
+Hands_MediaPipe_project/  
 │  
-├── app.py  
+├── server.py  
+│  
 ├── static/  
-│   ├── style.css  
-│   └── image.png  # 업로드된 이미지를 여기에 저장  
-└── templates/  
-    ├── index.html  
-    └── detail.html  
+│   ├── css/  
+│   │   ├── main.css  
+│   │   ├── game.css  
+│   └── img  # 업로드된 이미지를 여기에 저장  
+│  
+├── templates/  
+│   ├── index.html  
+│   ├── game.html  
+│   └── loading.html  
+
+
+
+- - - 
+
+> 일정
+
+- **5/23**  
+  ---
+  - flask 문법 익히기
+  - 홈페이지 기능 간단히 구현
+  - chat gpt 도움을 받아 flask 문법과 홈페이지 기능 구현이 어떤 식으로 흘러가는지 공부하였습니다.
+
+- **5/24**
+  ---
+  - html 문법과 css 속성들에 대해 공부하였습니다.
+  - 팀원이 전날에 main 페이지 화면 구축한 것을 바탕으로 main 페이지를 디자인하였습니다.
+  - 두번째 페이지인 game 첫번째에 대한 페이지를 만들고 디자인하였습니다.
+
+ 
