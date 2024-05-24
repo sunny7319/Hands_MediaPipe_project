@@ -1,7 +1,7 @@
 .main-button {
     /* text-align: center; */
     display: flex;
-    padding-bottom: 10%;
+    /* padding-bottom: 10%; */
     align-items: center;
     justify-content: center;
 }
@@ -24,20 +24,23 @@
     display: flex;
 }
 .title-bar {
-    margin-left: 5vw;
+    margin-left: 10vw;
     position: relative;
     left: auto;
     padding-top: 10%;
 }
 .logo-box {
+    margin-left: 20vw;
     position: relative;
     right: auto;
     padding-top: 10%;
 }
-/* div {
-    padding-top: 10%;
-} */
-.title{
+div {
+    padding: 10px;
+    border: 1px solid black;
+    margin: 20px;
+}
+.title {
     font-size: calc(3rem + 5vw);
     padding-top: 1%;
     padding-bottom: 1%;
