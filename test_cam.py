@@ -1,7 +1,7 @@
 import cv2
 
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 4000)  # 캠 최대 해상도가 1280x720 임  ToDo: cv2 함수로 늘려야 함
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 4000)  # 캠 최대 해상도가 1280x720 / ToDo 1 : cv2 함수로 늘려야 함
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 4000)
 
 if cap.isOpened():
@@ -16,8 +16,8 @@ while True:
 
 		k = cv2.waitKey(10) & 0xFF
 
-		if k == 27:  # ESC 키(27?)를 누르면 break, 캠화면 닫힘 -> 이 이벤트도 DB에 저장해보세요
-			print('Closing windows')
+		if k == 27:  # ESC 키(27?)를 누르면 break, 캠화면 닫힘
+			print('Closing windows')  # -> 이 이벤트도 DB에 저장해보세요
 			cv2.destroyAllWindows()
 			break
 
@@ -26,3 +26,5 @@ while True:
 
 # cap.release()             # 두 줄 다 있어야 ESC 키를 누른 후 창이 알아서 잘 닫힘
 # cv2.destroyAllWindows()   # 두 줄 다 있어야 ESC 키를 누른 후 창이 알아서 잘 닫힘
+
+# ToDo 2 : mediapipe 사용
