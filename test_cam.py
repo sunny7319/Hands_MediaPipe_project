@@ -6,21 +6,24 @@ cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 4000)
 
 if cap.isOpened():
 	print('width: {}, height : {}'.format(cap.get(3), cap.get(4)))  # 화면크기 1280x720를 프린트 -> DB에 저장해보세요
-
+                                                                    # cap.get(3) = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
 while True:
 	ret, fram = cap.read()
 	
 	if ret:
 
-		cv2.imshow('video', cv2.flip(fram, 1))
+		cv2.imshow('cam', cv2.flip(fram, 1))
 
-		k = cv2.waitKey(10) & 0xFF
+		key = cv2.waitKey(10)
 
-		if k == 27:  # ESC 키(27?)를 누르면 break, 캠화면 닫힘
-			print('Closing windows')  # -> 이 이벤트도 DB에 저장해보세요
+		if key == ord('a'):
+			print('key "a" pressed')  # -> 이 이벤트도 DB에 저장해보세요
+
+		elif (key & 0xFF) == 27:  # ESC 키(27?)를 누르면 break, 캠화면 닫힘
+			print('Closing windows')
+			cap.release()
 			cv2.destroyAllWindows()
 			break
-
 	else:
 		print('error')
 
