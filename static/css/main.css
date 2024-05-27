@@ -104,7 +104,7 @@ img {
     justify-content: center;
 }
 
-.button13 {
+.button-blue {
     text-align: center;
     font-family: 'Cafe24Ssurround';
     font-size: calc(1rem + 2vw);
@@ -120,7 +120,7 @@ img {
     cursor: pointer;
 }
 
-.button2 {
+.button-white {
     text-align: center;
     font-family: 'Cafe24Ssurround';
     font-size: calc(1rem + 2vw);

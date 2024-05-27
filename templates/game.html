@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
-        <title>그림자놀이</title>
+        <title>{{ game.title }}</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
         <style>
             body {
@@ -17,15 +17,15 @@
         <div class="header">
             <div class="back-button">
                 <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
-            </div><br>
-            <div class="title">그림자놀이</div>
+            </div>
+            <h1>{{ game.title }}</h1>
         </div>
         <div class="vedio">  <!--이 부분에 img 대신 video를 넣으시면 됩니당-->
             <img src="{{ url_for('static', filename='img/game1.png') }}" alt="설명" class="vedio-game1">
         </div>
         <div class="play">
             <div class="description">
-                손으로 동물이나 모양을 표현하는 놀이입니다
+                {{ game.description }}
             </div>
             <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
         </div>
