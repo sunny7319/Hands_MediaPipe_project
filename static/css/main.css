@@ -105,6 +105,7 @@ img {
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    text-decoration: none;
 }
 
 .button-blue, .button-white {
