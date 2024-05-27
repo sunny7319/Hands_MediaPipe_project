@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ game.title }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+        <style>
+            body {
+                background-image: url("{{ url_for('static', filename='img/background2.jpg') }}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            #loading-screen {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgba(255, 255, 255, 0.8);
+                z-index: 9999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2em;
+                flex-direction: column;
+            }
+            .spinner {
+                border: 16px solid #f3f3f3; /* Light grey */
+                border-top: 16px solid #3498db; /* Blue */
+                border-radius: 50%;
+                width: 120px;
+                height: 120px;
+                animation: spin 2s linear infinite;
+            }
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="loading-screen">
+            <div class="spinner"></div>
+            <p>로딩 중...</p>
+        </div>
+        <div id="content" style="display: none;">
+            <div class="header">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+                <h1>{{ game.title }}</h1>
+            </div>
+            <div class="vedio">  <!--이 부분에 img 대신 video를 넣으시면 됩니당-->
+                <img src="{{ url_for('static', filename='img/game1.png') }}" alt="설명" class="vedio-game1">
+            </div>
+            <div class="play">
+                <div class="description">
+                    {{ game.description }}
+                </div>
+                <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
+            </div>
+        </div>
+
+        <script>
+            // 페이지가 완전히 로드되었을 때 실행되는 함수
+            window.onload = function() {
+                // 로딩을 확인하기 위해 3초의 지연 추가
+                setTimeout(function() {
+                    // 로딩 스크린을 숨기고 콘텐츠를 표시합니다
+                    document.getElementById('loading-screen').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+                }, 3000); // 3초 (3000 밀리초) 지연
+            };
+        </script>
+
+    </body>
+</html>

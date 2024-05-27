@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    display: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+    min-height: 100vh;
+    max-width: 100vh; 
+}
+
+.header {
+    display: absolute;
+    align-items: center;
+    padding: 10px;
+    /*background-color: white;*/
+    border-bottom: 1px solid white;
+}
+
+.back-button {
+    width: 5vw;
+    border-radius: 10vw;
+    cursor: pointer;
+}
+
+h1 {
+    font-family: 'Cafe24Ssurround';
+    font-size: calc(1rem + 5vw);
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.vedio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0;
+    height: 30vw;
+    max-width: 100vh;
+}
+
+.vedio-game1 {
+    height: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5vw;
+    max-width: 80vh;
+}
+
+.play {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+}
+
+.description {
+    font-family: 'MaplestoryOTFBold';
+    font-size: calc(1rem + 2vw);
+    color: #333;
+    margin-top: 20px;
+    margin-right: 5vw;
+}
+
+.play-button {
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20vw;
+    cursor: pointer;
+}
