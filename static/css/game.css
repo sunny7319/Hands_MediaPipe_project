@@ -37,7 +37,7 @@ body {
     cursor: pointer;
 }
 
-.title {
+h1 {
     font-family: 'Cafe24Ssurround';
     font-size: calc(1rem + 5vw);
     text-align: center;

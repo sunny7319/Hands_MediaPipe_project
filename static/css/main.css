@@ -29,10 +29,9 @@
     font-style: normal;
 }
 
-
 body {
     min-height: 100vh;
-    max-width: 100vh; 
+    max-width: 100vh;
     margin: 0 auto;
     background-color: rgb(146, 139, 144, 0.08);
 }
@@ -64,7 +63,6 @@ div {
     font-size: calc(1rem + 5vw);
     padding-top: 1%;
     padding-bottom: 1%;
-    /*border-radius: 10px;*/
 }
 
 .discription {
@@ -96,55 +94,46 @@ img {
 }
 
 .main-button {
-    /* text-align: center; */
     display: flex;
+    justify-content: center;
     padding-left: 5%;
     padding-right: 5%;
     align-items: center;
+}
+
+.main-button a {
+    flex-grow: 1;
+    display: flex;
     justify-content: center;
 }
 
-.button-blue {
+.button-blue, .button-white {
     text-align: center;
     font-family: 'Cafe24Ssurround';
     font-size: calc(1rem + 2vw);
-    width: 25%;
-    margin-left: 1.5%;
-    margin-right: 1.5%;
+    margin: 0 1vw;
     min-height: 30vw;
     max-height: 40vw;
     border-radius: 20px;
     border: none;
-    background-color: #c8edfd;
     align-items: center;
     cursor: pointer;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-blue {
+    background-color: #c8edfd;
 }
 
 .button-white {
-    text-align: center;
-    font-family: 'Cafe24Ssurround';
-    font-size: calc(1rem + 2vw);
-    width: 25%;
-    margin-left: 1.5%;
-    margin-right: 1.5%;
-    min-height: 30vw;
-    max-height: 40vw;
-    border-radius: 20px;
-    border: 1px solid #000;
     background-color: #ffffff;
-    align-items: center;
-    cursor: pointer;
+    border: 1px solid #000;
 }
 
-.button13:hover {
+.button-blue:hover, .button-white:hover {
     background-color: #AB957B;
     cursor: pointer;
 }
-
-.button2:hover {
-    background-color: #AB957B;
-    cursor: pointer;
-}
-
-
-

@@ -17,9 +17,16 @@
         </div>
         <p class="category"><b>Game Categories</b></p>
         <div class="main-button">
-            <button type="button"><a href="{{ url_for('game', game_name='game1') }}" class="button-blue">그림자<br>놀이</a></button>
-            <button type="button"><a href="{{ url_for('game', game_name='game2') }}" class="button-white">두더지<br>잡기</a></button>
-            <button type="button"><a href="{{ url_for('game', game_name='game1') }}" class="button-blue">산성비</a></button>
+            <a href="{{ url_for('game', game_name='그림자 놀이') }}">
+                <button type="button" class="button-blue">그림자<br>놀이</button>
+            </a>
+            <a href="{{ url_for('game', game_name='두더지 잡기') }}">
+                <button type="button" class="button-white">두더지<br>잡기</button>
+            </a>
+            <a href="{{ url_for('game', game_name='산성비') }}">
+                <button type="button" class="button-blue">산성비</button>
+            </a>
+                
         </div>
     </body>
 </html>
