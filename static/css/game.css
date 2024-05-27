@@ -45,7 +45,7 @@ h1 {
     padding-bottom: 1%;
 }
 
-.vedio {
+.video {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +54,7 @@ h1 {
     max-width: 100vh;
 }
 
-.vedio-game1 {
+.video-game1 {
     height: 30vw;
     display: flex;
     justify-content: center;

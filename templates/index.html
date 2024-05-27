@@ -4,8 +4,14 @@
         <meta charset="utf-8">
         <title>Proj Main Menu</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-        <link href='https://fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <style>
+            body {
+                background-image: url("{{ url_for('static', filename='img/gpt_background2.webp') }}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        </style>
     </head>
     <body>
         <div class="top">
@@ -26,7 +32,6 @@
             <a href="{{ url_for('game', game_name='산성비') }}">
                 <button type="button" class="button-blue">산성비</button>
             </a>
-                
         </div>
     </body>
 </html>
