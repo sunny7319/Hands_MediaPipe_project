@@ -13,25 +13,19 @@ mp_draw = mp.solutions.drawing_utils
 toggle = 0
 def generate_frames():
     cap = cv2.VideoCapture(0)
+
+    if cap.isOpened():
+        print('width: {}, height : {}'.format(cap.get(3), cap.get(4)))  # 화면크기 1280x720를 프린트 -> DB에 저장해보세요
+                                                                        # cap.get(3) = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
     while True:
         success, frame = cap.read()
-        if not success:
-            break
-        else:
-            # 손 랜드마크 추적
-            image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            result = hands.process(image)
-            if result.multi_hand_landmarks:
-                for hand_landmarks in result.multi_hand_landmarks:
-                    mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
-                    toggle = 1
-            
+
+        if success:
+            frame = cv2.flip(frame, 1)
             ret, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-            
-            return toggle
 
 # def generate_frames():    
 #     cap = cv2.VideoCapture(0)
@@ -81,12 +75,12 @@ def game(game_name):
         '그림자 놀이터': {
             'title': '그림자 놀이터',
             'image': 'game1.png',
-            'description': '손으로 동물이나 모양을 표현하는 놀이입니다'
+            'description': '손으로 동물과 모양을 만들어 보세요!'
         },
         '두더지 잡기': {
             'title': '두더지 잡기',
             'image': 'game1.png',
-            'description': '주어진 문제에 맞는 단어를 가지고 있는 두더지를 잡는 게임입니다'
+            'description': '주어진 단어와 같은 단어를 가지고 있는 두더지를 잡아보세요!'
         },
         '산성비': {
             'title': '산성비',
