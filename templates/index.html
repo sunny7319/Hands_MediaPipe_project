@@ -5,6 +5,12 @@
         <title>Proj Main Menu</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         <style>
+            html, body {
+                overflow: hidden;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
             body {
                 background-image: url("{{ url_for('static', filename='img/gpt_background2.webp') }}");
                 background-size: cover;
