@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
         <style>
             body {
-                background-image: url("{{ url_for('static', filename='img/background2.jpg') }}");
+                background-image: url("{{ url_for('static', filename='img/gpt_background.webp') }}");
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -49,8 +49,8 @@
                 <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
                 <h1>{{ game.title }}</h1>
             </div>
-            <div class="vedio">  <!--이 부분에 img 대신 video를 넣으시면 됩니당-->
-                <img src="{{ url_for('static', filename='img/game1.png') }}" alt="설명" class="vedio-game1">
+            <div id="webcam-overlay">
+                <img src="{{ url_for('video_feed') }}" id="webcam" autoplay>
             </div>
             <div class="play">
                 <div class="description">
@@ -68,9 +68,12 @@
                     // 로딩 스크린을 숨기고 콘텐츠를 표시합니다
                     document.getElementById('loading-screen').style.display = 'none';
                     document.getElementById('content').style.display = 'block';
-                }, 3000); // 3초 (3000 밀리초) 지연
+                }); // 3초 (3000 밀리초) 지연
             };
-        </script>
 
+            // 웹캠 스트리밍을 video 태그에 표시
+            var video = document.getElementById('video');
+            video.src = "/video_feed";
+        </script>
     </body>
 </html>
