@@ -45,6 +45,12 @@ h1 {
     padding-bottom: 1%;
 }
 
+#toggle-display {
+    display: flex;
+    margin-left: 18%;
+    margin-top: 25%;
+}
+
 #webcam-overlay {
     display: flex;
     justify-content: center;
