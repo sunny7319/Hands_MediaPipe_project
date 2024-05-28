@@ -54,7 +54,9 @@
     </div>
     <div id="content" style="display: none;">
         <div class="header">
-            <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            </a>
             <h1>{{ game.title }}</h1>
         </div>
         <div id="toggle-display">Toggle: 0</div> <!-- Toggle 값을 표시하는 요소 -->
