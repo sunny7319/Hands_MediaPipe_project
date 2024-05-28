@@ -5,51 +5,11 @@
     <title>{{ game.title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
     <style>
-        html, body {
-            overflow: hidden;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
         body {
-            background-image: url("{{ url_for('static', filename='img/gpt_background.webp') }}");
+            background-image: url("{{ url_for('static', filename='img/main_background.webp') }}");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-        }
-        #loading-screen {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: rgba(255, 255, 255, 0.8);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2em;
-            flex-direction: column;
-        }
-        .spinner {
-            border: 16px solid #f3f3f3; /* Light grey */
-            border-top: 16px solid #3498db; /* Blue */
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin 2s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        #toggle-display {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            font-size: 20px;
-            color: white;
-            z-index: 10000;
         }
     </style>
 </head>
@@ -65,15 +25,15 @@
             </a>
             <h1>{{ game.title }}</h1>
         </div>
-        <div id="toggle-display">Toggle: 0</div> <!-- Toggle 값을 표시하는 요소 -->
-        <div id="webcam-overlay">
-            <img src="{{ url_for('video_feed') }}" id="webcam" autoplay>
-        </div>
-        <div class="play">
-            <div class="description">
-                {{ game.description }}
+        <div class="main">
+            <div class="video">
+                <p class="toggle-display">Toggle: 0</p>  <!-- Toggle 값을 표시하는 요소 -->
+                <img src="{{ url_for('video_feed') }}" id="webcam" autoplay>
             </div>
-            <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
+            <div class="play">
+                <p class="description">{{ game.description }}</p>
+                <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
+            </div>
         </div>
     </div>
 
@@ -85,7 +45,7 @@
                 // 로딩 스크린을 숨기고 콘텐츠를 표시합니다
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
-            }, 3000); // 3초 (3000 밀리초) 지연
+            }); // 3초 (3000 밀리초) 지연
 
             // 주기적으로 toggle 값을 가져와서 업데이트하는 함수
             setInterval(function() {
