@@ -5,6 +5,12 @@
     <title>{{ game.title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
     <style>
+        html, body {
+            overflow: hidden;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
         body {
             background-image: url("{{ url_for('static', filename='img/gpt_background.webp') }}");
             background-size: cover;
