@@ -37,17 +37,13 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        .overlay {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .overlay video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        #toggle-display {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            color: white;
+            z-index: 10000;
         }
     </style>
 </head>
@@ -56,21 +52,20 @@
         <div class="spinner"></div>
         <p>로딩 중...</p>
     </div>
-    <div id="content" style="display: none; position: relative;">
+    <div id="content" style="display: none;">
         <div class="header">
             <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
             <h1>{{ game.title }}</h1>
         </div>
-        <div class="vedio">
-            <div class="overlay">
-                <video id="video" autoplay muted></video>
+        <div id="toggle-display">Toggle: 0</div> <!-- Toggle 값을 표시하는 요소 -->
+        <div id="webcam-overlay">
+            <img src="{{ url_for('video_feed') }}" id="webcam" autoplay>
+        </div>
+        <div class="play">
+            <div class="description">
+                {{ game.description }}
             </div>
-            <div class="play">
-                <div class="description">
-                    {{ game.description }}
-                </div>
-                <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
-            </div>
+            <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
         </div>
     </div>
 
@@ -83,11 +78,16 @@
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
             }, 3000); // 3초 (3000 밀리초) 지연
+
+            // 주기적으로 toggle 값을 가져와서 업데이트하는 함수
+            setInterval(function() {
+                fetch('/toggle_status')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('toggle-display').textContent = 'Toggle: ' + data.toggle;
+                    });
+            }, 1000); // 1초마다 업데이트
         };
-        
-        // 웹캠 스트리밍을 video 태그에 표시
-        var video = document.getElementById('video');
-        video.src = window.location.pathname + "/video_feed";
     </script>
 </body>
 </html>
