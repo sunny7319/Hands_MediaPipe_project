@@ -60,6 +60,7 @@ html, body {
     height: 64px;
     margin-top: 10px;
     margin-left: 50px;
+    cursor: pointer;
 }
 
 h1 {
@@ -127,6 +128,7 @@ h1 {
     height: 150px;
     margin-top: -30px;
     margin-bottom: 100px;
+    cursor: pointer;
 }
 
 
