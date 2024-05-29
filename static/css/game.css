@@ -23,8 +23,8 @@ html, body {
 
 #loading-screen {
     position: fixed;
-    width: 100%;
-    height: 100%;
+    width: 1920px;
+    height: 1080px;
     top: 0;
     left: 0;
     background: rgba(255, 255, 255, 0.8);
@@ -34,6 +34,9 @@ html, body {
     align-items: center;
     font-size: 2em;
     flex-direction: column;
+}
+.loading-img {
+    height: 500px;
 }
 
 .spinner {

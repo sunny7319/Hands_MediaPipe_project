@@ -33,6 +33,9 @@
                 <img src="{{ url_for('video_feed') }}" id="webcam" autoplay>
             </div>
         </div>
+        <div id="container">
+            <img src="{{ url_for('static', filename='img/dog_1.gif') }}" alt="draggable gif" id="draggable">
+        </div>
         <div class="footer">
             <p>여기는 점수 등 라벨 넣기</p>
         </div>
@@ -46,7 +49,7 @@
                 // 로딩 스크린을 숨기고 콘텐츠를 표시합니다
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
-            }); // 3초 (3000 밀리초) 지연
+            });
 
             // 주기적으로 toggle 값을 가져와서 업데이트하는 함수
             setInterval(function() {
@@ -56,6 +59,41 @@
                         document.getElementById('toggle-display').textContent = 'Toggle: ' + data.toggle;
                     });
             }, 5000); // 1초마다 업데이트
+        };
+
+        const img = document.getElementById('draggable');
+
+        img.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+
+            let shiftX = e.clientX - img.getBoundingClientRect().left;
+            let shiftY = e.clientY - img.getBoundingClientRect().top;
+
+            img.style.position = 'absolute';
+            img.style.zIndex = 1000;
+            document.body.append(img);
+
+            moveAt(e.pageX, e.pageY);
+
+            function moveAt(pageX, pageY) {
+                img.style.left = pageX - shiftX + 'px';
+                img.style.top = pageY - shiftY + 'px';
+            }
+
+            function onMouseMove(e) {
+                moveAt(e.pageX, e.pageY);
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+
+            img.onmouseup = function() {
+                document.removeEventListener('mousemove', onMouseMove);
+                img.onmouseup = null;
+            };
+        });
+
+        img.ondragstart = function() {
+            return false;
         };
     </script>
 </body>
