@@ -18,3 +18,8 @@
 ## 5/28(화)
 > - Google Cloud Postgresql를 로컬 DB와 연결
 > - 새로 구축된 웹 서버와 로컬 DB 연동
+
+## 5/29(수)
+> - 테이블 정의 다시 함(id 컬럼과 time 컬럼을 primary key로 지정해서 중복된 값을 받아와도 문제 없도록 수정).
+> - 행동 로그 추출(label, id, coordinate, time, ...)
+> - 새로운 가상 환경 구축(python -> conda)
