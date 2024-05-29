@@ -222,7 +222,7 @@ def game(game_name):
         }
     }
     if game_name in game_data:
-        return render_template('game.html', game=game_data[game_name])
+        return render_template('game_temp.html', game=game_data[game_name])
     else:
         return "Game not found", 404
 
