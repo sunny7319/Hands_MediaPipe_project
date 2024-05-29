@@ -29,10 +29,12 @@
     font-style: normal;
 }
 
-body {
-    min-height: 100vh;
-    max-width: 100vh;
-    margin: 0 auto;
+html, body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     background-color: rgb(146, 139, 144, 0.08);
 }
 
@@ -50,54 +52,46 @@ div {
 .top {
     display: flex;
     justify-content: center;
+    height: 170px;
 }
 
 .title-bar {
     position: relative;
     left: auto;
-    padding-top: 10%;
+    padding-top: 20px;
 }
 
 .title {
     font-family: 'yg-jalnan';
-    font-size: calc(1rem + 5vw);
-    padding-top: 1%;
-    padding-bottom: 1%;
+    font-size: 150px;
 }
 
 .discription {
     font-family: 'Katuri';
-    font-size: calc(1rem + 2vw);
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-
-.logo-box {
-    position: relative;
-    right: auto;
-    padding-top: 10%;
+    font-size: 50px;
 }
 
 img {
     background-size: contain;
     position: relative;
     right: auto;
-    padding-top: 11%;
-    padding-bottom: 3%;
-    margin: 20px;
+    margin-top: 90px;
+    margin-left: 50px;
+    height: 250px;
 }
 
 .category {
     font-family: 'yg-jalnan';
-    font-size: calc(1rem + 2vw);
+    font-size: 60px;
+    margin-top: 220px;
     text-align: center;
 }
 
 .main-button {
     display: flex;
     justify-content: center;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 100px;
+    padding-right: 100px;
     align-items: center;
 }
 
@@ -111,10 +105,9 @@ img {
 .button-blue, .button-white {
     text-align: center;
     font-family: 'Cafe24Ssurround';
-    font-size: calc(1rem + 2vw);
-    margin: 0 1vw;
-    min-height: 30vw;
-    max-height: 40vw;
+    font-size: 60px;
+    margin: 0 30px;
+    height: 500px;
     border-radius: 20px;
     border: none;
     align-items: center;
