@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ game.title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/play.css') }}">
     <style>
         body {
-            background-image: url("{{ url_for('static', filename='img/main_background.webp') }}");
+            /* background-image: url("{{ url_for('static', filename='img/main_background.webp') }}"); */
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -20,22 +20,21 @@
     </div>
     <div id="content" style="display: none;">
         <div class="header">
-            <a href="{{ url_for('index') }}">
+            <a href="{{ url_for('game', game_name=game.title) }}">
                 <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
             </a>
             <h1>{{ game.title }}</h1>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/home.png') }}" alt="메인화면" class="home-button">
+            </a>
         </div>
         <div class="main">
             <div class="video">
-                <p class="toggle-display">Toggle: 0</p>  <!-- Toggle 값을 표시하는 요소 -->
                 <img src="{{ url_for('video_feed') }}" id="webcam" autoplay>
             </div>
-            <div class="play">
-                <p class="description">{{ game.description }}</p>
-                <a href="{{ url_for('game_play', game_name=game.title) }}">
-                    <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
-                </a>
-            </div>
+        </div>
+        <div class="footer">
+            <p>여기는 점수 등 라벨 넣기</p>
         </div>
     </div>
 
