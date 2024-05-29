@@ -1,22 +1,52 @@
 # Hands_MediaPipe_project
 
+Hands_MediaPipe_project/  
+│  
+├── server.py  
+│  
+├── static/  
+│   ├── css/  
+│   │   ├── main.css  
+│   │   ├── game.css  
+│   └── img  # 업로드된 이미지를 여기에 저장  
+│  
+├── templates/  
+│   ├── index.html  
+│   ├── game.html  
+│   └── loading.html  
 
-#### 내용 추가 할 html코드 작성 요망
 
-**개발환경**
 
-- Python 3.12.3
-    - Conda
-        - Numpy               conda install numpy==1.26.4
-        - Flask                   conda install flask==3.0.3
-        - SQLAlchemy      conda install flask-sqlalchemy==3.1.1
-        - Psycopg2           conda install psycopg2==2.9.9
-    - PiPy
-        - OpenCV             pip install opencv-python==4.9.0.80
-        - MediaPipe         pip install mediapipe==0.10.14
-        - cvzone               pip install cvzone==1.6.1
-        - TensorFlow        pip install tensorflow==2.16.1
-        - apscheduler       pip install apscheduler==3.10.4
+  --- 
 
-1. conda create -n (이름) python==3.12.3 numpy==1.26.4 flask==3.0.3 flask-sqlalchemy==3.1.1 psycopg2==2.9.9 pip
-2. pip install opencv-python==4.9.0.80 mediapipe==0.10.14 cvzone==1.6.1 tensorflow==2.16.1 apscheduler==3.10.4
+<details>
+    <summary>일정</summary>
+
+- **5/23**  
+  - - -
+  - flask 문법 익히기
+  - 홈페이지 기능 간단히 구현
+  - chat gpt 도움을 받아 flask 문법과 홈페이지 기능 구현이 어떤 식으로 흘러가는지 공부하였습니다.
+
+- **5/24**
+  - - -
+  - html 문법과 css 속성들에 대해 공부하였습니다.
+  - 팀원이 전날에 main 페이지 화면 구축한 것을 바탕으로 main 페이지를 디자인하였습니다.
+  - 두번째 페이지인 game 첫번째에 대한 페이지를 만들고 디자인하였습니다.
+
+ - **5/27**
+   - - -
+   - 로딩창 페이지 추가
+   - 웹 페이지 위에서 웹 캠 구동하기
+     - 게임 페이지 안에서의 캠을 띄우고 싶어서 여러가지 시도를 해봤지만 실패하여 다음날 해결할 예정
+
+- **5/28**
+  - - -
+  - 웹 페이지 위에서 웹 캠 구동하기
+    - mediapipe 사용한 캠 띄우기 성공
+    - toggle 숫자 바뀌는지 확인 (손 인식되면 1)
+    - 손 그림자 인식하여 그림이 띄워지는 코드 적용하여 웹 캠 띄우는 것은 다음날 시도 예정 -> 성공했다면 gif 파일로 움직이는 것까지 만들어보기
+  - 페이지 레이아웃 조정
+    - 반응형 웹 페이지로 만드려고 했으나, 강사님의 피드백으로 1920 x 1080 크기로 화면 조정
+
+</details>

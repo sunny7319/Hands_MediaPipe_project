@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Katuri';
+    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+html, body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(146, 139, 144, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    padding: 10px;
+    margin: 20px;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    height: 170px;
+}
+
+.title-bar {
+    position: relative;
+    left: auto;
+    padding-top: 20px;
+}
+
+.title {
+    font-family: 'yg-jalnan';
+    font-size: 150px;
+}
+
+.discription {
+    font-family: 'Katuri';
+    font-size: 50px;
+}
+
+img {
+    background-size: contain;
+    position: relative;
+    right: auto;
+    margin-top: 90px;
+    margin-left: 50px;
+    height: 250px;
+}
+
+.category {
+    font-family: 'yg-jalnan';
+    font-size: 60px;
+    margin-top: 220px;
+    text-align: center;
+}
+
+.main-button {
+    display: flex;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    align-items: center;
+}
+
+.main-button a {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.button-blue, .button-white {
+    text-align: center;
+    font-family: 'Cafe24Ssurround';
+    font-size: 60px;
+    margin: 0 30px;
+    height: 500px;
+    border-radius: 20px;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-blue {
+    background-color: #c8edfd;
+}
+
+.button-white {
+    background-color: #ffffff;
+    border: 1px solid #000;
+}
+
+.button-blue:hover, .button-white:hover {
+    background-color: #AB957B;
+    cursor: pointer;
+}
