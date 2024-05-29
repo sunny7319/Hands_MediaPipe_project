@@ -63,40 +63,6 @@
                         document.getElementById('toggle-display').textContent = 'Toggle: ' + data.toggle;
                     });
             }, 5000); // 1초마다 업데이트
-
-            const img = document.getElementById('draggable');
-
-            img.addEventListener('mousedown', (e) => {
-                e.preventDefault();
-
-                let shiftX = e.clientX - img.getBoundingClientRect().left;
-                let shiftY = e.clientY - img.getBoundingClientRect().top;
-
-                img.style.position = 'absolute';
-                img.style.zIndex = 1000;
-                document.body.append(img);
-
-                moveAt(e.pageX, e.pageY);
-
-                function moveAt(pageX, pageY) {
-                    img.style.left = pageX - shiftX + 'px';
-                    img.style.top = pageY - shiftY + 'px';
-                }
-
-                function onMouseMove(e) {
-                    moveAt(e.pageX, e.pageY);
-                }
-
-                document.addEventListener('mousemove', onMouseMove);
-
-                img.onmouseup = function() {
-                    document.removeEventListener('mousemove', onMouseMove);
-                    img.onmouseup = null;
-                };
-            });
-
-            img.ondragstart = function() {
-                return false;
         };
     </script>
 </body>

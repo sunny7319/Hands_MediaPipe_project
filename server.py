@@ -17,8 +17,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands()
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+# cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+# cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
 
 # Load GIF files
 nabi_1 = cv2.VideoCapture('outpart_lib/butterfly_1.gif')
