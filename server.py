@@ -45,12 +45,12 @@ def game(game_name):
         '그림자 놀이터': {
             'title': '그림자 놀이터',
             'image': 'game1.png',
-            'description': '손으로 동물이나 모양을 표현하는 놀이입니다'
+            'description': '손으로 동물과 모양을 만들어 보세요!'
         },
         '두더지 잡기': {
             'title': '두더지 잡기',
             'image': 'game1.png',
-            'description': '주어진 문제에 맞는 단어를 가지고 있는 두더지를 잡는 게임입니다'
+            'description': '주어진 단어와 같은 단어를 가지고 있는 두더지를 잡아보세요!'
         },
         '산성비': {
             'title': '산성비',

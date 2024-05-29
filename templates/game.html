@@ -5,18 +5,13 @@
     <title>{{ game.title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
     <style>
-        html, body {
-            overflow: hidden;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
         body {
-            background-image: url("{{ url_for('static', filename='img/gpt_background.webp') }}");
+            background-image: url("{{ url_for('static', filename='img/main_background.webp') }}");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
         }
+<<<<<<< HEAD
         #loading-screen {
             position: fixed;
             width: 100%;
@@ -51,6 +46,8 @@
             color: white;
             z-index: 10000;
         }
+=======
+>>>>>>> 50c0da959a7ad2f850fe1d4bef0af5f75f60f67a
     </style>
 </head>
 <body>
@@ -65,15 +62,15 @@
             </a>
             <h1>{{ game.title }}</h1>
         </div>
-        <div id="toggle-display">Toggle: 0</div> <!-- Toggle 값을 표시하는 요소 -->
-        <div id="webcam-overlay">
-            <img src="{{ url_for('video_feed') }}" id="webcam" autoplay>
-        </div>
-        <div class="play">
-            <div class="description">
-                {{ game.description }}
+        <div class="main">
+            <div class="video">
+                <p class="toggle-display">Toggle: 0</p>  <!-- Toggle 값을 표시하는 요소 -->
+                <img src="{{ url_for('video_feed') }}" id="webcam" autoplay>
             </div>
-            <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
+            <div class="play">
+                <p class="description">{{ game.description }}</p>
+                <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
+            </div>
         </div>
     </div>
 
@@ -85,7 +82,7 @@
                 // 로딩 스크린을 숨기고 콘텐츠를 표시합니다
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
-            }, 3000); // 3초 (3000 밀리초) 지연
+            }); // 3초 (3000 밀리초) 지연
 
             // 주기적으로 toggle 값을 가져와서 업데이트하는 함수
             setInterval(function() {
@@ -94,7 +91,7 @@
                     .then(data => {
                         document.getElementById('toggle-display').textContent = 'Toggle: ' + data.toggle;
                     });
-            }, 1000); // 1초마다 업데이트
+            }, 5000); // 1초마다 업데이트
         };
     </script>
 </body>
