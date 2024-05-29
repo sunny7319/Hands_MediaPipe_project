@@ -11,13 +11,19 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+        #loading-screen {
+            background-image: url("{{ url_for('static', filename='img/main_background5.webp') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
     </style>
 </head>
 <body>
     <div id="loading-screen">
         <img src="{{ url_for('static', filename='img/character.png') }}" alt='마스코트' class="loading-img">
         <div class="spinner"></div>
-        <p>로딩 중...</p>
+        <p>잠시만 기다려주세요~!</p>
     </div>
     <div id="content" style="display: none;">
         <div class="header">
@@ -48,7 +54,7 @@
                 // 로딩 스크린을 숨기고 콘텐츠를 표시합니다
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
-            });
+            }, 3000); // 3초 (3000 밀리초) 지연
 
             // 주기적으로 toggle 값을 가져와서 업데이트하는 함수
             setInterval(function() {

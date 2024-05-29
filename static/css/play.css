@@ -35,13 +35,17 @@ body {
     height: 1080px;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.8);
+    background-color: #ffffff8f;
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2em;
     flex-direction: column;
+}
+
+.loading-img {
+    height: 500px;
 }
 
 .spinner {
