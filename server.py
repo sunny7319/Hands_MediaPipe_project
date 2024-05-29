@@ -37,9 +37,9 @@ deer_1 = cv2.VideoCapture('outpart_lib/deer.gif')
 deer_2 = cv2.VideoCapture('outpart_lib/deer_1.gif')
 deer_3 = cv2.VideoCapture('outpart_lib/deer_2.gif')
 
-heart_1 = cv2.VideoCapture('outpart_lib/heart_1.gif')
-heart_2 = cv2.VideoCapture('outpart_lib/heart_1.gif')
-heart_3 = cv2.VideoCapture('outpart_lib/heart_1.gif')
+heart_1 = cv2.VideoCapture('outpart_lib/heart.gif')
+heart_2 = cv2.VideoCapture('outpart_lib/heart.gif')
+heart_3 = cv2.VideoCapture('outpart_lib/heart.gif')
 
 duck_1 = cv2.VideoCapture('outpart_lib/duck_1.gif')
 duck_2 = cv2.VideoCapture('outpart_lib/duck_2.gif')
@@ -72,7 +72,9 @@ dog_3 = cv2.VideoCapture('outpart_lib/dog_7.gif')
 def reset_gif(gif):
     gif.set(cv2.CAP_PROP_POS_FRAMES, 0)
 
+score = 0
 def generate_frames():
+    global score
     with mp_hands.Hands(static_image_mode=False, max_num_hands=6, min_detection_confidence=0.5) as hands:
         counting = 1
         dict_hand = util.make_dict_hand()
@@ -94,11 +96,18 @@ def generate_frames():
                 if counting % 10 == 0:
                     detect_label = recog.recog_main()
 
-                    if detect_label:
+                    if detect_label:    # 레이블이 감지된 경우
                         for i in range(len(detect_label)):
                             label, position = detect_label[i]
-                            x_c = int(position[0] * nw)
-                            y_c = int(position[1] * nh)
+                            print(f"label: {label}, position: {position}")  # position 구조 확인
+
+                            # 예: position이 [[x, y]] 형태라면
+                            if isinstance(position[0], list):
+                                x_c = int(position[0][0] * nw)
+                                y_c = int(position[0][1] * nh)
+                            else:
+                                x_c = int(position[0] * nw)
+                                y_c = int(position[1] * nh)
 
                             if label == 0:
                                 rndN = np.random.randint(1, 4)
@@ -185,6 +194,7 @@ def generate_frames():
                                 flag.append(Moving(dog, x_c, y_c, 100, 100, 1))
 
             counting += 1
+            score += 1
 
             for obj in flag:
                 frame = obj.gif.read()[1]
@@ -239,7 +249,7 @@ def game(game_name):
 def game_play(game_name):
     global game_data
     if game_name in game_data:
-        return render_template('game_video.html', game=game_data[game_name])
+        return render_template('game_video.html', game=game_data[game_name], score=score)
     else:
         return "Game not found", 404
 
