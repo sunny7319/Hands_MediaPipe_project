@@ -11,43 +11,6 @@
             background-repeat: no-repeat;
             background-position: center;
         }
-<<<<<<< HEAD
-        #loading-screen {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: rgba(255, 255, 255, 0.8);
-            z-index: 9999;
-            display: flex; 
-            justify-content: center;
-            align-items: center;
-            font-size: 2em;
-            flex-direction: column;
-        }
-        .spinner {
-            border: 16px solid #f3f3f3; /* Light grey */
-            border-top: 16px solid #3498db; /* Blue */
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin 2s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        #toggle-display {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            font-size: 20px;
-            color: white;
-            z-index: 10000;
-        }
-=======
->>>>>>> 50c0da959a7ad2f850fe1d4bef0af5f75f60f67a
     </style>
 </head>
 <body>
@@ -69,7 +32,9 @@
             </div>
             <div class="play">
                 <p class="description">{{ game.description }}</p>
-                <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
+                <a href="{{ url_for('game_play', game_name=game.title) }}">
+                    <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
+                </a>
             </div>
         </div>
     </div>

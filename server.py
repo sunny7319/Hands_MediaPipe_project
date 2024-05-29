@@ -11,6 +11,24 @@ mp_draw = mp.solutions.drawing_utils
 # 글로벌 변수로 설정
 toggle = 0
 
+game_data = {
+    '그림자 놀이터': {
+        'title': '그림자 놀이터',
+        'image': 'game1.png',
+        'description': '손으로 동물과 모양을 만들어 보세요!'
+    },
+    '두더지 잡기': {
+        'title': '두더지 잡기',
+        'image': 'game1.png',
+        'description': '주어진 단어와 같은 단어를 가지고 있는 두더지를 잡아보세요!'
+    },
+    '산성비': {
+        'title': '산성비',
+        'image': 'game1.png',
+        'description': '제시된 알파벳과 같은 글자를 고르는 게임입니다.'
+    }
+}
+
 def generate_frames():
     global toggle
     cap = cv2.VideoCapture(0)
@@ -39,27 +57,20 @@ def generate_frames():
 def index():
     return render_template('index.html')
 
+
 @app.route('/game/<game_name>')
 def game(game_name):
-    game_data = {
-        '그림자 놀이터': {
-            'title': '그림자 놀이터',
-            'image': 'game1.png',
-            'description': '손으로 동물과 모양을 만들어 보세요!'
-        },
-        '두더지 잡기': {
-            'title': '두더지 잡기',
-            'image': 'game1.png',
-            'description': '주어진 단어와 같은 단어를 가지고 있는 두더지를 잡아보세요!'
-        },
-        '산성비': {
-            'title': '산성비',
-            'image': 'game1.png',
-            'description': '제시된 알파벳과 같은 글자를 고르는 게임입니다.'
-        }
-    }
+    global game_data
     if game_name in game_data:
         return render_template('game.html', game=game_data[game_name])
+    else:
+        return "Game not found", 404
+    
+@app.route('/game_play/<game_name>')
+def game_play(game_name):
+    global game_data
+    if game_name in game_data:
+        return render_template('game_video.html', game=game_data[game_name])
     else:
         return "Game not found", 404
 
