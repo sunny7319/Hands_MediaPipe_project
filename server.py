@@ -115,6 +115,7 @@ def generate_frames():
                                 if x_c + 100 > nw or y_c + 100 > nh:
                                     x_c, y_c = nw - 100, nh - 100
                                 flag.append(Moving(nabi, x_c, y_c, 100, 100, 1))
+                                print(f"현재 라벨이 인식된 카메라 좌표는 label: {label}, position: {position}")
 
                             elif label == 1:
                                 rndN = np.random.randint(1, 4)
