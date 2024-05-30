@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="loading-screen">
-        <img src="{{ url_for('static', filename='img/character.png') }}" alt='마스코트' class="loading-img">
+        <img src="{{ url_for('static', filename='img/animated_character.gif') }}" alt='마스코트' class="loading-img">
         <div class="spinner"></div>
         <p>잠시만 기다려주세요~!</p>
     </div>
@@ -35,7 +35,10 @@
         <div class="main">
             <div class="video">
                 <!-- <p class="toggle-display">Toggle: 0</p>  Toggle 값을 표시하는 요소 -->
-                <img src="{{ url_for('video_feed') }}" id="webcam" autoplay>
+                <video src="{{ url_for('static', filename='video/orora.mp4') }}" id="preview-video" muted controls autoplay loop>
+                <img src="{{ url_for('check_video') }}" id="checkcam" autoplay>
+                <!--<div class="overlay">
+                </div>-->
             </div>
             <div class="play">
                 <p class="description">{{ game.description }}</p>

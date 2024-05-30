@@ -13,10 +13,32 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # 모델 로드 및 컴파일
 mp_hands = mp.solutions.hands
-hands = mp_hands.Hands()
+hands = mp_hands.Hands(static_image_mode=False, max_num_hands=6, min_detection_confidence=0.5)
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+# cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+# cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+
+# 웹캠 스트리밍 함수(게임 대기화면 mediapipe 확인 캠)
+def check_frames():
+    cap = cv2.VideoCapture(0)
+    while cap.isOpened():
+        success, frame = cap.read()
+        if not success:
+            break
+        frame = cv2.cvtColor(cv2.flip(frame, 1), cv2.COLOR_BGR2RGB)
+        results = hands.process(frame)
+        frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+
+        if results.multi_hand_landmarks:
+            for hand_landmarks in results.multi_hand_landmarks:
+                mp.solutions.drawing_utils.draw_landmarks(
+                    frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+
+        ret, buffer = cv2.imencode('.jpg', frame)
+        frame = buffer.tobytes()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
 
 # Load GIF files
 nabi_1 = cv2.VideoCapture('outpart_lib/butterfly_1.gif')
