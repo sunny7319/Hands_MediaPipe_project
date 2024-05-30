@@ -40,11 +40,11 @@
                 <img src="{{ url_for('video_feed') }}" id="webcam" autoplay>
             </div>
         </div>
-        <div id="container">
+        <!-- <div id="container">
             <img src="{{ url_for('static', filename='img/dog_1.gif') }}" alt="draggable gif" id="draggable">
-        </div>
+        </div> -->
         <div class="footer">
-            <p>점수 : {{ score }}</p>
+            <p>점수 : {{ score }}, 좌표 : <span id="position-display">{{ position }}</span></p>
         </div>
     </div>
 
@@ -56,7 +56,7 @@
                 // 로딩 스크린을 숨기고 콘텐츠를 표시합니다
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
-            }, 3000); // 3초 (3000 밀리초) 지연
+            }); // 3초 (3000 밀리초) 지연
 
             // 주기적으로 toggle 값을 가져와서 업데이트하는 함수
             setInterval(function() {
@@ -66,6 +66,22 @@
                         document.getElementById('toggle-display').textContent = 'Toggle: ' + data.toggle;
                     });
             }, 5000); // 1초마다 업데이트
+
+            // setInterval(function() {
+            //     fetch('/get_position')
+            //         .then(response => response.json())
+            //         .then(data => {
+            //             // 좌표를 픽셀 단위로 변환
+            //             const videoWidth = 1173.33;
+            //             const videoHeight = 880;
+            //             const startX = (1920 - videoWidth) / 2;
+            //             const startY = 100;
+            //             const pixelX = data.x * videoWidth + startX;
+            //             const pixelY = data.y * videoHeight + startY;
+                        
+            //             document.getElementById('position-display').textContent = `(${pixelX.toFixed(2)}, ${pixelY.toFixed(2)})`;
+            //         });
+            // }, 1000);
         };
 
         const img = document.getElementById('draggable');
