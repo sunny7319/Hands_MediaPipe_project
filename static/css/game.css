@@ -35,6 +35,9 @@ html, body {
     font-size: 2em;
     flex-direction: column;
 }
+.loading-img {
+    height: 500px;
+}
 
 .loading-img {
     height: 500px;
