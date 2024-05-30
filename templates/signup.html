@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="header">
+        <p>i-SON</p>
+        <a href="{{ url_for('login') }}">로그인</a>
+    </div>
+    <div class="main">
+        <form id="signupForm" action="{{ url_for('signup_info') }}" method="post">
+            <p>등록할 id 입력</p>
+            <input type="text" name="username" id="signupUsername" placeholder="ex) ison123" required>
+            <button type="submit">등록</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="header">
+        <p>i-SON</p>
+        <a href="{{ url_for('signup') }}">회원가입</a>
+    </div>
+    <div class="main">
+        <form id="loginForm" action="{{ url_for('login_info') }}" method="post">
+            <p>로그인</p>
+            <input type="text" name="username" id="loginUsername" placeholder="아이디" required>
+            <button type="submit">로그인</button>
+        </form>
+    </div>
+</body>
+</html>

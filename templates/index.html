@@ -1,43 +1,22 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8">
-        <title>Proj Main Menu</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-        <style>
-            html, body {
-                overflow: hidden;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            body {
-                background-image: url("{{ url_for('static', filename='img/gpt_background2.webp') }}");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="top">
-            <div class="title-bar">
-                <p class="title">i-SON</p>
-                <p class="discription">지금 바로 시작해보세요!</p>
-            </div>
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
-        </div>
-        <p class="category"><b>Game Categories</b></p>
-        <div class="main-button">
-            <a href="{{ url_for('game', game_name='그림자 놀이터') }}">
-                <button type="button" class="button-blue">그림자<br>놀이터</button>
-            </a>
-            <a href="{{ url_for('game', game_name='잡아라! 두더지!') }}">
-                <button type="button" class="button-white">잡아라!<br>두더지!</button>
-            </a>
-            <a href="{{ url_for('game', game_name='산성비') }}">
-                <button type="button" class="button-blue">산성비</button>
-            </a>
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i-SON</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="logo">
+        <h1>i-SON</h1>
+    </div>
+    <div class="buttons">
+        <a href="{{ url_for('login') }}">
+            <button type="button">로그인</button>
+        </a>
+        <a href="{{ url_for('signup') }}">
+            <button type="button">회원가입</button>
+        </a>
+    </div>
+</body>
 </html>

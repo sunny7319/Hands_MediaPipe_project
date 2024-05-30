@@ -1,4 +1,5 @@
-from flask import Flask, render_template, Response, jsonify
+from flask import Flask, render_template, Response, request, redirect, url_for, jsonify
+from login import save_user, load_users
 from game1 import check_frames, generate_frames, get_score, get_position
 
 app = Flask(__name__)
@@ -29,6 +30,36 @@ game_data = {
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login_info():
+    username = request.form['username']
+    users = load_users()
+    print('post')
+    if username in users:
+        return redirect(url_for('main'))
+    else:
+        return render_template('signup.html', error='등록된 아이디가 없습니다. 회원가입하시겠습니까?')
+    
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup_info():
+    username = request.form['username']
+    if save_user(username):
+        return redirect(url_for('login_info'))
+    else:
+        return render_template('signup.html', error='이미 존재하는 아이디입니다.')
+
+@app.route('/main')
+def main():
+    return render_template('main.html')
 
 @app.route('/game/<game_name>')
 def game(game_name):
