@@ -94,9 +94,11 @@ def reset_gif(gif):
 
 score = 0
 position2 = [0, 0]
+current_image_info = []
 def generate_frames():
     global score
     global position2
+    global current_image_info
     with mp_hands.Hands(static_image_mode=False, max_num_hands=6, min_detection_confidence=0.5) as hands:
         counting = 1
         dict_hand = util.make_dict_hand()
@@ -133,112 +135,116 @@ def generate_frames():
 
                             if label == 0:
                                 rndN = np.random.randint(1, 4)
-                                nabi = [nabi_1, nabi_2, nabi_3][rndN - 1]
-                                if x_c + 100 > nw or y_c + 100 > nh:
-                                    x_c, y_c = nw - 100, nh - 100
-                                flag.append(Moving(nabi, x_c, y_c, 100, 100, 1))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # nabi = [nabi_1, nabi_2, nabi_3][rndN - 1]
+                                # if x_c + 100 > nw or y_c + 100 > nh:
+                                #     x_c, y_c = nw - 100, nh - 100
+                                # flag.append(Moving(nabi, x_c, y_c, 100, 100, 1))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 1:
                                 rndN = np.random.randint(1, 4)
-                                cat = [cat_1, cat_2, cat_3][rndN - 1]
-                                if x_c + 200 > nw or y_c + 200 > nh:
-                                    x_c, y_c = nw - 200, nh - 200
-                                flag.append(Moving(cat, x_c, y_c, 200, 200, 1))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # cat = [cat_1, cat_2, cat_3][rndN - 1]
+                                # if x_c + 200 > nw or y_c + 200 > nh:
+                                #     x_c, y_c = nw - 200, nh - 200
+                                # flag.append(Moving(cat, x_c, y_c, 200, 200, 1))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 2:
                                 rndN = np.random.randint(1, 4)
-                                snail = [snail_1, snail_2, snail_3][rndN - 1]
-                                if x_c + 70 > nw or y_c + 70 > nh:
-                                    x_c, y_c = nw - 70, nh - 70
-                                flag.append(Moving(snail, x_c, y_c, 70, 70, 1))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # snail = [snail_1, snail_2, snail_3][rndN - 1]
+                                # if x_c + 70 > nw or y_c + 70 > nh:
+                                #     x_c, y_c = nw - 70, nh - 70
+                                # flag.append(Moving(snail, x_c, y_c, 70, 70, 1))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 3:
                                 rndN = np.random.randint(1, 4)
-                                deer = [deer_1, deer_2, deer_3][rndN - 1]
+                                # deer = [deer_1, deer_2, deer_3][rndN - 1]
                                 if x_c + 300 > nw or y_c + 300 > nh:
                                     x_c, y_c = nw - 300, nh - 300
-                                flag.append(Moving(deer, x_c, y_c, 300, 300, 1))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # flag.append(Moving(deer, x_c, y_c, 300, 300, 1))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 4:
                                 rndN = np.random.randint(1, 4)
-                                heart = [heart_1, heart_2, heart_3][rndN - 1]
+                                # heart = [heart_1, heart_2, heart_3][rndN - 1]
                                 if x_c + 100 > nw or y_c + 100 > nh:
                                     x_c, y_c = nw - 100, nh - 100
-                                flag.append(Moving(heart, x_c, y_c, 100, 100, 0))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # flag.append(Moving(heart, x_c, y_c, 100, 100, 0))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 5:
                                 rndN = np.random.randint(1, 4)
-                                duck = [duck_1, duck_2, duck_3][rndN - 1]
+                                # duck = [duck_1, duck_2, duck_3][rndN - 1]
                                 if x_c + 150 > nw or y_c + 150 > nh:
                                     x_c, y_c = nw - 150, nh - 150
-                                flag.append(Moving(duck, x_c, y_c, 150, 150, 1))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # flag.append(Moving(duck, x_c, y_c, 150, 150, 1))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 6:
                                 rndN = np.random.randint(1, 4)
-                                sun = [sun_1, sun_2, sun_3][rndN - 1]
+                                # sun = [sun_1, sun_2, sun_3][rndN - 1]
                                 if x_c + 180 > nw or y_c + 180 > nh:
                                     x_c, y_c = nw - 180, nh - 180
-                                flag.append(Moving(sun, x_c, y_c, 180, 180, 0))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # flag.append(Moving(sun, x_c, y_c, 180, 180, 0))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 7:
                                 rndN = np.random.randint(1, 4)
-                                house = [house_1, house_2, house_3][rndN - 1]
+                                # house = [house_1, house_2, house_3][rndN - 1]
                                 if x_c + 400 > nw or y_c + 400 > nh:
                                     x_c, y_c = nw - 400, nh - 400
-                                flag.append(Moving(house, x_c, y_c, 400, 400, 0))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # flag.append(Moving(house, x_c, y_c, 400, 400, 0))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 8:
                                 rndN = np.random.randint(1, 4)
-                                tree = [tree_1, tree_2, tree_3][rndN - 1]
+                                # tree = [tree_1, tree_2, tree_3][rndN - 1]
                                 if x_c + 350 > nw or y_c + 350 > nh:
                                     x_c, y_c = nw - 350, nh - 350
-                                flag.append(Moving(tree, x_c, y_c, 350, 350, 0))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # flag.append(Moving(tree, x_c, y_c, 350, 350, 0))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 9:
                                 rndN = np.random.randint(1, 4)
-                                rock = [rock_1, rock_2, rock_3][rndN - 1]
+                                # rock = [rock_1, rock_2, rock_3][rndN - 1]
                                 if x_c + 120 > nw or y_c + 120 > nh:
                                     x_c, y_c = nw - 120, nh - 120
-                                flag.append(Moving(rock, x_c, y_c, 120, 120, 0))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # flag.append(Moving(rock, x_c, y_c, 120, 120, 0))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 10:
                                 rndN = np.random.randint(1, 4)
-                                flower = [flower_1, flower_2, flower_3][rndN - 1]
+                                # flower = [flower_1, flower_2, flower_3][rndN - 1]
                                 if x_c + 70 > nw or y_c + 70 > nh:
                                     x_c, y_c = nw - 70, nh - 70
-                                flag.append(Moving(flower, x_c, y_c, 70, 70, 0))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                size = 70
+                                way = 0
+                                # flag.append(Moving(flower, x_c, y_c, 70, 70, 0))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
                             elif label == 11:
                                 rndN = np.random.randint(1, 4)
-                                dog = [dog_1, dog_2, dog_3][rndN - 1]
+                                # dog = [dog_1, dog_2, dog_3][rndN - 1]
                                 if x_c + 100 > nw or y_c + 100 > nh:
                                     x_c, y_c = nw - 100, nh - 100
-                                flag.append(Moving(dog, x_c, y_c, 100, 100, 1))
-                                print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
+                                # flag.append(Moving(dog, x_c, y_c, 100, 100, 1))
+                                # print(f"현재 라벨과 좌표는 label: {label}, position: {position2}")
 
+                            current_image_info = label
+                            print("현재 이미지 라벨은 : ", current_image_info)
             counting += 1
             score += 1
-
-            for obj in flag:
-                frame = obj.gif.read()[1]
-                if frame is not None and frame.size != 0:
-                    obj.frame = cv2.resize(frame, (obj.resize_x, obj.resize_y))
-                    if obj.way == 1:
-                        obj.frame = cv2.flip(obj.frame, 1)
-                    image[obj.rp[obj.c][1]:obj.rp[obj.c][1] + obj.frame.shape[0],
-                        obj.rp[obj.c][0]:obj.rp[obj.c][0] + obj.frame.shape[1]] = obj.frame
-                reset_gif(obj.gif)
+            # 혹시 모르니 원본코드 지우지 말것
+            # for obj in flag:
+            #     frame = obj.gif.read()[1]
+            #     if frame is not None and frame.size != 0:
+            #         obj.frame = cv2.resize(frame, (obj.resize_x, obj.resize_y))
+            #         if obj.way == 1:
+            #             obj.frame = cv2.flip(obj.frame, 1)
+            #         image[obj.rp[obj.c][1]:obj.rp[obj.c][1] + obj.frame.shape[0],
+            #             obj.rp[obj.c][0]:obj.rp[obj.c][0] + obj.frame.shape[1]] = obj.frame
+            #     reset_gif(obj.gif)
 
             ret, buffer = cv2.imencode('.jpg', image)
             frame = buffer.tobytes()
@@ -249,7 +255,11 @@ def get_score():
     return score
 
 def get_position():
-    return position2
+    return position2, current_image_info
+
+def get_labels_positions():
+    global detect_label
+    return detect_label
 
 def convert_position(posi):
     video_width = 1173.33
@@ -260,7 +270,11 @@ def convert_position(posi):
     start_y = 100
     
     # 변환 공식 적용
-    X = posi[0] * video_width + start_x
-    Y = posi[1] * video_height + start_y
+    if isinstance(posi[0], list):
+        X = posi[0][0] * video_width + start_x
+        Y = posi[0][1] * video_height + start_y
+    else:
+        X = posi[0] * video_width + start_x
+        Y = posi[1] * video_height + start_y
     
     return X, Y
