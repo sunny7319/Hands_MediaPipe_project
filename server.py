@@ -71,7 +71,7 @@ def game_play(game_name):
     global game_data
     if game_name in game_data:
         position, image_info = get_position()
-        return render_template('game_video.html', game=game_data[game_name], score=get_score(), position=position, image_info=image_info)
+        return render_template('1.html', game=game_data[game_name], score=get_score(), position=position, image_info=image_info)
     else:
         return "Game not found", 404
     
