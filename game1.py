@@ -102,7 +102,6 @@ def generate_frames():
     with mp_hands.Hands(static_image_mode=False, max_num_hands=6, min_detection_confidence=0.5) as hands:
         counting = 1
         dict_hand = util.make_dict_hand()
-        flag = []
         while True:
             success, image = cap.read()
             if not success:
@@ -123,7 +122,6 @@ def generate_frames():
                     if detect_label:    # 레이블이 감지된 경우
                         for i in range(len(detect_label)):
                             label, position = detect_label[i]
-                            # print(f"label: {label}, position: {position}")  # position 구조 확인
                             position2 = convert_position(position)
                             # 예: position이 [[x, y]] 형태라면
                             if isinstance(position[0], list):
