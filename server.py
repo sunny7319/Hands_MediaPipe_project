@@ -42,9 +42,13 @@ def game(game_name):
 @app.route('/game_play/<game_name>')
 def game_play(game_name):
     global game_data
-    if game_name in game_data:
+    if game_name == '그림자 놀이터':
         position, image_info = get_position()
-        return render_template('game_video.html', game=game_data[game_name], score=get_score(), position=position, image_info=image_info)
+        return render_template('1.html', game=game_data[game_name], score=get_score(), position=position, image_info=image_info)
+    elif game_name == '두더지 잡기':
+        return render_template('2.html')
+    elif game_name == '산성비':
+        return render_template('3.html')
     else:
         return "Game not found", 404
 
