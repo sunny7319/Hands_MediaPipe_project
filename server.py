@@ -1,13 +1,6 @@
 from flask import Flask, render_template, Response, jsonify
-import cv2
-import mediapipe as mp
-import numpy as np
-import os
-from classgo import Moving
-from recognition_lib import util
-from recognition_part import recognition
-from tensorflow.keras.models import load_model
-from game1 import generate_frames, get_score, get_position
+
+from game1 import generate_frames, get_score, get_position, get_labels_positions
 
 app = Flask(__name__)
 
@@ -50,7 +43,8 @@ def game(game_name):
 def game_play(game_name):
     global game_data
     if game_name in game_data:
-        return render_template('game_video.html', game=game_data[game_name], score=get_score(), position=get_position())
+        position, image_info = get_position()
+        return render_template('game_video.html', game=game_data[game_name], score=get_score(), position=position, image_info=image_info)
     else:
         return "Game not found", 404
 
@@ -58,11 +52,20 @@ def game_play(game_name):
 def video_feed():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-# @app.route('/get_position')
-# def get_position():
-#     # 여기서 실시간으로 좌표 데이터를 업데이트
-#     global position
-#     return jsonify(position)
+@app.route('/current_position')
+def current_position():
+    # 여기서 실시간으로 좌표 데이터를 업데이트
+    pos, img_info = get_position()
+    return jsonify({
+        'x': pos[0],
+        'y': pos[1],
+        'label': img_info
+    })
+
+@app.route('/labels_positions')
+def labels_positions():
+    labels_positions = get_labels_positions()  # 라벨과 좌표 정보를 가져오는 함수
+    return jsonify(labels_positions)
 
 # toggle 값을 반환하는 엔드포인트 추가
 @app.route('/toggle_status')
