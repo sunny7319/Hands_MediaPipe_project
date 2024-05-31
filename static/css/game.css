@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+html, body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3da7ee38;
+}
+
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    flex-direction: column;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.header {
+    background-color: #ffffff8f;
+    height: 216px;
+}
+
+.back-button {
+    justify-content: left;
+    height: 64px;
+    margin-top: 10px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+h1 {
+    font-family: 'Cafe24Ssurround';
+    font-size: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 152px;
+    margin-top: -4px;
+}
+
+.main {
+    background-color: #ffffff8f;
+    display: flex;
+    flex-direction: column;
+    height: 864px;
+}
+
+.video {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    height: 564px;
+}
+
+.toggle-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+#webcam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 514px;
+}
+
+.play {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.description {
+    font-family: 'MaplestoryOTFBold';
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 75px;
+    margin-top: 25px;
+}
+
+.play-button {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 150px;
+    margin-top: -30px;
+    margin-bottom: 100px;
+    cursor: pointer;
+}
+
+

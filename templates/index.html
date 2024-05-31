@@ -1,22 +1,43 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">Name</div>
-      <div class="content">
-        <div class="box"><a href="{{ url_for('detail') }}">그림자놀이</a></div>
-        <div class="box"><a href="{{ url_for('detail') }}">두더지잡기</a></div>
-        <div class="box"><a href="{{ url_for('detail') }}">산성비</a></div>
-      </div>
-    </div>
-  </body>
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>Proj Main Menu</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <style>
+            html, body {
+                overflow: hidden;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-image: url("{{ url_for('static', filename='img/gpt_background2.webp') }}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <div class="title-bar">
+                <p class="title">i-SON</p>
+                <p class="discription">지금 바로 시작해보세요!</p>
+            </div>
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+        </div>
+        <p class="category"><b>Game Categories</b></p>
+        <div class="main-button">
+            <a href="{{ url_for('game', game_name='그림자 놀이터') }}">
+                <button type="button" class="button-blue" onclick="sendPageID(1001)">그림자<br>놀이터</button>
+            </a>
+            <a href="{{ url_for('game', game_name='두더지 잡기') }}">
+                <button type="button" class="button-white" onclick="sendPageID(2001)">두더지<br>잡기</button>
+            </a>
+            <a href="{{ url_for('game', game_name='산성비') }}">
+                <button type="button" class="button-blue" onclick="sendPageID(3001)">산성비</button>
+            </a>
+        </div>
+    </body>
 </html>
-
-
-
