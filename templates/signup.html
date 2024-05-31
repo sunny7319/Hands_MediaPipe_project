@@ -14,11 +14,13 @@
     <div class="main">
         <form id="signupForm" action="{{ url_for('signup') }}" method="post">
             <p>등록할 id 입력</p>
-            <input type="text" name="username" id="signupUsername" placeholder="ex) ison123" required>
-            {% if error %}
-            <div class="error">{{ error }}</div>
-            {% endif %}
-            <button type="submit">등록</button>
+            <div class="input">
+                <input type="text" name="username" id="signupUsername" placeholder="ex) ison123" required>
+                {% if error %}
+                <div class="error">{{ error }}</div>
+                {% endif %}
+                <button type="submit">등록</button>
+            </div>
         </form>
     </div>
 </body>

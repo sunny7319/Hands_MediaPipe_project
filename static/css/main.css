@@ -87,19 +87,98 @@ img {
     text-align: center;
 }
 
-.main-button {
+.buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 700px;
     padding-left: 100px;
     padding-right: 100px;
-    align-items: center;
+    font-family: 'KyoboHand';
+    font-size: 40px;
 }
-
-.main-button a {
+/* 
+.buttons a {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     text-decoration: none;
+} */
+
+.buttons li {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    float: left;
+    padding: 20px; 
+    background: #659EC7; 
+    overflow: hidden;
+    box-shadow: inset 0px 0px 10px #ccc, 0px 0px 10px #659EC7;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.buttons li:hover {
+    width: 300px;
+    background: #488AC7;
+    box-shadow: 0px 0px 10px #488AC7;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+.buttons li:first-child {
+    -webkit-border-radius: 10px 0px 0px 10px;
+    -moz-border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.buttons li:last-child {
+    -webkit-border-radius: 0px 10px 10px 0px;
+    -moz-border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.buttons li:first-child:hover {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-transform: scale(1.2) rotate(-2deg);
+    -moz-transform: scale(1.2) rotate(-2deg);
+    transform: scale(1.2) rotate(-2deg);
+}
+
+.buttons li:last-child:hover {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-transform: scale(1.2) rotate(2deg);
+    -moz-transform: scale(1.2) rotate(2deg);
+    transform: scale(1.2) rotate(2deg);
+}
+
+.buttons li a {
+    display: inline-block;   
+    color: #fefefe;
+    text-decoration: none;
+    text-shadow: 0px 0px 1px #000, 0px 0px 1px #333;
+    font-size: 20px;
+    cursor: default;
+}
+
+.buttons .image {
+    display: none;
+    color: #FFF8C6;
+    line-height: 22px;
+}
+
+.buttons li:hover > .image {
+    display: block;
 }
 
 .button-blue, .button-white {
