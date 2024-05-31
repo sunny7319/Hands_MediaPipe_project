@@ -12,7 +12,7 @@
         <a href="{{ url_for('login') }}">로그인</a>
     </div>
     <div class="main">
-        <form id="signupForm" action="{{ url_for('signup_info') }}" method="post">
+        <form id="signupForm" action="{{ url_for('signup') }}" method="post">
             <p>등록할 id 입력</p>
             <input type="text" name="username" id="signupUsername" placeholder="ex) ison123" required>
             {% if error %}

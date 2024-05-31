@@ -31,12 +31,8 @@ game_data = {
 def index():
     return render_template('index.html')
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
-
 @app.route('/login', methods=['GET', 'POST'])
-def login_info():
+def login():
     if request.method == 'POST':
         username = request.form['username']
         users = load_users()
@@ -47,12 +43,8 @@ def login_info():
             return render_template('login.html', error=error)
     return render_template('login.html')
 
-@app.route('/signup')
-def signup():
-    return render_template('signup.html')
-
 @app.route('/signup', methods=['GET', 'POST'])
-def signup_info():
+def signup():
     if request.method == 'POST':
         username = request.form['username']
         if save_user(username):
