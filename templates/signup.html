@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
     <div class="header">
@@ -15,6 +15,9 @@
         <form id="signupForm" action="{{ url_for('signup_info') }}" method="post">
             <p>등록할 id 입력</p>
             <input type="text" name="username" id="signupUsername" placeholder="ex) ison123" required>
+            {% if error %}
+            <div class="error">{{ error }}</div>
+            {% endif %}
             <button type="submit">등록</button>
         </form>
     </div>

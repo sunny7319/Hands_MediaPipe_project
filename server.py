@@ -37,25 +37,30 @@ def login():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_info():
-    username = request.form['username']
-    users = load_users()
-    print('post')
-    if username in users:
-        return redirect(url_for('main'))
-    else:
-        return render_template('signup.html', error='등록된 아이디가 없습니다. 회원가입하시겠습니까?')
-    
+    if request.method == 'POST':
+        username = request.form['username']
+        users = load_users()
+        if any(user['username'] == username for user in users):
+            return redirect(url_for('main'))
+        else:
+            error = '아이디를 찾을 수 없습니다.'
+            return render_template('login.html', error=error)
+    return render_template('login.html')
+
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup_info():
-    username = request.form['username']
-    if save_user(username):
-        return redirect(url_for('login_info'))
-    else:
-        return render_template('signup.html', error='이미 존재하는 아이디입니다.')
+    if request.method == 'POST':
+        username = request.form['username']
+        if save_user(username):
+            return redirect(url_for('login'))
+        else:
+            error = '이미 존재하는 아이디입니다.'
+            return render_template('signup.html', error=error)
+    return render_template('signup.html')
 
 @app.route('/main')
 def main():

@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>i-SON</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-    <div class="logo">
-        <h1>i-SON</h1>
+    <div class="top">
+        <div class="logo">
+            <h1>i-SON</h1>
+        </div>
     </div>
     <div class="buttons">
         <a href="{{ url_for('login') }}">
