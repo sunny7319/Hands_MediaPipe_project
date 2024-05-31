@@ -79,6 +79,10 @@ def game_play(game_name):
     else:
         return "Game not found", 404
     
+@app.route('/survey')
+def survey():
+    return render_template('survey.html')
+    
 # 게임 대기화면에 표시할 캠 미리보기
 @app.route('/check_video')
 def check_video():

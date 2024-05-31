@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Proj Main Menu</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/survey.scss') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='js/survey.js') }}">
         <style>
             html, body {
                 overflow: hidden;
@@ -12,7 +13,6 @@
                 padding: 0;
             }
             body {
-                background-image: url("{{ url_for('static', filename='img/gpt_background2.webp') }}");
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -23,7 +23,7 @@
         <div class="top">
             <p class="discription">게임은 어떠셨나요?</p>
         </div>
-        <div class="button">
+        <div class="button-group">
             <button class="button">
                 <div class="icon">
                     <div class="cannon"></div>
@@ -37,10 +37,10 @@
                         <div class="emitter"></div>
                     </div>
                 </div>
-                <span>Confirm</span>
+                <span>좋아요</span>
             </button>
             
-            <button class="button white">
+            <button class="button-white">
                 <div class="icon">
                     <div class="cannon"></div>
                     <div class="confetti">
@@ -53,7 +53,7 @@
                         <div class="emitter"></div>
                     </div>
                 </div>
-                <span>Confirm</span>
+                <span>아주 좋아요</span>
             </button>
             
             <!-- <button class="button grey">
