@@ -1,6 +1,6 @@
-from flask import Flask, render_template, Response, jsonify
-
-from game1 import generate_frames, get_score, get_position, get_labels_positions
+from flask import Flask, render_template, Response, request, redirect, url_for, jsonify
+from login import save_user, load_users
+from game1 import check_frames, generate_frames, get_score, get_position, get_labels_positions
 
 app = Flask(__name__)
 
@@ -15,8 +15,8 @@ game_data = {
         'image': 'game1.png',
         'description': '손으로 동물과 모양을 만들어 보세요!'
     },
-    '두더지 잡기': {
-        'title': '두더지 잡기',
+    '잡아라! 두더지!': {
+        'title': '잡아라! 두더지!',
         'image': 'game1.png',
         'description': '주어진 단어와 같은 단어를 가지고 있는 두더지를 잡아보세요!'
     },
@@ -30,6 +30,33 @@ game_data = {
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        users = load_users()
+        if any(user['username'] == username for user in users):
+            return redirect(url_for('main'))
+        else:
+            error = '아이디를 찾을 수 없습니다.'
+            return render_template('login.html', error=error)
+    return render_template('login.html')
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        username = request.form['username']
+        if save_user(username):
+            return redirect(url_for('login'))
+        else:
+            error = '이미 존재하는 아이디입니다.'
+            return render_template('signup.html', error=error)
+    return render_template('signup.html')
+
+@app.route('/main')
+def main():
+    return render_template('main.html')
 
 @app.route('/game/<game_name>')
 def game(game_name):
@@ -51,7 +78,13 @@ def game_play(game_name):
         return render_template('3.html')
     else:
         return "Game not found", 404
+    
+# 게임 대기화면에 표시할 캠 미리보기
+@app.route('/check_video')
+def check_video():
+    return Response(check_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
+# 게임 화면에 들어갈 mediapipe 비디오
 @app.route('/video_feed')
 def video_feed():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')

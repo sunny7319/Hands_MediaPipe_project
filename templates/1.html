@@ -27,7 +27,7 @@
     <div id="loading-screen">
         <img src="{{ url_for('static', filename='img/character.png') }}" alt='마스코트' class="loading-img">
         <div class="spinner"></div>
-        <p>로딩 중...</p>
+        <p>잠시만 기다려주세요~!</p>
     </div>
     <div id="content" style="display: none;">
         <div class="header">
@@ -35,7 +35,7 @@
                 <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
             </a>
             <h1>{{ game.title }}</h1>
-            <a href="{{ url_for('index') }}">
+            <a href="{{ url_for('main') }}">
                 <img src="{{ url_for('static', filename='img/home.png') }}" alt="메인화면" class="home-button">
             </a>
         </div>
@@ -107,7 +107,7 @@
                     .catch(error => {
                         console.error('Error fetching position:', error);
                     });
-            }, 1); // 1초마다 업데이트
+            }, 1000); // 1초마다 업데이트
         };
 
         function updateImage(label, x, y) {
