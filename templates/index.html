@@ -1,0 +1,96 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 퀴즈쇼 게임</title>
+</head>
+<body>
+    <h1>이미지 퀴즈쇼 게임</h1>
+    <img id="quizImage" src="./static/가지.jpeg" alt="퀴즈 이미지">
+    <h2>이 이미지는 무엇인가요? 단어를 웹캠으로 보여주세요!</h2>
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="captureBtn">캡처</button>
+    <button id="nextBtn" style="display: none;">다음</button>
+    <p id="result"></p>
+    <script>
+        const video = document.getElementById('video');
+        const captureBtn = document.getElementById('captureBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const result = document.getElementById('result');
+        let currentQuizIndex = 0;
+
+        const quizData = [
+            {answer: '가지', image: '가지.jpeg'},
+            {answer: '나비', image: '나비.jpeg'},
+            {answer: '다리', image: '다리.jpeg'},
+            {answer: '레몬', image: '레몬.jpeg'},
+            {answer: '마늘', image: '마늘.jpeg'},
+            {answer: '바위', image: '바위.jpeg'},
+            {answer: '사슴', image: '사슴.jpeg'},
+            {answer: '애기', image: '애기.jpeg'},
+            {answer: '자수', image: '자수.jpeg'},
+            {answer: '차고', image: '차고.jpeg'},
+            {answer: '카레', image: '카레.jpeg'},
+            {answer: '태양', image: '태양.jpeg'},
+            {answer: '팔', image: '팔.jpeg'},
+            {answer: '하늘', image: '하늘.jpeg'},
+        ];
+
+        function loadQuiz() {
+            const quiz = quizData[currentQuizIndex];
+            document.getElementById('quizImage').src = `./static/${quiz.image}`;
+            result.textContent = '';
+            nextBtn.style.display = 'none';
+            captureBtn.style.display = 'block';
+        }
+
+        function checkAnswer(predictedClass) {
+            const correctAnswer = quizData[currentQuizIndex].answer;
+            if (predictedClass === correctAnswer) {
+                result.textContent = `정답! ${predictedClass}`;
+                nextBtn.style.display = 'block';
+                captureBtn.style.display = 'none';
+            } else {
+                result.textContent = `오답! 예측된 클래스: ${predictedClass}`;
+            }
+        }
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            });
+
+        captureBtn.addEventListener('click', () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            const data = canvas.toDataURL('image/jpeg');
+            fetch('/capture', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image: data })
+            })
+            .then(response => response.json())
+            .then(data => {
+                checkAnswer(data.class);
+            });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentQuizIndex++;
+            if (currentQuizIndex < quizData.length) {
+                loadQuiz();
+            } else {
+                result.textContent = '모든 퀴즈를 완료했습니다!';
+                nextBtn.style.display = 'none';
+            }
+        });
+
+        loadQuiz(); // 첫 퀴즈를 로드합니다.
+    </script>
+</body>
+</html>
