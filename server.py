@@ -3,7 +3,6 @@ from login import save_user, load_users
 from game1 import check_frames, generate_frames, get_score, get_position, get_labels_positions
 
 app = Flask(__name__)
-
 # score = 0
 
 # 글로벌 변수로 설정
@@ -79,8 +78,20 @@ def game_play(game_name):
     else:
         return "Game not found", 404
     
-@app.route('/survey')
+# @app.route('/survey')
+# def survey():
+#     return render_template('survey.html')
+
+@app.route('/survey', methods=['GET', 'POST'])
 def survey():
+    if request.method == 'POST':
+        data = request.get_json()
+        feedback = data.get('feedback')
+
+        # 서버 콘솔에 데이터 출력
+        print(f"Received feedback: {feedback}")
+
+        return jsonify({'status': 'success', 'feedback': feedback})
     return render_template('survey.html')
     
 # 게임 대기화면에 표시할 캠 미리보기
