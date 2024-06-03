@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
-    <div class="header">
+    <div class="top">
         <p>i-SON</p>
-        <a href="{{ url_for('signup') }}">회원가입</a>
     </div>
     <div class="main">
-        <form id="loginForm" action="{{ url_for('login') }}" method="post">
-            <p>로그인</p>
-            <div class="input">
+        <div class="buttons">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            </a>
+            <a href="{{ url_for('signup') }}">회원가입</a>
+        </div>
+        <div class"container">
+            <div class="header">
+                <h1>로그인</h1>
+            </div>
+            <form id="loginForm" action="{{ url_for('login') }}" method="post">
                 <input type="text" name="username" id="loginUsername" placeholder="아이디" required>
                 {% if error %}
                 <div class="error">{{ error }}</div>
                 {% endif %}
-                <button type="submit">로그인</button>
-            </div>
-        </form>
+                <button type="submit">시작</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
