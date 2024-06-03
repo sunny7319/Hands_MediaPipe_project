@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ game.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='3.css') }}">
+    <style>
+        body {
+            /* background-image: url("{{ url_for('static', filename='img/main_background.webp') }}"); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #loading-screen {
+            background-image: url("{{ url_for('static', filename='img/main_background5.webp') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <img src="{{ url_for('static', filename='img/character.png') }}" alt='마스코트' class="loading-img">
+        <div class="spinner"></div>
+        <p>잠시만 기다려주세요~!</p>
+    </div>
+    <div id="content" style="display: none;">
+        <div class="header">
+            <a href="{{ url_for('game', game_name=game.title) }}">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            </a>
+            <h1>{{ game.title }}</h1>
+            <a href="{{ url_for('main') }}">
+                <img src="{{ url_for('static', filename='img/home.png') }}" alt="메인화면" class="home-button">
+            </a>
+        </div>
+        <p>이 이미지는 무엇인가요? 단어를 웹캠으로 보여주세요!</p>
+        <div class="main">
+            <div class="video">
+                <video id="webcam" autoplay></video>
+            </div>
+        </div>
+        <div id="image-container"></div>
+        <div class="footer">
+            <button id="captureBtn">캡처</button>
+            <button id="nextBtn" style="display: none;">다음</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='game3.js') }}"></script>
+</body>
+</html>

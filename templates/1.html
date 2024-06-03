@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ game.title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/play.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/1.css') }}">
     <style>
         body {
             /* background-image: url("{{ url_for('static', filename='img/main_background.webp') }}"); */
@@ -52,7 +52,6 @@
             <p>점수 : {{ score }}, 좌표 : <span id="position-display">{{ position }}</span></p>
         </div>
     </div>
-
     <script>
         // 페이지가 완전히 로드되었을 때 실행되는 함수
         window.onload = function() {
@@ -62,7 +61,6 @@
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
             });
-
             // 주기적으로 toggle 값을 가져와서 업데이트하는 함수
             // setInterval(function() {
             //     fetch('/toggle_status')
@@ -71,7 +69,6 @@
             //             document.getElementById('toggle-display').textContent = 'Toggle: ' + data.toggle;
             //         });
             // }, 5000); // 5초마다 업데이트
-
             // 주기적으로 position 값을 가져와서 업데이트하는 함수
             // setInterval(function() {
             //     fetch('/current_position')
@@ -89,7 +86,6 @@
             //             console.error('Error fetching position:', error);
             //         });
             // }, 1000); // 1초마다 업데이트
-
             setInterval(function() {
                 fetch('/current_position')
                     .then(response => response.json())
@@ -98,7 +94,6 @@
                             const positionDisplay = document.getElementById('position-display');
                             const newPos = `(${data.x}, ${data.y})`;
                             positionDisplay.textContent = newPos;
-
                             updateImage(data.label, data.x, data.y);
                         } else {
                             console.error('Invalid data format:', data);
@@ -109,7 +104,6 @@
                     });
             }, 1000); // 1초마다 업데이트
         };
-
         function updateImage(label, x, y) {
             const imageContainer = document.getElementById('image-container');
             if (!imageContainer) {
@@ -125,29 +119,26 @@
             img.style.width = '300px';
             imageContainer.appendChild(img);
         }
-
         function getGifSource(label) {
             const gifMap = {
-                0: '{{ url_for("static", filename="img/butterfly_1.gif") }}',
-                1: '{{ url_for("static", filename="img/cat_1.gif") }}',
-                2: '{{ url_for("static", filename="img/snail_1.gif") }}',
-                3: '{{ url_for("static", filename="img/deer_1.gif") }}',
-                4: '{{ url_for("static", filename="img/heart.gif") }}',
-                5: '{{ url_for("static", filename="img/duck_1.gif") }}',
-                6: '{{ url_for("static", filename="img/sun.gif") }}',
-                7: '{{ url_for("static", filename="img/house.gif") }}',
-                8: '{{ url_for("static", filename="img/tree.gif") }}',
-                9: '{{ url_for("static", filename="img/rock.gif") }}',
-                10: '{{ url_for("static", filename="img/flower.gif") }}',
-                11: '{{ url_for("static", filename="img/dog_1.gif") }}'
+                0: '{{ url_for("static", filename="img/game1/butterfly_1.gif") }}',
+                1: '{{ url_for("static", filename="img/game1/cat_1.gif") }}',
+                2: '{{ url_for("static", filename="img/game1/snail_1.gif") }}',
+                3: '{{ url_for("static", filename="img/game1/deer_1.gif") }}',
+                4: '{{ url_for("static", filename="img/game1/heart.gif") }}',
+                5: '{{ url_for("static", filename="img/game1/duck_1.gif") }}',
+                6: '{{ url_for("static", filename="img/game1/sun.gif") }}',
+                7: '{{ url_for("static", filename="img/game1/house.gif") }}',
+                8: '{{ url_for("static", filename="img/game1/tree.gif") }}',
+                9: '{{ url_for("static", filename="img/game1/rock.gif") }}',
+                10: '{{ url_for("static", filename="img/game1/flower.gif") }}',
+                11: '{{ url_for("static", filename="img/game1/dog_1.gif") }}'
             };
             return gifMap[label];
         }
-
         // function updateLabelsPositions(data) {
         //     // 이전에 표시된 이미지를 모두 제거
         //     document.querySelectorAll('.moving-img').forEach(img => img.remove());
-
         //     // 새로운 데이터를 바탕으로 이미지 추가
         //     data.forEach(item => {
         //         const label = item.label;
@@ -160,7 +151,6 @@
         //         document.body.appendChild(img);
         //     });
         // }
-
         // function getGifSource(label) {
         //     const gifMap = {
         //         0: 'static/img/butterfly.gif',
@@ -178,38 +168,28 @@
         //     };
         //     return gifMap[label] || 'static/img/default.gif';
         // }
-
         // const img = document.getElementById('draggable');
-
         // img.addEventListener('mousedown', (e) => {
         //     e.preventDefault();
-
         //     let shiftX = e.clientX - img.getBoundingClientRect().left;
         //     let shiftY = e.clientY - img.getBoundingClientRect().top;
-
         //     img.style.position = 'absolute';
         //     img.style.zIndex = 1000;
         //     document.body.append(img);
-
         //     moveAt(e.pageX, e.pageY);
-
         //     function moveAt(pageX, pageY) {
         //         img.style.left = pageX - shiftX + 'px';
         //         img.style.top = pageY - shiftY + 'px';
         //     }
-
         //     function onMouseMove(e) {
         //         moveAt(e.pageX, e.pageY);
         //     }
-
         //     document.addEventListener('mousemove', onMouseMove);
-
         //     img.onmouseup = function() {
         //         document.removeEventListener('mousemove', onMouseMove);
         //         img.onmouseup = null;
         //     };
         // });
-
         // img.ondragstart = function() {
         //     return false;
         // };

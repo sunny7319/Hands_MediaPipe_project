@@ -44,10 +44,39 @@ html, body {
     box-sizing: border-box;
 }
 
-div {
-    padding: 10px;
-    margin: 20px;
+.nav {
+    /* background-color: #c8edfd; */
+    height: 130px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
+
+input[id="menuicon"] {
+    display: none;
+}
+
+input[id="menuicon"] + label {
+    display: block;
+}
+
+input[id="menuicon"] + label img {
+    height: 65px;
+    margin-right: 65px;
+    cursor: pointer;
+    
+}
+
+/* .sidebar {
+    width: 300px;
+    height: 100%;
+    background: #333333cc;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    z-index: 1;
+    transition: all .35s;
+} */
 
 .top {
     display: flex;
@@ -71,7 +100,7 @@ div {
     font-size: 50px;
 }
 
-img {
+.top img {
     background-size: contain;
     position: relative;
     right: auto;
