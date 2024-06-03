@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    {% if is_correct %}
+        <p>정답입니다!</p>
+    {% else %}
+        <p>실패했습니다. 예측된 클래스: {{ predicted_class }} (확률: {{ predicted_prob }})</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Go Back</a>
+</body>
+</html>
