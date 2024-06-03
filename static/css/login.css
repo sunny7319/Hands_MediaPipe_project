@@ -44,7 +44,7 @@ body {
     display: absolute;
 }
 
-.top {
+.header {
     background-color: #3da7ee38;
     display: flex;
     justify-content: space-between;
@@ -54,7 +54,7 @@ body {
     height: 130px;  /* 1080 x 12% */
 }
 
-.top p {
+.header p {
     font-family: 'yg-jalnan';
     font-size: 80px;
     color: #333;
@@ -128,7 +128,7 @@ body {
     border-radius: 15px;
 }
 
-.header h1 {
+.title h1 {
     font-family: 'Cafe24Ssurround';
     font-size: 50px;
     margin: 20px;

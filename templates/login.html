@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
-    <div class="top">
+    <div class="header">
         <p>i-SON</p>
     </div>
     <div class="main">
@@ -19,7 +19,7 @@
         </div>
         <div class="main2">
             <div class="container">
-                <div class="header">
+                <div class="title">
                     <h1>로그인</h1>
                 </div>
                 <form id="loginForm" action="{{ url_for('login') }}" method="post">
