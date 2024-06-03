@@ -69,9 +69,13 @@ def game(game_name):
 @app.route('/game_play/<game_name>')
 def game_play(game_name):
     global game_data
-    if game_name in game_data:
+    if game_name == '그림자 놀이터':
         position, image_info = get_position()
         return render_template('1.html', game=game_data[game_name], score=get_score(), position=position, image_info=image_info)
+    elif game_name == '두더지 잡기':
+        return render_template('2.html')
+    elif game_name == '산성비':
+        return render_template('3.html')
     else:
         return "Game not found", 404
     
@@ -99,6 +103,11 @@ def current_position():
 def labels_positions():
     labels_positions = get_labels_positions()  # 라벨과 좌표 정보를 가져오는 함수
     return jsonify(labels_positions)
+
+@app.route('/get_position')
+def get_position_route():
+    label, x, y = get_position()
+    return jsonify({'label': label, 'x': x, 'y': y})
 
 # toggle 값을 반환하는 엔드포인트 추가
 @app.route('/toggle_status')

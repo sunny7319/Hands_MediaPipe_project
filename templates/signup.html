@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp</title>
+    <title>Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
-    <div class="header">
+    <div class="top">
         <p>i-SON</p>
-        <a href="{{ url_for('login') }}">로그인</a>
     </div>
     <div class="main">
-        <form id="signupForm" action="{{ url_for('signup') }}" method="post">
-            <p>등록할 id 입력</p>
-            <div class="input">
-                <input type="text" name="username" id="signupUsername" placeholder="ex) ison123" required>
-                {% if error %}
-                <div class="error">{{ error }}</div>
-                {% endif %}
-                <button type="submit">등록</button>
+        <div class="buttons">
+            <a href="{{ url_for('index') }}" class="button1">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            </a>
+            <a href="{{ url_for('login') }}" class="button2"><p>로그인</p></a>
+        </div>
+        <div class="main2">
+            <div class="container">
+                <div class="header">
+                    <h1>회원가입</h1>
+                </div>
+                <form id="loginForm" action="{{ url_for('login') }}" method="post">
+                    <input type="text" name="username" id="loginUsername" placeholder="ex) ison123" required>
+                    {% if error %}
+                    <div class="error">{{ error }}</div>
+                    {% endif %}
+                    <button type="submit">생성</button>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </body>
 </html>
