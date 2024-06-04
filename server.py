@@ -5,6 +5,7 @@ from game3 import predict_image
 from PIL import Image
 import base64
 from io import BytesIO
+import json
 
 app = Flask(__name__)
 
@@ -24,8 +25,8 @@ game_data = {
         'image': 'game1.png',
         'description': '주어진 단어와 같은 단어를 가지고 있는 두더지를 잡아보세요!'
     },
-    '이미지 퀴즈쇼': {
-        'title': '이미지 퀴즈쇼',
+    '한글 놀이': {
+        'title': '한글 놀이',
         'image': 'game1.png',
         'description': '제시된 알파벳과 같은 글자를 고르는 게임입니다.'
     }
@@ -119,11 +120,11 @@ def game_play(game_name):
     if game_name == '그림자 놀이터':
         position, image_info = get_position()
         return render_template('1.html', game=game_data[game_name], score=get_score(), position=position, image_info=image_info)
-    elif game_name == '두더지 잡기':
+    elif game_name == '잡아라! 두더지!':
         return render_template('2.html')
-    elif game_name == '이미지 퀴즈쇼':
+    elif game_name == '한글 놀이':
         quiz = quiz_data[0]  # 첫 번째 퀴즈 로드 (향후 로직 개선 가능)
-        return render_template('3.html', game=game_data[game_name], quiz_image=quiz['image'])
+        return render_template('3.html', game=game_data[game_name], quiz_image=quiz['image'], quiz_data=json.dumps(quiz_data))
     else:
         return "Game not found", 404
 
@@ -186,13 +187,30 @@ def capture_image():
     predicted_class, predicted_prob, _ = predict_image(img)
     return jsonify({'class': predicted_class, 'probability': predicted_prob})
 
-@app.route('/next_quiz/<int:quiz_index>')
-def next_quiz(quiz_index):
-    if quiz_index < len(quiz_data):
-        quiz = quiz_data[quiz_index]
-        return jsonify({'image': url_for('static', filename=quiz['image']), 'index': quiz_index})
-    else:
-        return jsonify({'message': '모든 퀴즈를 완료했습니다!'}), 404
+# @app.route('/next_quiz/<int:quiz_index>')
+# def next_quiz(quiz_index):
+#     if quiz_index < len(quiz_data):
+#         quiz = quiz_data[quiz_index]
+#         return jsonify({'image': url_for('static', filename=quiz['image']), 'index': quiz_index})
+#     else:
+#         return jsonify({'message': '모든 퀴즈를 완료했습니다!'}), 404
+
+
+################################
+########## 평가 페이지 ##########
+################################
+
+@app.route('/survey', methods=['GET', 'POST'])
+def survey():
+    if request.method == 'POST':
+        data = request.get_json()
+        feedback = data.get('feedback')
+
+        # 서버 콘솔에 데이터 출력
+        print(f"Received feedback: {feedback}")
+
+        return jsonify({'status': 'success', 'feedback': feedback})
+    return render_template('survey.html')
 
 
 if __name__ == '__main__':

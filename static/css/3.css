@@ -29,6 +29,7 @@
     font-style: normal;
 }
 
+
 html, body {
     width: 1920px;
     height: 1080px;
@@ -81,7 +82,8 @@ body {
 }
 
 .header {
-    height: 105px;
+    /* background-color: #ffffff8f; */
+    height: 120px;
     width: 1920px;
     display: flex;
     align-items: center;
@@ -98,7 +100,7 @@ body {
     margin-right: 50px;
 }
 
-h1 {
+.header h1 {
     font-family: 'Cafe24Ssurround';
     font-size: 50px;
     text-align: center;
@@ -112,65 +114,55 @@ h1 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 870px;
+    width: 1920px;
+    height: 960px;
 }
 
-.quiz {
-    width: 480px;
-    height: 480px;
+.description {
+    width: 640px;
+    height: 960px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: #fff; */
-    /* border: 2px solid #000;
-    border-radius: 10px; */
+    text-align: center;
+}
+
+.image {
+    height: 720px;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
 
 .quiz-img {
-    max-width: 320px;
-    max-height: 320px;
+    max-height: 480px;
+    max-width: 480px;
+    /* max-height: 480px; */
     object-fit: cover;
     border: 2px solid #000;
     border-radius: 10px;
     padding: 20px;
+    /* margin-top: 100px; */
 }
 
-.video {
-    width: 1440px;
-    height: 870px;
+.buttons {
+    width: 480px;
+    height: 240px;
     display: flex;
-    justify-content: baseline;
+    justify-content: center;
     align-items: center;
-    /* background-color: #fff; */
-    /* border-radius: 10px; */
+    margin-bottom: 100px;
 }
 
-.footer {
+#hintBtn, #nextBtn {
     font-family: 'Cafe24Ssurround';
-    font-size: 50px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    width: 1920px;
-    height: 105px;
-    background-color: #a3d8f4;
-}
-
-#webcam {
-    left: 0;
-    height: 870px;
-    /* border: 2px solid #000;
-    border-radius: 10px; */
-}
-
-#image-container {
-    position: relative;
-}
-
-#hintBtn, #captureBtn, #nextBtn {
+    font-size: 30px;
+    width: 150px;
+    height: 80px;
     padding: 10px 20px;
-    font-size: 24px;
+    margin: 0 20px;
     border: none;
     border-radius: 5px;
     background-color: #3498db;
@@ -178,12 +170,21 @@ h1 {
     cursor: pointer;
 }
 
-#hintBtn:hover, #captureBtn:hover, #nextBtn:hover {
+#hintBtn:hover, #nextBtn:hover {
     background-color: #2980b9;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 24px;
-    color: #333;
+.video {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    height: 960px;
+}
+
+#webcam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
