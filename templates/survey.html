@@ -63,6 +63,7 @@
     </div>
     <script>
         function sendFeedback(feedback) {
+            const button = event.currentTarget;
             fetch('/survey', {
                 method: 'POST',
                 headers: {
@@ -73,20 +74,33 @@
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
-                triggerAnimation();
+                triggerAnimation(feedback, button);
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
         }
 
-        function triggerAnimation() {
-            const buttons = document.querySelectorAll('.button1, .button2');
-            buttons.forEach(button => button.classList.add('shake'));
-            setTimeout(() => {
+        // function triggerAnimation() {
+        //     const buttons = document.querySelectorAll('.button1, .button2');
+        //     buttons.forEach(button => button.classList.add('shake'));
+        //     setTimeout(() => {
+        //         window.location.href = "{{ url_for('main') }}";
+        //     }, 1000); // 1초 후 페이지 이동
+        // }
+
+        function triggerAnimation(feedback) {
+            const button = feedback === 0 ? document.querySelector('.button1') : document.querySelector('.button2');
+            button.classList.add('shake');
+            // 애니메이션 끝난 후 shake 클래스 제거
+            button.addEventListener('animationend', () => {
+                button.classList.remove('shake');
                 window.location.href = "{{ url_for('main') }}";
-            }, 1000); // 1초 후 페이지 이동
+            }, { once: true });
         }
+
+        
+
     </script>
 </body>
 </html>
