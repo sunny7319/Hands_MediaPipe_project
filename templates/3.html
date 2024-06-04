@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ game.title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='3.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/3.css') }}">
     <style>
         body {
-            /* background-image: url("{{ url_for('static', filename='img/main_background.webp') }}"); */
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -35,19 +34,79 @@
                 <img src="{{ url_for('static', filename='img/home.png') }}" alt="메인화면" class="home-button">
             </a>
         </div>
-        <p>이 이미지는 무엇인가요? 단어를 웹캠으로 보여주세요!</p>
         <div class="main">
+            <div class="quiz">
+                <img id="quizImage" src="{{ url_for('static', filename=quiz_image) }}" alt="quiz image" class="quiz-img">
+            </div>
             <div class="video">
                 <video id="webcam" autoplay></video>
             </div>
         </div>
         <div id="image-container"></div>
         <div class="footer">
-            <button id="captureBtn">캡처</button>
-            <button id="nextBtn" style="display: none;">다음</button>
+            <button id="hintBtn">힌트</button>
+            <button id="captureBtn">정답 확인</button>
+            <button id="nextBtn">다음 그림</button>
             <p id="result"></p>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='game3.js') }}"></script>
+    <script>
+        // 로딩창
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 2000);  // 2초 지연
+        }
+
+        const video = document.getElementById('webcam');
+        const captureBtn = document.getElementById('captureBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const result = document.getElementById('result');
+        let currentQuizIndex = 0;
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            });
+
+        captureBtn.addEventListener('click', () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            const data = canvas.toDataURL('image/jpeg');
+            fetch('/capture', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image: data })
+            })
+            .then(response => response.json())
+            .then(data => {
+                result.textContent = `예측된 클래스: ${data.class}, 확률: ${data.probability}`;
+                // nextBtn.style.display = 'none';
+                // captureBtn.style.display = 'none';
+            });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentQuizIndex++;
+            fetch(`/next_quiz/${currentQuizIndex}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.image) {
+                        document.getElementById('quizImage').src = data.image;
+                        result.textContent = '';
+                        // nextBtn.style.display = 'none';
+                        // captureBtn.style.display = 'none';
+                    } else {
+                        result.textContent = data.message;
+                        // nextBtn.style.display = 'none';
+                    }
+                });
+        });
+    </script>
 </body>
 </html>

@@ -31,6 +31,23 @@ game_data = {
     }
 }
 
+quiz_data = [
+    {'answer': '가지', 'image': 'img/game3/가지.jpeg'},
+    {'answer': '나비', 'image': 'img/game3/나비.jpeg'},
+    {'answer': '다리', 'image': 'img/game3/다리.jpeg'},
+    {'answer': '레몬', 'image': 'img/game3/레몬.jpeg'},
+    {'answer': '마늘', 'image': 'img/game3/마늘.jpeg'},
+    {'answer': '바위', 'image': 'img/game3/바위.jpeg'},
+    {'answer': '사슴', 'image': 'img/game3/사슴.png'},
+    {'answer': '애기', 'image': 'img/game3/애기.jpeg'},
+    {'answer': '자수', 'image': 'img/game3/자수.jpeg'},
+    {'answer': '차고', 'image': 'img/game3/차고.jpeg'},
+    {'answer': '카레', 'image': 'img/game3/카레.jpeg'},
+    {'answer': '태양', 'image': 'img/game3/태양.jpeg'},
+    {'answer': '팔', 'image': 'img/game3/팔.jpeg'},
+    {'answer': '하늘', 'image': 'img/game3/하늘.jpeg'}
+]
+
 
 #########################################
 ########## 로그인/회원가입 화면 ##########
@@ -98,13 +115,15 @@ def game(game_name):
 @app.route('/game_play/<game_name>')
 def game_play(game_name):
     global game_data
+    global quiz_data
     if game_name == '그림자 놀이터':
         position, image_info = get_position()
         return render_template('1.html', game=game_data[game_name], score=get_score(), position=position, image_info=image_info)
     elif game_name == '두더지 잡기':
         return render_template('2.html')
     elif game_name == '이미지 퀴즈쇼':
-        return render_template('3.html', game=game_data[game_name])
+        quiz = quiz_data[0]  # 첫 번째 퀴즈 로드 (향후 로직 개선 가능)
+        return render_template('3.html', game=game_data[game_name], quiz_image=quiz['image'])
     else:
         return "Game not found", 404
 
@@ -167,7 +186,13 @@ def capture_image():
     predicted_class, predicted_prob, _ = predict_image(img)
     return jsonify({'class': predicted_class, 'probability': predicted_prob})
 
-
+@app.route('/next_quiz/<int:quiz_index>')
+def next_quiz(quiz_index):
+    if quiz_index < len(quiz_data):
+        quiz = quiz_data[quiz_index]
+        return jsonify({'image': url_for('static', filename=quiz['image']), 'index': quiz_index})
+    else:
+        return jsonify({'message': '모든 퀴즈를 완료했습니다!'}), 404
 
 
 if __name__ == '__main__':

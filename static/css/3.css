@@ -29,7 +29,6 @@
     font-style: normal;
 }
 
-
 html, body {
     width: 1920px;
     height: 1080px;
@@ -82,8 +81,7 @@ body {
 }
 
 .header {
-    /* background-color: #ffffff8f; */
-    height: 100px;
+    height: 105px;
     width: 1920px;
     display: flex;
     align-items: center;
@@ -111,16 +109,40 @@ h1 {
 .main {
     background-color: #ffffff8f;
     display: flex;
-    flex-direction: column;
-    height: 880px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 870px;
+}
+
+.quiz {
+    width: 480px;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #fff; */
+    /* border: 2px solid #000;
+    border-radius: 10px; */
+}
+
+.quiz-img {
+    max-width: 320px;
+    max-height: 320px;
+    object-fit: cover;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .video {
+    width: 1440px;
+    height: 870px;
     display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
+    justify-content: baseline;
     align-items: center;
-    height: 880px;
+    /* background-color: #fff; */
+    /* border-radius: 10px; */
 }
 
 .footer {
@@ -130,18 +152,38 @@ h1 {
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    height: 100px;
+    width: 1920px;
+    height: 105px;
+    background-color: #a3d8f4;
 }
 
 #webcam {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 880px;
+    left: 0;
+    height: 870px;
+    /* border: 2px solid #000;
+    border-radius: 10px; */
 }
 
 #image-container {
     position: relative;
-    /* width: 100%;
-    height: 100%; */
+}
+
+#hintBtn, #captureBtn, #nextBtn {
+    padding: 10px 20px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+
+#hintBtn:hover, #captureBtn:hover, #nextBtn:hover {
+    background-color: #2980b9;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
 }

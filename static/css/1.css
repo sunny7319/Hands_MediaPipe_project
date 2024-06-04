@@ -83,7 +83,7 @@ body {
 
 .header {
     /* background-color: #ffffff8f; */
-    height: 100px;
+    height: 105px;
     width: 1920px;
     display: flex;
     align-items: center;
@@ -107,11 +107,12 @@ h1 {
     margin: 0; /* 기본 여백 제거 */
     flex-grow: 1; /* 남은 공간을 차지하게 함 */
 }
+
 .main {
     background-color: #ffffff8f;
     display: flex;
     flex-direction: column;
-    height: 880px;
+    height: 870px;
 }
 
 .video {
@@ -119,7 +120,7 @@ h1 {
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    height: 880px;
+    height: 870px;
 }
 
 .footer {
@@ -129,7 +130,7 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100px;
+    height: 105px;
 }
 
 .toggle-display {
@@ -143,7 +144,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 880px;
+    height: 870px;
 }
 
 .play {

@@ -22,7 +22,7 @@
                 <div class="title">
                     <h1>회원가입</h1>
                 </div>
-                <form id="loginForm" action="{{ url_for('login') }}" method="post">
+                <form id="loginForm" action="{{ url_for('signup') }}" method="post">
                     <input type="text" name="username" id="loginUsername" placeholder="ex) ison123" required>
                     {% if error %}
                     <div class="error">{{ error }}</div>
