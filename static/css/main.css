@@ -44,39 +44,10 @@ html, body {
     box-sizing: border-box;
 }
 
-.nav {
-    /* background-color: #c8edfd; */
-    height: 130px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+div {
+    padding: 10px;
+    margin: 20px;
 }
-
-input[id="menuicon"] {
-    display: none;
-}
-
-input[id="menuicon"] + label {
-    display: block;
-}
-
-input[id="menuicon"] + label img {
-    height: 65px;
-    margin-right: 65px;
-    cursor: pointer;
-    
-}
-
-/* .sidebar {
-    width: 300px;
-    height: 100%;
-    background: #333333cc;
-    position: fixed;
-    top: 0;
-    right: -300px;
-    z-index: 1;
-    transition: all .35s;
-} */
 
 .top {
     display: flex;
@@ -100,13 +71,61 @@ input[id="menuicon"] + label img {
     font-size: 50px;
 }
 
-.top img {
+img {
     background-size: contain;
     position: relative;
     right: auto;
     margin-top: 90px;
     margin-left: 50px;
     height: 250px;
+}
+
+.user {
+    margin-top: -70px;
+	position: fixed;
+	top: 10px;
+	right: 20px;
+}
+
+.user-image {
+	height: 70px;
+    cursor: pointer;
+}
+
+.sidebar {
+    height: auto;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    z-index: 1001; /* 다른 요소 위에 표시되도록 */
+    display: none;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
 .category {
@@ -116,98 +135,19 @@ input[id="menuicon"] + label img {
     text-align: center;
 }
 
-.buttons {
+.main-button {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 700px;
+    justify-content: center;
     padding-left: 100px;
     padding-right: 100px;
-    font-family: 'KyoboHand';
-    font-size: 40px;
+    align-items: center;
 }
-/* 
-.buttons a {
+
+.main-button a {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     text-decoration: none;
-} */
-
-.buttons li {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    float: left;
-    padding: 20px; 
-    background: #659EC7; 
-    overflow: hidden;
-    box-shadow: inset 0px 0px 10px #ccc, 0px 0px 10px #659EC7;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-.buttons li:hover {
-    width: 300px;
-    background: #488AC7;
-    box-shadow: 0px 0px 10px #488AC7;
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);
-    -webkit-transition: all 0.6s ease-in-out;
-    -moz-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
-}
-
-.buttons li:first-child {
-    -webkit-border-radius: 10px 0px 0px 10px;
-    -moz-border-radius: 10px 0px 0px 10px;
-    border-radius: 10px 0px 0px 10px;
-}
-
-.buttons li:last-child {
-    -webkit-border-radius: 0px 10px 10px 0px;
-    -moz-border-radius: 0px 10px 10px 0px;
-    border-radius: 0px 10px 10px 0px;
-}
-
-.buttons li:first-child:hover {
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-    -webkit-transform: scale(1.2) rotate(-2deg);
-    -moz-transform: scale(1.2) rotate(-2deg);
-    transform: scale(1.2) rotate(-2deg);
-}
-
-.buttons li:last-child:hover {
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-    -webkit-transform: scale(1.2) rotate(2deg);
-    -moz-transform: scale(1.2) rotate(2deg);
-    transform: scale(1.2) rotate(2deg);
-}
-
-.buttons li a {
-    display: inline-block;   
-    color: #fefefe;
-    text-decoration: none;
-    text-shadow: 0px 0px 1px #000, 0px 0px 1px #333;
-    font-size: 20px;
-    cursor: default;
-}
-
-.buttons .image {
-    display: none;
-    color: #FFF8C6;
-    line-height: 22px;
-}
-
-.buttons li:hover > .image {
-    display: block;
 }
 
 .button-blue, .button-white {
@@ -232,10 +172,15 @@ input[id="menuicon"] + label img {
 
 .button-white {
     background-color: #ffffff;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 }
 
-.button-blue:hover, .button-white:hover {
-    background-color: #AB957B;
+.button-blue:hover {
+    background-color: #81D4FA;
+    cursor: pointer;
+}
+
+.button-white:hover {
+    background-color: #D3D3D3;
     cursor: pointer;
 }

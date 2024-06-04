@@ -124,7 +124,7 @@ def game_play(game_name):
         return render_template('2.html')
     elif game_name == '한글 놀이':
         quiz = quiz_data[0]  # 첫 번째 퀴즈 로드 (향후 로직 개선 가능)
-        return render_template('3.html', game=game_data[game_name], quiz_image=quiz['image'], quiz_data=json.dumps(quiz_data))
+        return render_template('3.html', game=game_data[game_name], quiz_image=quiz['image'])
     else:
         return "Game not found", 404
 
