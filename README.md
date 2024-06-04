@@ -1,4 +1,16 @@
-# 빅데이터 7기 중간프로젝트 i-son
+#빅데이터 7기 중간프로젝트 i-son
+
+## **🥇천재교육 빅데이터 7기 '경만과 아이들' Github Page 입니다!🥇**
+
+<br>
+
+<br>
+<p align="left">
+  <img src=https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/b554d8c6-7b6c-4d5a-9b91-c6f864487d60 width = "630px">
+</p>
+
+- - -
+## **🥑 소개**
 
 <details>
 <summary>📗 <b>Summary</b></summary><br>
@@ -16,7 +28,7 @@
     <br />
     <sub>
     <b>백경만</b><br>
-    <b> 🙋‍♂️ 모델 구현 및 발</b>
+    <b> 🙋‍♂️ 모델 구현 및 발표</b>
     </sub>
     </a>
     <br />
@@ -85,7 +97,6 @@
 </table>
 <br/>
 
-
 <h3 align="left"><b>🛠 Used Tool/Stack 🛠</b></h3>
 </br>
 <p align="left">
@@ -109,18 +120,7 @@
 </details>
 
 
-- - -
-## 📃 **소개**
-### **🥇천재교육 빅데이터 7기 '경만과 아이들' Github Page 입니다!🥇**
 
-<br>
-
-<br>
-<p align="left">
-  <img src=https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/b554d8c6-7b6c-4d5a-9b91-c6f864487d60 width = "630px">
-</p>
-
-- - -
 
 ## **🥑 개발환경 및 운영자 메뉴얼**
 <details>
