@@ -11,8 +11,8 @@
 <table>
   <tr>
     <td align="center">
-    <a href="https://github.com/bgmbgm94">
-    <img src="https://github.com/bgmbgm94.png" width="150px;" alt="경만"/>
+    <a href="https://github.com/k-3730">
+    <img src="https://github.com/k-3730.png" width="150px;" alt="경만"/>
     <br />
     <sub>
     <b>백경만</b><br>
@@ -21,8 +21,8 @@
     </a>
     <br />
     <td align="center">
-    <a href="https://github.com/choijouneun">
-    <img src="https://github.com/choijouneun.png" width="150px;" alt="종은"/>
+    <a href="https://github.com/dony1220">
+    <img src="https://github.com/dony1220.png" width="150px;" alt="종은"/>
     <br />
     <sub>
     <b>최종은</b><br>
@@ -41,8 +41,8 @@
     <br />
     </td>
     <td align="center">
-    <a href="https://github.com/sunny7319">
-    <img src="https://github.com/sunny7319.png" width="150px;" alt="선영"/>
+    <a href="https://github.com/surplus96">
+    <img src="https://github.com/surplus96.png" width="150px;" alt="선영"/>
     <br />
     <sub>
     <b>민선영</b><br>
@@ -55,8 +55,8 @@
     </td>
   </tr>
     <td align="center">
-    <a href="https://github.com/hanaSummer0701">
-    <img src="https://github.com/hanaSummer0701.png" width="150px;" alt="하나"/>
+    <a href="https://github.com/surplus96">
+    <img src="https://github.com/surplus96.png" width="150px;" alt="하나"/>
     <br />
     <sub>
     <b>장하나</b><br>
@@ -69,8 +69,8 @@
     </td>
   </tr>
     <td align="center">
-    <a href="https://github.com/pch229">
-    <img src="https://github.com/pch229.png" width="150px;" alt="찬혁"/>
+    <a href="https://github.com/surplus96">
+    <img src="https://github.com/surplus96.png" width="150px;" alt="찬혁"/>
     <br />
     <sub>
     <b>박찬혁</b><br>
@@ -111,18 +111,18 @@
 
 - - -
 ## 📃 **소개**
-### 🚩🥇천재교육 빅데이터 7기 '경만과 아이들' Github Page 입니다!🚩**
-저희는 유아들을 대상으로 MediaPipe, OpenCV를 이용하여 카메라와 사용자간의 상호작용을 바탕으로 '에듀테인먼트'라는 주제로 프로젝트를 진행하였습니다.
+### **🥇천재교육 빅데이터 7기 '경만과 아이들' Github Page 입니다!🥇**
+
 <br>
-즉 유아들이 카메라를 통해 게임을 이행하고, 교육에 조금 더 흥미를 높일 수 있도록함이 저희 프로젝트의 궁극적인 목표였습니다.
+
 <br>
 <p align="left">
-  <img src="https://github.com/dnddl6962/flask/assets/96913965/0af57721-4025-4458-9333-cb2df39dabb8" width = "630px">
+  <img src=https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/b554d8c6-7b6c-4d5a-9b91-c6f864487d60 width = "630px">
 </p>
 
 - - -
 
-## **🥑 개발환경 및 **
+## **🥑 개발환경 및 운영자 메뉴얼**
 <details>
 <summary><b>⚓Requirements⚓</b></summary>
   <br>
@@ -192,7 +192,7 @@
 - - -
 ## **🧑 컨텐츠 결과**
 <details>
-<summary><b>🔤English🔤</b></summary>
+<summary><b>🫶🏿그림자 놀이🫶🏿</b></summary>
   <p align='left'>
     <img src = "https://github.com/dnddl6962/flask/assets/96913965/4990cbec-d143-4cbd-945c-44f50d085166" width = "400px">
     <img src = "https://github.com/dnddl6962/flask/assets/96913965/a42a78af-f84e-49d1-b06e-5741318cbd36" width = "400px">
@@ -202,7 +202,7 @@
 <br>
 
 <details>
-<summary><b>💯Math💯</b></summary>
+<summary><b>🐭잡아라! 두더지🐭</b></summary>
   <p align='left'>
     <img src = "https://github.com/dnddl6962/flask/assets/96913965/160bc60d-0f10-4e02-a5d6-45bfb53c9b36" width = "400px">
 </details>
@@ -210,7 +210,7 @@
 <br>
 
 <details>
-<summary><b>🧠Thinking Power🧠</b></summary>
+<summary><b>📝한글놀📝</b></summary>
   <p align='left'>
     <img src = "https://github.com/dnddl6962/flask/assets/96913965/620b6f60-cdb1-4db4-9af5-f71c8f35cd0d" width = "400px">
     <img src = "https://github.com/dnddl6962/flask/assets/96913965/d3bb00c8-6222-4ca6-8c9c-812b0c49caad" width = "400px">
