@@ -1,6 +1,6 @@
-# 빅데이터 7기 중간프로젝트 i-son 👋
+# 빅데이터 7기 중간프로젝트 i-SON 👋
 - - -
-## **❤️‍🔥천재교육 빅데이터 7기 '경만과 아이들' Github Page 입니다!❤️‍🔥**
+## **❤️‍🔥천재교육 빅데이터 7기 i-SON(아이손) 팀 Github Page 입니다!❤️‍🔥**
 
 <br>
 
@@ -15,8 +15,8 @@
 <details>
 <summary>📖 <b>Summary</b></summary><br>
   
-### Team Name - 경만과 아이들
-### Content Name - i-son
+### Team Name - i-SON(아이손)
+### Content Name - i-SON
 ### Team Member 
 
 
