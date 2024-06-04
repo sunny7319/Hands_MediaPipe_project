@@ -1,6 +1,7 @@
 import os
 import cv2
 import cvzone
+import numpy as np
 from cvzone.SelfiSegmentationModule import SelfiSegmentation
 import mediapipe as mp
 
