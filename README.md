@@ -1,6 +1,6 @@
-# 빅데이터 7기 중간프로젝트 i-son
-
-## **🇰🇷천재교육 빅데이터 7기 '경만과 아이들' Github Page 입니다!🇰🇷**
+# 빅데이터 7기 중간프로젝트 i-son 👋
+- - -
+## **❤️‍🔥천재교육 빅데이터 7기 '경만과 아이들' Github Page 입니다!❤️‍🔥**
 
 <br>
 
@@ -9,8 +9,8 @@
   <img src=https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/b554d8c6-7b6c-4d5a-9b91-c6f864487d60 width = "630px">
 </p>
 
-- - -
-## ** 소개**
+
+## **🤍 소개**
 
 <details>
 <summary>📖 <b>Summary</b></summary><br>
@@ -23,81 +23,54 @@
 <table>
   <tr>
     <td align="center">
-    <a href="https://github.com/bgmbgm94">
-    <img src="https://github.com/bgmbgm94.png" width="150px;" alt="경만"/>
-    <br />
-    <sub>
-    <b>백경만</b><br>
-    <b> 🙋‍♂️ 모델 구현 및 발표</b>
-    </sub>
-    </a>
-    <br />
-    <td align="center">
-    <a href="https://github.com/choijouneun">
-    <img src="https://github.com/choijouneun.png" width="150px;" alt="종은"/>
-    <br />
-    <sub>
-    <b>최종은</b><br>
-    <b> 🙋‍♂️ 모델 구현 및 깃허브 관리</b>
-    </sub>
-    </a>
-    <td align="center">
-    <a href="https://github.com/LeeMin-a">
-    <img src="https://github.com/LeeMin-a.png" width="150px;" alt="민아"/>
-    <br />
-    <sub>
-    <b>이민아</b><br>
-    <b> 🙋‍♀️ 웹 개발 </b>
-    </sub>
-    </a>
-    <br />
+      <a href="https://github.com/bgmbgm94">
+        <img src="https://github.com/bgmbgm94.png" width="150px;" alt="경만"/>
+        <br />
+        <sub><b>👑 백경만</b><br>🙋‍♂️ 모델 구현 및 발표</sub>
+      </a>
     </td>
     <td align="center">
-    <a href="https://github.com/sunny7319">
-    <img src="https://github.com/sunny7319.png" width="150px;" alt="선영"/>
-    <br />
-    <sub>
-    <b>민선영</b><br>
-    <b> 🙋‍♀️ 웹개발 및 깃허브 관리</b>
-    </sub>
-    </a>
-    <br />
-    </td>    
-    <br />
+      <a href="https://github.com/choijouneun">
+        <img src="https://github.com/choijouneun.png" width="150px;" alt="종은"/>
+        <br />
+        <sub><b>최종은</b><br>🙋‍♂️ 모델 구현 및 깃허브 관리</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/LeeMin-a">
+        <img src="https://github.com/LeeMin-a.png" width="150px;" alt="민아"/>
+        <br />
+        <sub><b>이민아</b><br>🙋‍♀️ 웹 개발</sub>
+      </a>
     </td>
   </tr>
+  <tr>
     <td align="center">
-    <a href="https://github.com/hanaSummer0701">
-    <img src="https://github.com/hanaSummer0701.png" width="150px;" alt="하나"/>
-    <br />
-    <sub>
-    <b>장하나</b><br>
-    <b> 🙋‍♀️ 데이터 엔지니어링 및 ppt 제작</b>
-    </sub>
-    </a>
-    <br />
-    </td>    
-    <br />
+      <a href="https://github.com/sunny7319">
+        <img src="https://github.com/sunny7319.png" width="150px;" alt="선영"/>
+        <br />
+        <sub><b>민선영</b><br>🙋‍♀️ 웹개발 및 깃허브 관리</sub>
+      </a>
     </td>
-  </tr>
     <td align="center">
-    <a href="https://github.com/pch229">
-    <img src="https://github.com/pch229.png" width="150px;" alt="찬혁"/>
-    <br />
-    <sub>
-    <b>박찬혁</b><br>
-    <b> 🙋‍♂️ 데이터 엔지니어링 및 보고서 작성</b>
-    </sub>
-    </a>
-    <br />
-    </td>    
-    <br />
+      <a href="https://github.com/hanaSummer0701">
+        <img src="https://github.com/hanaSummer0701.png" width="150px;" alt="하나"/>
+        <br />
+        <sub><b>장하나</b><br>🙋‍♀️ 데이터 엔지니어링 및 ppt 제작</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/pch229">
+        <img src="https://github.com/pch229.png" width="150px;" alt="찬혁"/>
+        <br />
+        <sub><b>박찬혁</b><br>🙋‍♂️ 데이터 엔지니어링 및 보고서 작성</sub>
+      </a>
     </td>
   </tr>
 </table>
-<br/>
 
-<h3 align="left"><b>🛠 Used Tool/Stack 🛠</b></h3>
+
+<h3 align="left"><b>⚙️ Used Tool/Stack ⚙️</b></h3>
 </br>
 <p align="left">
 
@@ -111,7 +84,7 @@
 <img alt="Flask" src ="https://img.shields.io/badge/Flask-000000.svg?&style=for-the-badge&logo=Flask&logoColor=white"/>
 
 
-<h3 align="left"><b>🛠 Used SCM 🛠</b></h3>
+<h3 align="left"><b>⚙️ Used SCM ⚙️</b></h3>
 </br>
 <p align="left">
 <img alt="GitHub" src ="https://img.shields.io/badge/GitHub-181717.svg?&style=for-the-badge&logo=GitHub&logoColor=white"/>
@@ -122,7 +95,7 @@
 
 
 
-## **🥑 개발환경 및 운영자 메뉴얼**
+## **🩶 개발환경 및 운영자 메뉴얼**
 <details>
 <summary><b>⚓Requirements⚓</b></summary>
   <br>
@@ -159,7 +132,7 @@
 </details>
 
 - - -
-## **:accessibility: SW License**
+## **🤎 SW License**
 <details>
 <summary><b>💡License💡</b></summary>
 <br>
@@ -190,7 +163,7 @@
 </details>
 
 - - -
-## **🧑 컨텐츠 결과**
+## **🖤 컨텐츠 결과**
 <details>
 <summary><b>🎭그림자 놀이🎭</b></summary>
   <p align='left'>
