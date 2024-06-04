@@ -1,6 +1,6 @@
 # 빅데이터 7기 중간프로젝트 i-son
 
-## **🥇천재교육 빅데이터 7기 '경만과 아이들' Github Page 입니다!🥇**
+## **🇰🇷천재교육 빅데이터 7기 '경만과 아이들' Github Page 입니다!🇰🇷**
 
 <br>
 
@@ -10,10 +10,10 @@
 </p>
 
 - - -
-## **🥑 소개**
+## ** 소개**
 
 <details>
-<summary>📗 <b>Summary</b></summary><br>
+<summary>📖 <b>Summary</b></summary><br>
   
 ### Team Name - 경만과 아이들
 ### Content Name - i-son
@@ -23,8 +23,8 @@
 <table>
   <tr>
     <td align="center">
-    <a href="https://github.com/k-3730">
-    <img src="https://github.com/k-3730.png" width="150px;" alt="경만"/>
+    <a href="https://github.com/bgmbgm94">
+    <img src="https://github.com/bgmbgm94.png" width="150px;" alt="경만"/>
     <br />
     <sub>
     <b>백경만</b><br>
@@ -33,8 +33,8 @@
     </a>
     <br />
     <td align="center">
-    <a href="https://github.com/dony1220">
-    <img src="https://github.com/dony1220.png" width="150px;" alt="종은"/>
+    <a href="https://github.com/choijouneun">
+    <img src="https://github.com/choijouneun.png" width="150px;" alt="종은"/>
     <br />
     <sub>
     <b>최종은</b><br>
@@ -53,8 +53,8 @@
     <br />
     </td>
     <td align="center">
-    <a href="https://github.com/surplus96">
-    <img src="https://github.com/surplus96.png" width="150px;" alt="선영"/>
+    <a href="https://github.com/sunny7319">
+    <img src="https://github.com/sunny7319.png" width="150px;" alt="선영"/>
     <br />
     <sub>
     <b>민선영</b><br>
@@ -67,8 +67,8 @@
     </td>
   </tr>
     <td align="center">
-    <a href="https://github.com/surplus96">
-    <img src="https://github.com/surplus96.png" width="150px;" alt="하나"/>
+    <a href="https://github.com/hanaSummer0701">
+    <img src="https://github.com/hanaSummer0701.png" width="150px;" alt="하나"/>
     <br />
     <sub>
     <b>장하나</b><br>
@@ -81,8 +81,8 @@
     </td>
   </tr>
     <td align="center">
-    <a href="https://github.com/surplus96">
-    <img src="https://github.com/surplus96.png" width="150px;" alt="찬혁"/>
+    <a href="https://github.com/pch229">
+    <img src="https://github.com/pch229.png" width="150px;" alt="찬혁"/>
     <br />
     <sub>
     <b>박찬혁</b><br>
@@ -192,7 +192,7 @@
 - - -
 ## **🧑 컨텐츠 결과**
 <details>
-<summary><b>🫶🏿그림자 놀이🫶🏿</b></summary>
+<summary><b>🎭그림자 놀이🎭</b></summary>
   <p align='left'>
     <img src =  width = "400px">
     <img src =  width = "400px">
@@ -210,7 +210,7 @@
 <br>
 
 <details>
-<summary><b>📝한글놀이이📝</b></summary>
+<summary><b>📝한글놀이📝</b></summary>
   <p align='left'>
     <img src =  width = "400px">
     <img src =  width = "400px">
