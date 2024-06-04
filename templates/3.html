@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ game.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/3.css') }}">
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #loading-screen {
+            background-image: url("{{ url_for('static', filename='img/main_background5.webp') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <img src="{{ url_for('static', filename='img/character.png') }}" alt='마스코트' class="loading-img">
+        <div class="spinner"></div>
+        <p>잠시만 기다려주세요~!</p>
+    </div>
+    <div id="content" style="display: none;">
+        <div class="header">
+            <a href="{{ url_for('game', game_name=game.title) }}">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            </a>
+            <h1>{{ game.title }}</h1>
+            <a href="{{ url_for('main') }}">
+                <img src="{{ url_for('static', filename='img/home.png') }}" alt="메인화면" class="home-button">
+            </a>
+        </div>
+        <div class="main">
+            <div class="description">
+                <div class="image">
+                    <img id="quizImage" src="{{ url_for('static', filename=quiz_image) }}" alt="quiz image" class="quiz-img">
+                </div>
+                <div class="buttons">
+                    <button id="hintBtn">힌트</button>
+                    <button id="nextBtn">다음</button>
+                </div>
+            </div>
+            <div class="video">
+                <video id="webcam" autoplay>
+                    <div id="overlay"></div>
+                </video>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game3.js') }}"></script>
+</body>
+</html>

@@ -9,19 +9,28 @@
 <body>
     <div class="header">
         <p>i-SON</p>
-        <a href="{{ url_for('signup') }}">회원가입</a>
     </div>
     <div class="main">
-        <form id="loginForm" action="{{ url_for('login') }}" method="post">
-            <p>로그인</p>
-            <div class="input">
-                <input type="text" name="username" id="loginUsername" placeholder="아이디" required>
-                {% if error %}
-                <div class="error">{{ error }}</div>
-                {% endif %}
-                <button type="submit">로그인</button>
+        <div class="buttons">
+            <a href="{{ url_for('index') }}" class="button1">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            </a>
+            <a href="{{ url_for('signup') }}" class="button2"><p>회원가입</p></a>
+        </div>
+        <div class="main2">
+            <div class="container">
+                <div class="title">
+                    <h1>로그인</h1>
+                </div>
+                <form id="loginForm" action="{{ url_for('login') }}" method="post">
+                    <input type="text" name="username" id="loginUsername" placeholder="아이디" required>
+                    {% if error %}
+                    <div class="error">{{ error }}</div>
+                    {% endif %}
+                    <button type="submit">시작</button>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </body>
 </html>
