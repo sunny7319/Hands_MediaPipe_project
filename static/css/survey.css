@@ -130,20 +130,32 @@ body {
 }
 
 .survey {
-	width: 400px;
+	height: 400px;
 }
 
 .button1 {
-	margin: 50px 130px;
+	margin-top:50px;
+	margin-right: 350px;
 	justify-content: left;
 }
 
 .button2 {
-	margin: 50px 130px;
+	margin-top: 50px;
+	margin-left: 350px;
 	justify-content: right;
 }
 
 .button-text {
 	font-family: 'Cafe24Ssurround';
     font-size: 50px;
+}
+
+.character {
+	position: fixed;
+	top: 650px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+	animation: float 3s ease-in-out infinite;
+	height: 800px;
 }

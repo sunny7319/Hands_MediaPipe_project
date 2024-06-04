@@ -117,7 +117,7 @@ h1 {
 .video {
     display: flex;
     /* flex-direction: column; */
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     height: 880px;
 }
@@ -141,7 +141,7 @@ h1 {
 
 #webcam {
     display: flex;
-    justify-content: center;
+    /* justify-content: right; */
     align-items: center;
     height: 880px;
 }
