@@ -20,7 +20,7 @@
 </head>
 <body>
     <div id="loading-screen">
-        <img src="{{ url_for('static', filename='img/character.png') }}" alt='마스코트' class="loading-img">
+        <img src="{{ url_for('static', filename='img/animated_character.gif') }}" alt='마스코트' class="loading-img">
         <div class="spinner"></div>
         <p>잠시만 기다려주세요~!</p>
     </div>
@@ -37,6 +37,7 @@
         <div class="main">
             <div class="description">
                 <div class="image">
+                    <img src="{{ url_for('static', filename='img/cliped_character.png') }}" alt="character image" class="character-img">
                     <img id="quizImage" src="{{ url_for('static', filename=quiz_image) }}" alt="quiz image" class="quiz-img">
                 </div>
                 <div class="buttons">
@@ -45,9 +46,10 @@
                 </div>
             </div>
             <div class="video">
-                <video id="webcam" autoplay>
-                    <div id="overlay"></div>
-                </video>
+                <video id="webcam" autoplay></video>
+                <div id="overlay">
+                    <div id="overlay-text" class="overlay-text"></div>
+                </div>
             </div>
         </div>
     </div>

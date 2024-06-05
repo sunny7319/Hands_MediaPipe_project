@@ -1,10 +1,10 @@
 import torch
 import torch.nn as nn
 import torchvision.models as models
-import cv2
 from torchvision import transforms
 from PIL import Image
 import json
+import os
 
 # 모델 클래스 정의
 def get_model(num_classes):
@@ -17,18 +17,23 @@ def get_model(num_classes):
 # 디바이스 설정
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+# 현재 파일의 디렉토리 경로
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # 클래스 이름을 JSON 파일에서 로드
-with open('game3/class_names.json', 'r', encoding='utf-8') as f:
+class_names_path = os.path.join(BASE_DIR, 'game3', 'class_names.json')
+with open(class_names_path, 'r', encoding='utf-8') as f:
     class_names = json.load(f)
 
 # 모델 초기화 및 로드
+model_path = os.path.join(BASE_DIR, 'game3', 'finalLLL_model.pth')
 model = get_model(len(class_names)).to(device)
-model.load_state_dict(torch.load("game3/finalLLL_model.pth"))
+model.load_state_dict(torch.load(model_path))
 model.eval()
 
 # 전처리 파이프라인 설정
 transform = transforms.Compose([
-    transforms.Grayscale(num_output_channels=1),  # 흑백 이미지로 변환
+    transforms.Grayscale(num_output_channels=1),
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485], std=[0.229])
@@ -36,48 +41,11 @@ transform = transforms.Compose([
 
 def predict_image(image):
     img_tensor = transform(image).unsqueeze(0).to(device)
-
-    # 모델에 입력
     with torch.no_grad():
         outputs = model(img_tensor)
         probabilities = torch.nn.functional.softmax(outputs, dim=1)
         _, predicted = torch.max(outputs, 1)
         predicted_class = class_names[predicted.item()]
         predicted_prob = probabilities[0][predicted.item()].item()
-
-    return predicted_class, predicted_prob, probabilities[0].cpu().numpy()
-
-def classify_webcam():
-    cap = cv2.VideoCapture(0)
-    if not cap.isOpened():
-        print("웹캠을 열 수 없습니다.")
-        return
-
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            print("프레임을 읽을 수 없습니다.")
-            break
-
-        cv2.imshow('Webcam', frame)
-
-        key = cv2.waitKey(1) & 0xFF
-        if key == ord('c'):
-            # 이미지를 PIL 형식으로 변환
-            img = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-
-            # 이미지 변환 및 예측
-            predicted_class, predicted_prob, probabilities = predict_image(img)
-
-            # 예측 결과를 출력
-            print(f'예측된 클래스: {predicted_class} ({predicted_prob:.2f})')
-
-            # 각 클래스별 확률 출력
-            for i, prob in enumerate(probabilities):
-                print(f'{class_names[i]}: {prob:.4f}')
-
-        elif key == ord('q'):
-            break
-
-    cap.release()
-    cv2.destroyAllWindows()
+        print(predicted_class, predicted_prob)
+    return predicted_class, predicted_prob

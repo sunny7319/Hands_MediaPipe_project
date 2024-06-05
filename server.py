@@ -184,9 +184,8 @@ def capture_image():
     img_data = data['image']
     img_data = img_data.split(",")[1]
     img = Image.open(BytesIO(base64.b64decode(img_data)))
-    predicted_class, predicted_prob, _ = predict_image(img)
+    predicted_class, predicted_prob = predict_image(img)
     return jsonify({'class': predicted_class, 'probability': predicted_prob})
-
 # @app.route('/next_quiz/<int:quiz_index>')
 # def next_quiz(quiz_index):
 #     if quiz_index < len(quiz_data):
@@ -202,6 +201,10 @@ def capture_image():
 
 @app.route('/survey', methods=['GET', 'POST'])
 def survey():
+    global game_data
+    game_name = request.args.get('game_name')
+    if not game_name or game_name not in game_data:
+        return "Game not found", 404
     if request.method == 'POST':
         data = request.get_json()
         feedback = data.get('feedback')
@@ -210,7 +213,7 @@ def survey():
         print(f"Received feedback: {feedback}")
 
         return jsonify({'status': 'success', 'feedback': feedback})
-    return render_template('survey.html')
+    return render_template('survey.html', game=game_data[game_name])
 
 
 if __name__ == '__main__':
