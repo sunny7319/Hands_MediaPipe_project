@@ -1,8 +1,11 @@
 from flask import Flask, render_template, Response, request, redirect, url_for, jsonify
 from login import save_user, load_users
 from game1 import check_frames, generate_frames, get_score, get_position, get_labels_positions
+from flask_scss import Scss
 
 app = Flask(__name__)
+
+Scss(app, static_dir='static/css', asset_dir='static/scss')
 
 # score = 0
 
