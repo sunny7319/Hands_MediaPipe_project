@@ -1,6 +1,7 @@
 # 빅데이터 7기 중간프로젝트 i-SON 👋
 - - -
-## **❤️‍🔥천재교육 빅데이터 7기 i-SON(아이손) 팀 Github Page 입니다!❤️‍🔥**
+## **❤️‍🔥천재교육 빅데이터 7기 i-SON(아이손) 팀 Github Page 입니다!❤️‍🔥** 
+
 
 <br>
 
@@ -102,27 +103,33 @@
   1. 주요 개발환경
   <br>
   <br>
-    - Flask == 3.0.0
+    - python==3.12.3
   <br>
-    - cvzone == 1.6.1
+    - numpy==1.26.4
   <br>
-    - mediapipe == 0.10.9
+    - flask==3.0.3
   <br>
-    - opencv-contrib-python == 4.9.0.80
+    - flask-sqlalchemy==3.1.1
   <br>
-    - opencv-python == 4.9.0.80
+    - psycopg2==2.9.9
   <br>
-    - PyAutoGUI == 0.9.54
+    - opencv-python==4.9.0.80
   <br>
-    - pynput == 1.7.6
+    - mediapipe==0.10.14
+  <br>
+    - cvzone==1.6.1
+  <br>
+    - tensorflow==2.16.1
+  <br>
+    - apscheduler==3.10.4
+  <br>
+    - torch==2.3.0
+  <br>
+    - torchvision==0.18.0
   <br>
     - requirements.txt를 별첨하였으며 requirements.txt를 install을 통해 라이브러리를 설치하여 적절하게 환경 Setting이 가능합니다.
   <br>
-  <br>
-  2. 운영자 메뉴얼
-  <br>
-  
-  - tools 폴더에 담긴 파일에 모든 컨텐츠들이 담겨 있으며, app 파일 하나를 실행했을시에, 돌아갈 수 있도록 분기 처리를 진행하였습니다. 따라서, app.py 코드를 실행하였을 때, 모든 컨텐츠들이 작동하며 app.py 파일에서 Port 번호를 조절하여 User가 사용하는 환경과 상황에 걸맞게 세팅하게끔 설정해 놓았습니다. 뿐만 아니라 Font_path를 커스텀하게 설정해야 합니다.
+ 
   
   - 후에 Flask를 실행하면 개**
 <details>
