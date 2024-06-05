@@ -80,6 +80,51 @@ img {
     height: 250px;
 }
 
+.user {
+    margin-top: -70px;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
+
+.user-image {
+	height: 70px;
+    cursor: pointer;
+}
+
+.sidebar {
+    height: auto;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    z-index: 1001; /* 다른 요소 위에 표시되도록 */
+    display: none;
+}
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
 .category {
     font-family: 'yg-jalnan';
     font-size: 60px;
@@ -124,10 +169,15 @@ img {
 
 .button-white {
     background-color: #ffffff;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 }
 
-.button-blue:hover, .button-white:hover {
-    background-color: #AB957B;
+.button-blue:hover {
+    background-color: #81D4FA;
+    cursor: pointer;
+}
+
+.button-white:hover {
+    background-color: #D3D3D3;
     cursor: pointer;
 }

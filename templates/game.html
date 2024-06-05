@@ -52,21 +52,11 @@
     <script>
         // 페이지가 완전히 로드되었을 때 실행되는 함수
         window.onload = function() {
-            // 로딩을 확인하기 위해 3초의 지연 추가
             setTimeout(function() {
                 // 로딩 스크린을 숨기고 콘텐츠를 표시합니다
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
-            }, 3000); // 3초 (3000 밀리초) 지연
-
-            // 주기적으로 toggle 값을 가져와서 업데이트하는 함수
-            setInterval(function() {
-                fetch('/toggle_status')
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('toggle-display').textContent = 'Toggle: ' + data.toggle;
-                    });
-            }, 5000); // 1초마다 업데이트
+            }); // 3초 (3000 밀리초) 지연
         };
     </script>
 </body>
