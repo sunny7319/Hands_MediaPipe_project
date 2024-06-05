@@ -40,7 +40,7 @@
 <body>
     <div id="content">
         <div class="header">
-            <a href="{{ url_for('game_play', game_name=game.title) }}">
+            <a href="{{ url_for('game', game_name=game.title) }}">
                 <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
             </a>
             <p class="description">게임은 어떠셨나요?</p>

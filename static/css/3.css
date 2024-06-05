@@ -197,26 +197,67 @@ body {
 
 #overlay {
     position: absolute;
-    top: 180px;
+    top: 120px;
     left: 640px;
     width: 1280px;
-    height: 120px;
+    height: 960px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     /* pointer-events: none; 마우스 이벤트를 비활성화하여 비디오 상호작용 유지 */
     color: white;
-    display: none;
 }
 
-.overlay-text {
+.hint-text, .overlay-img, .wait-text { /* overlay 위 절대적인 위치 조정 */
+    display: none;
+    position: absolute;
+    transform: translateX(50%);
+    transform: translateY(0%);
+}
+
+.hint-text, .wait-text {
     text-align: center;
     font-family: 'Cafe24Ssurround';
-    font-size: 80px;
     color: white; /* 글자 색상 */
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 20px;
     text-shadow: 2px 2px 4px #000000; /* 그림자 효과로 가독성 향상 */
+}
+
+.hint-text {
+    top: 100px;
+    font-size: 80px;
+}
+
+.wait-text {
+    bottom: 50px;
+    font-size: 50px;
+}
+
+.overlay-img {
+    top: 230px;
+    width: 500px;
+    height: 500px;
+}
+
+/* 마지막 이미지 안띄워짐 */
+#overlay-last {
+    position: absolute;
+    top: 120px;
+    width: 1920px;
+    height: 960px;
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-last img {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    transform: translateX(50%);
+    transform: translateY(0%);
 }

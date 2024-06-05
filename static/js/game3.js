@@ -1,6 +1,8 @@
 const video = document.getElementById('webcam');
-const overlay = document.getElementById('overlay');
-const overlayText = document.getElementById('overlay-text');
+const overlayhint = document.getElementById('overlay-hint'); // 힌트
+const overlayimg = document.getElementById('overlay-img'); // 정답 후 이미지
+const overlaywait = document.getElementById('overlay-wait'); // 기다리는 표시
+const lastimg = document.getElementById('last-img'); // 정답 후 이미지
 // const hint = document.getElementById('hint');
 // const hint = document.createElement('div'); // 힌트 요소를 동적으로 생성
 // document.body.appendChild(hint); // 힌트 요소를 body에 추가
@@ -8,14 +10,14 @@ const overlayText = document.getElementById('overlay-text');
 const hintBtn = document.getElementById('hintBtn');
 // const captureBtn = document.getElementById('captureBtn');
 const nextBtn = document.getElementById('nextBtn');
-const result = document.getElementById('result');
 const quizImage = document.getElementById('quizImage');
 
 let currentQuizIndex = 0; // 현재 퀴즈 인덱스
-// let hintTimeouts = []; // 힌트 타이머 배열
-let hintCount = 0; // 힌트 첫번째(초성), 두번째(정답) 구분하기 위한 변수
-let firstHintTime = null; // 첫번째 힌트 타이머
-let secondHintTimeout = null; // 두번째 힌트 타이머
+let hintTimeouts = []; // 힌트 타이머 배열
+let hintUsed = false; // 2번째 힌트 제시 이후(1분 이후의 여부)
+// let hintCount = 0; // 힌트 첫번째(초성), 두번째(정답) 구분하기 위한 변수
+// let firstHintTime = null; // 첫번째 힌트 타이머
+// let secondHintTimeout = null; // 두번째 힌트 타이머
 let correctCount = 0; // 맞춘 문제 수
 let wrongCount = 0; // 틀린 문제 수
 let skippedCount = 0; // 건너뛴 문제 수
@@ -39,106 +41,59 @@ const quizData = [ // 퀴즈 데이터 배열
     {answer: '하늘', image: 'img/game3/하늘.jpeg'},
 ];
 
-// hintBtn.addEventListener('click', () => {
-//     const quiz = quizData[currentQuizIndex];
-//     const now = new Date();
+// 비디오 확인
+navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+        video.srcObject = stream;
+    })
+    .catch(err => {
+        console.error("Error accessing webcam: ", err);
+    });
 
-//     // 1분 후에 두 번째 힌트를 표시하기 위한 타이머 설정
-//     secondHintTimeout = setTimeout(function() {
-//         hintCount = 1; // 두 번째 힌트를 표시할 준비
-//     }, 20000); // 1분 후
-
-//     if (hintCount === 0) {
-//         overlayText.textContent = `초성 힌트: ${getChosung(quiz.answer)}`; // 힌트를 overlay에 표시
-//         overlayText.style.display = 'flex'; // overlay 보이기
-//         overlay.style.display = 'flex';
-//         firstHintTime = now;
-//         // hintCount++;
-
-//         setTimeout(function() {
-//             overlay.textContent = ``; // 힌트 제거
-//             overlay.style.display = 'none';
-//             overlay.style.display = 'none';
-//         }, 5000); // 5초 후에 힌트 숨기기
-
-        
-//     } else if (hintCount === 1) {
-//         // 두 번째 힌트 표시
-//         overlayText.textContent = `정답: ${quiz.answer}`; // overlay에 정답 표시
-//         overlayText.style.display = 'flex';
-//         overlay.style.display = 'flex';
-//         // hintCount++;
-
-//         // setTimeout(function() {
-//         //     overlayText.style.display = 'none';
-//         // }, 5000); // 5초 후에 두 번째 힌트 숨기기
-//     }
-// });
-
+// 힌트 버튼
 hintBtn.addEventListener('click', () => {
+    // let hintUsed = false; // 2번째 힌트 제시 이후(1분 이후의 여부)
+    // if (hintUsed) return; // 힌트가 이미 사용되었다면 아무 것도 하지 않음
+
     const quiz = quizData[currentQuizIndex];
-    const now = new Date();
+    overlayhint.textContent = `초성 힌트: ${getChosung(quiz.answer)}`;
+    overlayhint.style.display = 'flex';
 
-    if (hintCount === 0) {
-        // 첫 번째 힌트 표시
-        overlayText.textContent = `초성 힌트: ${getChosung(quiz.answer)}`; // 힌트를 overlay에 표시
-        overlayText.style.display = 'flex'; // overlay 보이기
-        overlay.style.display = 'flex';
-        firstHintTime = now;
-        hintCount++;
+    setTimeout(function() {
+        overlayhint.style.display = 'none';
+    }, 5000); // 5초 후에 첫 번째 힌트 숨기기
 
-        setTimeout(function() {
-            overlayText.style.display = 'none';
-            overlay.style.display = 'none';
-        }, 5000); // 5초 후에 첫 번째 힌트 숨기기
-
-        // 1분 후에 두 번째 힌트를 표시하기 위한 타이머 설정
-        secondHintTimeout = setTimeout(function() {
-            hintCount = 1; // 두 번째 힌트를 표시할 준비
-        }, 60000); // 1분 후
-    } else if (hintCount === 1 && (now - firstHintTime >= 60000)) {
-        // 두 번째 힌트 표시
-        overlayText.textContent = `정답: ${quiz.answer}`; // overlay에 정답 표시
-        overlayText.style.display = 'flex';
-        overlay.style.display = 'flex';
-        hintCount++;
-
-        setTimeout(function() {
-            overlayText.style.display = 'none';
-            overlay.style.display = 'none';
-        }, 5000); // 5초 후에 두 번째 힌트 숨기기
-    }
+    hintTimeouts.push(setTimeout(() => {
+        overlayhint.textContent = `정답: ${quiz.answer}`;
+        overlayhint.style.display = 'flex';
+        hintUsed = true; // 1분 후에는 정답만 보이게
+    }, 10000)); // 힌트 버튼 클릭 후 1분 후 정답 표시
 });
 
-// function startHintTimers() {
-//     hintTimeouts.push(setTimeout(() => {
-//         hintBtn.textContent = ''; // 힌트 버튼의 텍스트 제거
-//         hintBtn.classList.add('shake'); // 흔들림 효과 추가
-//         hintBtn.style.display = 'block';
-        
-//         const quiz = quizData[currentQuizIndex];
-//         console.log(`Hint timer started for: ${quiz.answer}`); // 로그 추가
-//         overlay.textContent = `초성 힌트: ${getChosung(quiz.answer)}`;
-//         overlay.style.display = 'block';
-//     }, 3000)); // 3초 후 힌트 표시 및 흔들림 효과 추가
-// }
-
+// 힌트 지우기
 function clearHints() {
-    // hintTimeouts.forEach(timeout => clearTimeout(timeout));
-    // hintTimeouts = [];
-    clearTimeout(secondHintTimeout);
-    overlay.style.display = 'none'; // overlay 숨김
+    // let hintUsed = false; // 2번째 힌트 제시 이후(1분 이후의 여부)
+    hintTimeouts.forEach(timeout => clearTimeout(timeout));
+    hintTimeouts = [];
+    overlayhint.textContent = ''; // overlayhint 내용 초기화
+    overlayhint.style.display = 'none';
 }
 
+// 다음 버튼
+nextBtn.addEventListener('click', () => {  
+    skippedCount++;
+    nextQuiz();
+});
+
+// 퀴즈 로드
 function loadQuiz() {
     const quiz = quizData[currentQuizIndex];
     quizImage.src = `../static/${quiz.image}`;
-    result.textContent = '';
-    overlayText.textContent = ''; // overlay 내용 초기화
-    overlay.style.display = 'none'; // overlay 숨김
-    hintBtn.classList.remove('shake'); // 흔들림 효과 제거
-    hintBtn.style.display = 'block';
-    nextBtn.style.display = 'block';
+    overlayhint.textContent = ''; // 힌트 내용 초기화
+    overlayhint.style.display = 'none'; // 힌트 숨김
+    overlaywait.textContent = '정답을 기다리고 있어요 ...'; // 기다리는 중 문구
+    overlaywait.style.display = 'block'; // 기다리는 중 문구 띄우기
+    overlayimg.style.display = 'none'; // 정답 이미지 제거
     quizImage.style.display = 'block';
     video.style.display = 'block';
     canProceed = true;
@@ -164,28 +119,25 @@ function getChosung(word) {
 
 function checkAnswer(predictedClass, predictedProb) {
     const correctAnswer = quizData[currentQuizIndex].answer;
-    if (predictedClass === correctAnswer && predictedProb >= 0.8) {
+    if (predictedClass === correctAnswer && predictedProb >= 0.5) {
         // result.textContent = `정답! ${predictedClass} (확률: ${(predictedProb * 100).toFixed(2)}%)`;
         correctCount++;
-        if (canProceed) {
+        if (canProceed) { // 정답이면 힌트와 기다리는 중 문구 제거하고 정답 표시 하면서 2초 후 다음 퀴즈로 넘어감
             canProceed = false;
-            setTimeout(nextQuiz, 2000); // 2초 후 다음 퀴즈로 넘어감
+            setTimeout(function() {
+                overlayhint.style.display = 'none'; // 힌트 제거
+                overlaywait.style.display = 'none'; // 기다리는 중 문구 제거
+                overlayimg.style.display = 'block'; // 정답이에요 표시
+            }, 1000); // 1초 뒤 동작
+            setTimeout(nextQuiz, 5000); // 4초 동안 정답 이미지 띄우고 다음 퀴즈로 넘어감
         }
     } else {
         console.log(`오답! 예측된 클래스: ${predictedClass} (확률: ${(predictedProb * 100).toFixed(2)}%)`);
         // result.textContent = `오답! 예측된 클래스: ${predictedClass} (확률: ${(predictedProb * 100).toFixed(2)}%)`;
-        result.textContent = '정답을 기다리고 있어요 ...';
+        overlaywait.textContent = '정답을 기다리고 있어요 ...';
         wrongCount++;
     }
 }
-
-navigator.mediaDevices.getUserMedia({ video: true })
-    .then(stream => {
-        video.srcObject = stream;
-    })
-    .catch(err => {
-        console.error("Error accessing webcam: ", err);
-    });
 
 function captureAndCompare() {
     const canvas = document.createElement('canvas');
@@ -212,25 +164,20 @@ function captureAndCompare() {
 
 setInterval(captureAndCompare, 1000);  // 1초마다 실시간으로 확인
 
-nextBtn.addEventListener('click', () => {  // 다음 버튼
-    skippedCount++;
-    nextQuiz();
-});
-
 function nextQuiz() {
     currentQuizIndex++;
     if (currentQuizIndex < quizData.length) {
         loadQuiz();
     } else {
-        const totalAnswered = correctCount + wrongCount + skippedCount;
-        quizImage.style.display = 'none';
-        video.style.display = 'none';
-        nextBtn.style.display = 'none';
-        if (correctCount / totalAnswered === 1) {
-            overlayText.textContent = '모든 문제를 맞췄습니다! 단어왕!';
-        } else {
-            overlayText.textContent = '모든 퀴즈를 완료했습니다! 노력왕!';
-        }
+        const cci = document.getElementById('cci');
+        cci.style.display = 'none'
+        overlayimg.style.display = 'none'; // 정답 표시 숨김
+        overlaywait.style.display = 'none'; // 기다리는 표시 숨김
+        quizImage.style.display = 'none'; // 문제이미지 숨김
+        video.style.display = 'none'; // 비디오 숨김
+        hintBtn.style.display = 'none'; // 힌트버튼 숨김
+        nextBtn.style.display = 'none'; // 다음버튼 숨김
+        lastimg.style.display = 'block'; // 마지막 잘했어요 이미지 띄우기
 
         // 설문조사 페이지로 이동
         setTimeout(() => {
