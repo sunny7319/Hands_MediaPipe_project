@@ -1,16 +1,15 @@
 from flask import Flask, render_template, Response, request, redirect, url_for, jsonify
 from login import save_user, load_users
 from game1 import check_frames, generate_frames, get_score, get_position, get_labels_positions
-from game2 import get_data
 from game3 import predict_image
-from DB_log_log import db
-import game2
 from PIL import Image
 import base64
 from io import BytesIO
 import json
+import datetime
 
 app = Flask(__name__)
+
 # score = 0
 
 # 글로벌 변수로 설정
@@ -126,7 +125,7 @@ def game_play(game_name):
         return render_template('2.html')
     elif game_name == '한글 놀이':
         quiz = quiz_data[0]  # 첫 번째 퀴즈 로드 (향후 로직 개선 가능)
-        return render_template('3.html', game=game_data[game_name], quiz_image=quiz['image'], quiz_data=json.dumps(quiz_data))
+        return render_template('3.html', game=game_data[game_name], quiz_image=quiz['image'])
     else:
         return "Game not found", 404
 
@@ -160,17 +159,6 @@ def get_position_route():
     label, x, y = get_position()
     return jsonify({'label': label, 'x': x, 'y': y})
 
-@app.route('/send_game2')
-def send_game2():
-    time, stage, score, question, quit = get_data()
-    return jsonify({
-        'time': time,
-        'stage': stage,
-        'score': score,
-        'question': question,
-        'quit': quit
-    })
-
 # toggle 값을 반환하는 엔드포인트 추가
 @app.route('/toggle_status')
 def toggle_status():
@@ -191,14 +179,45 @@ def toggle_status():
 ########## game3 ##########
 ###########################
 
+# @app.route('/capture', methods=['POST'])
+# def capture_image():
+#     data = request.get_json()
+#     img_data = data['image']
+#     img_data = img_data.split(",")[1]
+#     img = Image.open(BytesIO(base64.b64decode(img_data)))
+#     predicted_class, predicted_prob = predict_image(img)
+#     return jsonify({'class': predicted_class, 'probability': predicted_prob})
+
+
 @app.route('/capture', methods=['POST'])
 def capture_image():
+    # POST 요청에서 JSON 데이터 추출
     data = request.get_json()
+    
+    # JSON 데이터에서 이미지 데이터 추출
     img_data = data['image']
-    img_data = img_data.split(",")[1]
-    img = Image.open(BytesIO(base64.b64decode(img_data)))
-    predicted_class, predicted_prob, _ = predict_image(img)
-    return jsonify({'class': predicted_class, 'probability': predicted_prob})
+    img_data = img_data.split(",")[1]  # 데이터 URI 스키마 제거
+    img = Image.open(BytesIO(base64.b64decode(img_data)))  # 이미지로 변환
+    
+    # 이미지 예측 함수 호출 (예시)
+    predicted_class, predicted_prob = predict_image(img)
+    
+    # 확률이 0.5 이상인 경우에만 JSON 형식으로 반환
+    if predicted_prob >= 0.5:
+        response = {
+            'id':1,
+            'class': predicted_class,
+            'probability': predicted_prob,
+            'page':3,
+            'time': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        }
+
+            # game3.json 파일에 데이터 저장
+        with open('game3.json', 'w') as outfile:
+            json.dump(response, outfile)
+    #     return jsonify(response)
+    # else:
+    #     return jsonify({'message': 'Probability is less than 0.5.'})
 
 # @app.route('/next_quiz/<int:quiz_index>')
 # def next_quiz(quiz_index):
@@ -215,6 +234,10 @@ def capture_image():
 
 @app.route('/survey', methods=['GET', 'POST'])
 def survey():
+    global game_data
+    game_name = request.args.get('game_name')
+    if not game_name or game_name not in game_data:
+        return "Game not found", 404
     if request.method == 'POST':
         data = request.get_json()
         feedback = data.get('feedback')
@@ -223,11 +246,8 @@ def survey():
         print(f"Received feedback: {feedback}")
 
         return jsonify({'status': 'success', 'feedback': feedback})
-    return render_template('survey.html')
+    return render_template('survey.html', game=game_data[game_name])
 
-@app.route('/game2_feed')
-def game2_feed():
-    return Response(game2.game2_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
     app.run(debug=True)
