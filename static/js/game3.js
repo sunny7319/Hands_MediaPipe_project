@@ -25,20 +25,20 @@ let lastImageData = ''; // 마지막으로 캡처된 이미지 데이터
 let canProceed = true; // 다음 문제로 넘어갈 수 있는지 여부
 
 const quizData = [ // 퀴즈 데이터 배열
-    {answer: '가지', image: 'img/game3/가지.jpeg'},
-    {answer: '나비', image: 'img/game3/나비.jpeg'},
+    {answer: '가지', image: 'img/game3/가지.png'},
+    {answer: '나비', image: 'img/game3/나비.png'},
     {answer: '다리', image: 'img/game3/다리.jpeg'},
-    {answer: '레몬', image: 'img/game3/레몬.jpeg'},
-    {answer: '마늘', image: 'img/game3/마늘.jpeg'},
-    {answer: '바위', image: 'img/game3/바위.jpeg'},
-    {answer: '사슴', image: 'img/game3/사슴.jpeg'},
-    {answer: '애기', image: 'img/game3/애기.jpeg'},
-    {answer: '자수', image: 'img/game3/자수.jpeg'},
-    {answer: '차고', image: 'img/game3/차고.jpeg'},
-    {answer: '카레', image: 'img/game3/카레.jpeg'},
-    {answer: '태양', image: 'img/game3/태양.jpeg'},
-    {answer: '팔', image: 'img/game3/팔.jpeg'},
-    {answer: '하늘', image: 'img/game3/하늘.jpeg'},
+    {answer: '레몬', image: 'img/game3/레몬.png'},
+    {answer: '마늘', image: 'img/game3/마늘.png'},
+    {answer: '바위', image: 'img/game3/바위.png'},
+    {answer: '사슴', image: 'img/game3/사슴.png'},
+    {answer: '애기', image: 'img/game3/애기.png'},
+    {answer: '자수', image: 'img/game3/자수.png'},
+    {answer: '차고', image: 'img/game3/차고.png'},
+    {answer: '카레', image: 'img/game3/카레.png'},
+    {answer: '태양', image: 'img/game3/태양.png'},
+    {answer: '팔', image: 'img/game3/팔.png'},
+    {answer: '하늘', image: 'img/game3/하늘.png'},
 ];
 
 // 비디오 확인
@@ -67,7 +67,7 @@ hintBtn.addEventListener('click', () => {
         overlayhint.textContent = `정답: ${quiz.answer}`;
         overlayhint.style.display = 'flex';
         hintUsed = true; // 1분 후에는 정답만 보이게
-    }, 10000)); // 힌트 버튼 클릭 후 1분 후 정답 표시
+    }, 30000)); // 힌트 버튼 클릭 후 1분 후 정답 표시 // 현재는 30초로 설정
 });
 
 // 힌트 지우기

@@ -75,9 +75,10 @@ img {
     background-size: contain;
     position: relative;
     right: auto;
-    margin-top: 90px;
+    /* margin-top: 90px; */
     margin-left: 50px;
-    height: 250px;
+    /* height: 250px; */
+    height: 380px;
 }
 
 .user {
@@ -133,6 +134,7 @@ img {
     font-size: 60px;
     margin-top: 220px;
     text-align: center;
+    z-index: 5;
 }
 
 .main-button {

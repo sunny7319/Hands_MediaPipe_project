@@ -93,11 +93,13 @@ body {
 .back-button {
     height: 80px;
     margin-left: 50px;
+    cursor: pointer;
 }
 
 .home-button {
     height: 80px;
     margin-right: 50px;
+    cursor: pointer;
 }
 
 .header h1 {

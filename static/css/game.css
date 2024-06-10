@@ -80,8 +80,8 @@ html, body {
 
 .back-button {
     justify-content: left;
-    height: 64px;
-    margin-top: 10px;
+    height: 70px;
+    margin-top: 20px;
     margin-left: 50px;
     cursor: pointer;
 }
@@ -93,7 +93,7 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 152px;
+    height: 136px;
     margin-top: -4px;
 }
 
@@ -106,26 +106,21 @@ h1 {
 
 .video {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     height: 564px;
 }
 
-.toggle-display {
+/* .toggle-display {
     display: none;
     justify-content: center;
     align-items: center;
     height: 50px;
-}
+} */
 
 #preview-video {
     display: flex;
-    height: 514px;
-}
-
-#checkcam {
-    display: flex;
-    height: 257px;
+    height: 495px;
+    margin-top: 30px;
 }
 
 .play {

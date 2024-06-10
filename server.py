@@ -17,18 +17,18 @@ toggle = 0
 game_data = {
     '그림자 놀이터': {
         'title': '그림자 놀이터',
-        'image': 'game1.png',
+        'video': 'game1.png',
         'description': '손으로 동물과 모양을 만들어 보세요!'
     },
     '잡아라! 두더지!': {
         'title': '잡아라! 두더지!',
-        'image': 'game1.png',
+        'video': 'game1.png',
         'description': '주어진 단어와 같은 단어를 가지고 있는 두더지를 잡아보세요!'
     },
     '한글 놀이': {
         'title': '한글 놀이',
-        'image': 'game1.png',
-        'description': '제시된 알파벳과 같은 글자를 고르는 게임입니다.'
+        'video': 'game1.png',
+        'description': '주어진 그림에 맞는 단어를 맞춰주세요!'
     }
 }
 

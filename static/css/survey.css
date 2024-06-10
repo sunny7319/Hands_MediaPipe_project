@@ -108,11 +108,13 @@ body {
 .back-button {
     height: 100px;
     margin-left: 100px;
+	cursor: pointer;
 }
 
 .home-button {
     height: 100px;
     margin-right: 100px;
+	cursor: pointer;
 }
 
 .main {
@@ -136,11 +138,13 @@ body {
 .button1 {
 	margin: 50px 130px;
 	justify-content: left;
+	cursor: pointer;
 }
 
 .button2 {
 	margin: 50px 130px;
 	justify-content: right;
+	cursor: pointer;
 }
 
 .button-text {
