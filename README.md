@@ -14,11 +14,8 @@
 ## **🤍 소개**
 
 <details>
-<summary>📖 <b>Summary</b></summary><br>
+<summary> <b>👨‍👨‍👧‍👦 Team Member</b></summary><br>
   
-### Team Name - i-SON(아이손)
-### Content Name - i-SON
-### Team Member 
 
 
 <table>
@@ -70,35 +67,35 @@
   </tr>
 </table>
 
-
+  
 <h3 align="left"><b>⚙️ Used Tool/Stack ⚙️</b></h3>
 </br>
 <p align="left">
 
 
 <img alt="Python" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white"/>
-<img alt="TensorFlow" src ="https://img.shields.io/badge/TensorFlow-FF6F00.svg?&style=for-the-badge&logo=TensorFlow&logoColor=black"/>
+<img alt="TensorFlow" src ="https://img.shields.io/badge/TensorFlow-1677FF.svg?&style=for-the-badge&logo=TensorFlow&logoColor=black"/>
 <img alt="Jupyter" src ="https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white"/>
 <img alt="OpenCV" src ="https://img.shields.io/badge/OpenCV-5C3EE8.svg?&style=for-the-badge&logo=OpenCV&logoColor=white"/>
 <img alt="OpenAI" src ="https://img.shields.io/badge/OpenAI-412991.svg?&style=for-the-badge&logo=OpenAI&logoColor=white"/>
 <img alt="Anaconda" src ="https://img.shields.io/badge/Anaconda-44A833.svg?&style=for-the-badge&logo=Anaconda&logoColor=black"/>
 <img alt="Flask" src ="https://img.shields.io/badge/Flask-000000.svg?&style=for-the-badge&logo=Flask&logoColor=white"/>
-
+<img alt="Mediapipe" src ="https://img.shields.io/badge/Flask-000000.svg?&style=for-the-badge&logo=Flask&logoColor=white"/>
 
 <h3 align="left"><b>⚙️ Used SCM ⚙️</b></h3>
 </br>
 <p align="left">
 <img alt="GitHub" src ="https://img.shields.io/badge/GitHub-181717.svg?&style=for-the-badge&logo=GitHub&logoColor=white"/>
 <img alt="Slack" src ="https://img.shields.io/badge/Slack-4A154B.svg?&style=for-the-badge&logo=Slack&logoColor=pupple"/>
-
+<img alt="Notion" src ="https://img.shields.io/badge/Notion-000000.svg?&style=for-the-badge&logo=Notion&logoColor=white"/>
 </details>
 
 
 
 
-## **🩶 개발환경 및 운영자 메뉴얼**
+## **🩶 개발환경 및 실행 방법**
 <details>
-<summary><b>⚓Requirements⚓</b></summary>
+<summary><b>📄Requirements</b></summary>
   <br>
   1. 주요 개발환경
   <br>
@@ -129,16 +126,22 @@
   <br>
     - requirements.txt를 별첨하였으며 requirements.txt를 install을 통해 라이브러리를 설치하여 적절하게 환경 Setting이 가능합니다.
   <br>
-  <br>
-  2. 운영자 메뉴얼
-  <br>
-  
-  - tools 폴더에 담긴 파일에 모든 컨텐츠들이 담겨 있으며, app 파일 하나를 실행했을시에, 돌아갈 수 있도록 분기 처리를 진행하였습니다. 따라서, app.py 코드를 실행하였을 때, 모든 컨텐츠들이 작동하며 app.py 파일에서 Port 번호를 조절하여 User가 사용하는 환경과 상황에 걸맞게 세팅하게끔 설정해 놓았습니다. 뿐만 아니라 Font_path를 커스텀하게 설정해야 합니다.
-  
-  - 후에 Flask를 실행하면 컨텐츠를 이용할 수 있습니다.
 
-  - 뿐만 아니라, 개인정보동의 항목을 추가하여 사용자가 웹 캠에 나오는 이미지에 대해서 해당 정보와 로그에 대한 개인정보 수용 여부 UI를 보여주며, 동의하면 해당 컨텐츠가 실행될 것이며 동의하지 않을 시 컨텐츠가 종료됩니다.
-  </br>
+  </details>
+
+<details>
+<summary><b>🏃How-to-Run</b></summary>
+  <br>
+  1. 실행 방법
+  <br>
+  
+  ### Command Prompt
+  ```bash
+  poetry shell
+  ```
+  
+  <br>
+
 </details>
 
 - - -
@@ -175,7 +178,7 @@
 - - -
 ## **🧑 컨텐츠 결과**
 <details>
-<summary><b>🎭그림자 놀이🎭</b></summary>
+<summary><b>🎭그림자 놀이</b></summary>
   <p align='left'>
     <img src =  width = "400px">
     <img src =  width = "400px">
@@ -185,7 +188,7 @@
 <br>
 
 <details>
-<summary><b>🐭잡아라! 두더지🐭</b></summary>
+<summary><b>🐭잡아라! 두더지</b></summary>
   <p align='left'>
     <img src =  width = "400px">
     <img src =  width = "400px">
@@ -194,7 +197,7 @@
 <br>
 
 <details>
-<summary><b>📝한글놀이📝</b></summary>
+<summary><b>📝한글놀이</b></summary>
   <p align='left'>
     <img src =  width = "400px">
     <img src =  width = "400px">
