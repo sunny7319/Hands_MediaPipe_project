@@ -31,10 +31,10 @@
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/choijouneun">
-        <img src="https://github.com/choijouneun.png" width="150px;" alt="종은"/>
+      <a href="https://github.com/pch229">
+        <img src="https://github.com/pch229.png" width="150px;" alt="찬혁"/>
         <br />
-        <sub><b>최종은</b><br>🙋‍♂️ 모델 구현 및 깃허브 관리</sub>
+        <sub><b>박찬혁</b><br>🙋‍♂️ 데이터 엔지니어링 및 보고서 작성</sub>
       </a>
     </td>
     <td align="center">
@@ -47,10 +47,10 @@
   </tr>
   <tr>
     <td align="center">
-      <a href="https://github.com/sunny7319">
-        <img src="https://github.com/sunny7319.png" width="150px;" alt="선영"/>
+      <a href="https://github.com/choijouneun">
+        <img src="https://github.com/choijouneun.png" width="150px;" alt="종은"/>
         <br />
-        <sub><b>민선영</b><br>🙋‍♀️ 웹개발 및 깃허브 관리</sub>
+        <sub><b>최종은</b><br>🙋‍♂️ 모델 구현 및 깃허브 관리</sub>
       </a>
     </td>
     <td align="center">
@@ -61,10 +61,10 @@
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/pch229">
-        <img src="https://github.com/pch229.png" width="150px;" alt="찬혁"/>
+      <a href="https://github.com/sunny7319">
+        <img src="https://github.com/sunny7319.png" width="150px;" alt="선영"/>
         <br />
-        <sub><b>박찬혁</b><br>🙋‍♂️ 데이터 엔지니어링 및 보고서 작성</sub>
+        <sub><b>민선영</b><br>🙋‍♀️ 웹개발 및 깃허브 관리</sub>
       </a>
     </td>
   </tr>
@@ -173,7 +173,7 @@
 </details>
 
 - - -
-## **🧑 Content Preview**
+## **🖤 Content Preview**
 <details>
 <summary><b>🎭따라해! 놀이터</b></summary>
   <p align='left'>
