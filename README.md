@@ -76,11 +76,11 @@
 
 </br>
 
--  따라해! 놀이터 : 웹캠을 활용하여 유아들이 손을 통해 미리 학습된 그림자(개,고양이,나무,돌,해,...) 모양을 인식하면 해당 그림자에 맞는 이미지가 생성되는 게임으로, 5-7세 아이들의 소근육 발달에 도움을 준다. 
+-  따라해! 놀이터 : 웹캠을 활용하여 유아들이 손을 통해 미리 학습된 그림자(개,고양이,나무,돌,해,...) 모양을 인식하면 해당 그림자에 맞는 이미지가 생성되는 게임으로, 5-7세 아이들의 소근육 발달에 도움을 줌. 
 
 - 잡아라! 두더지 : 게임 내에 나타난 두더지 이미지
   
-- 맞춰라! 색종이 : 게임내에 나타난 이미지를 보고 한글 교구를 이용하여 단어를 조합하는 게임으로, 5-7세 아이들의 언어발달과 더불어 한글 교구를 통한 소근육 발달에 도움을 준다.
+- 맞춰라! 색종이 : 게임내에 나타난 이미지를 보고 한글 교구를 이용하여 단어를 조합하는 게임으로, 5-7세 아이들의 언어발달과 더불어 한글 교구를 통한 소근육 발달에 도움을 줌.
 </details>
 
 
@@ -98,6 +98,7 @@
 <img alt="OpenAI" src ="https://img.shields.io/badge/OpenAI-412991.svg?&style=for-the-badge&logo=OpenAI&logoColor=white"/>
 <img alt="Anaconda" src ="https://img.shields.io/badge/Anaconda-44A833.svg?&style=for-the-badge&logo=Anaconda&logoColor=black"/>
 <img alt="Flask" src ="https://img.shields.io/badge/Flask-000000.svg?&style=for-the-badge&logo=Flask&logoColor=white"/>
+<img alt="postgresql" src ="https://img.shields.io/badge/postgresql-4169E1.svg?&style=for-the-badge&logo=postgresql&logoColor=white"/>
 </details>
 
 
@@ -150,18 +151,19 @@
   conda create -n (이름) python==3.12.3 numpy==1.26.4 flask==3.0.3 flask-sqlalchemy==3.1.1 psycopg2==2.9.9 watchdog==4.0.1
   ```
 
-  ### folder 
+  ### Folder Movement
   ```bash
-  cd anaconda3\envs\(이름)
+  cd anaconda3\envs\(이름)\Hands_MediaPipe_project
   ```
 
   ### pakeage install
+  `Hands_MediaPipe_project` 디렉토리에서
   ```bash
   -m pip install -r requirements.txt
   ```
 
-  ### app run 
-  `` 디렉토리에서
+  ### App run 
+  `Hands_MediaPipe_project` 디렉토리에서
   ```bash
   python server.py
   ```
