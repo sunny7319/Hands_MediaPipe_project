@@ -2,7 +2,7 @@
 - - -
 ## **❤️‍🔥 천재교육 빅데이터 7기 i-SON(아이손) 팀입니다! ❤️‍🔥** 
 
-요즘 시대에 태어난 유아들은 태어날 때부터 디지털 환경에 익숙한 이른바 '디지털 원주민'입니다. 이들은 오프라인뿐만 아니라 온라인 환경에서도 자연스럽게 상호작용합니다. 이러한 변화를 인식하여 에듀테크 시장은 유아들의 능동적인 학습 참여를 촉진하기 위해 게이미피케이션에 많은 투자를 하고 있습니다.
+요즘 시대에 태어난 유아들은 태어날 때부터 디지털 환경에 익숙한 이른바 '디지털 원주민'입니다. 이들은 오프라인뿐만 아니라 온라인 환경에서도 자연스럽게 노출되어 활동을 합니다. 이러한 변화를 인식하여 에듀테크 시장은 유아들의 능동적인 학습 참여를 촉진하기 위해 게이미피케이션에 많은 투자를 하고 있습니다.
 
 i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 혁신적인 교육 프로그램입니다. 기존의 천재교육 '밀크 T'와 같은 플랫폼은 이 연령대를 위한 다양한 게이미피케이션 교육 콘텐츠를 제공하지만, 카메라를 활용한 콘텐츠는 거의 없습니다. i-son은 이러한 격차를 해소하기 위해 몰입감 있는 카메라 기반 교육 콘텐츠를 개발하는 것을 목표로 합니다.
 
@@ -63,7 +63,25 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
     </td>
   </tr>
   <tr>
-    <td align당</sub>
+    <td align="center">
+      <a href="https://github.com/choijouneun">
+        <img src="https://github.com/choijouneun.png" width="150px;" alt="종은"/>
+        <br />
+        <sub><b>최종은</b><br>🙋‍♂️ 교육 컨텐츠 개발 및 네트워크 구성</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/hanaSummer0701">
+        <img src="https://github.com/hanaSummer0701.png" width="150px;" alt="하나"/>
+        <br />
+        <sub><b>장하나</b><br>🙋‍♀️ DB 구축 및 ppt 제작</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/sunny7319">
+        <img src="https://github.com/sunny7319.png" width="150px;" alt="선영"/>
+        <br />
+        <sub><b>민선영</b><br>🙋‍♀️ 웹개발 및 Github 담당</sub>
       </a>
     </td>
   </tr>
