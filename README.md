@@ -67,7 +67,7 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
       <a href="https://github.com/choijouneun">
         <img src="https://github.com/choijouneun.png" width="150px;" alt="종은"/>
         <br />
-        <sub><b>최종은</b><br>🙋‍♂️ 교육 컨텐츠 개발 및 네트워크 구성</sub>
+        <sub><b>최종은</b><br>🙋‍♂️ 교육 컨텐츠 개발 및 인식모델 파인튜닝</sub>
       </a>
     </td>
     <td align="center">
@@ -156,8 +156,6 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
     - torch==2.3.0
   <br>
     - torchvision==0.18.0
-  <br>
-    - requirements.txt를 별첨하였으며 requirements.txt를 install을 통해 라이브러리를 설치하여 적절하게 환경 Setting이 가능합니다.
   <br>
 
   </details>
