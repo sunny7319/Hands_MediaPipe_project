@@ -95,7 +95,7 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 
 -  **따라해! 놀이터** : 웹캠을 활용하여 유아들이 손을 통해 미리 학습된 그림자(개,고양이,나무,돌,해,...) 모양을 인식하면 해당 그림자에 맞는 이미지가 생성되는 게임으로, 5-7세 아이들의 소근육 발달에 도움을 줌. 
 
-- **잡아라! 두더지** : 게임 내에 나타난 두더지 이미지
+- **잡아라! 두더지** : 게임 내에서 요구하는 조건에 맞춰서 나타난 두더지 이미지를 잡아 없애는 게임으로. 5-7세 아이들의 언어발달과 더불어 소근육 발달에 도움을 줌.
   
 - **맞춰라! 색종이** : 게임내에 나타난 이미지를 보고 한글 교구를 이용하여 단어를 조합하는 게임으로, 5-7세 아이들의 언어발달과 더불어 한글 교구를 통한 소근육 발달에 도움을 줌.
 </details>
@@ -195,20 +195,29 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 - - -
 ## **🖤 Content Preview**
 <details>
-<summary><b>🎭따라해! 놀이터</b></summary>
+  <summary><b>🎭따라해! 놀이터</b></summary>
   <p align='left'>
-    <img src =  width = "400px">
-    <img src =  width = "400px">
+    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/b11b513b-a5f8-4c3f-be94-f3416fda1e2a" width="400px">
+    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/ba513746-2b2e-40d3-a921-6aac039dabf7" width="400px">
+    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/672430ba-5263-4385-a487-63d5a7da06a2" width="400px">
+    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/5de352bd-bafd-46f0-b4d6-ce5814557235" width="400px">
+    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/95b9efe2-c945-4970-ae55-d575c09d4e6a" width="400px">
+    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/8d53f9b1-a962-41da-94c9-c44f4f2013a6" width="400px">
+    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/1fed8379-ac87-4f0c-9b00-0377a2150e89" width="400px">
   </p>
 </details>
+
 
 <br>
 
 <details>
 <summary><b>🐭 잡아라! 두더지</b></summary>
   <p align='left'>
-    <img src =  width = "400px">
-    <img src =  width = "400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/d982a1a3-df0f-4e6e-9f21-21092132a8ff" width = "400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/89f06893-50ad-4219-9cb5-5866c8537138" width = "400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/a62dcc45-b309-4691-aa3e-f081c6a50a89" width = "400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/9ce37cde-c6af-4f58-b45b-6a87c170087d" width = "400px">
+
 </details>
 
 <br>
@@ -216,8 +225,12 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 <details>
 <summary><b>📝 맞춰라! 색종이</b></summary>
   <p align='left'>
-    <img src =  width = "400px">
-    <img src =  width = "400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/6299a5e0-4de9-48d9-b0eb-dd886d41c8ee" width = "400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/e001d7a3-6296-4b7d-8927-0c03044cd7e9" width = "400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/a6a09329-c49f-4670-a904-ef640fe4b754" width = "400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/832d4e80-7433-4309-abfc-376227f02e86" width = "400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/a3a32cfb-3de8-40c2-a93d-014dc50830b5" width = "400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/126303ff-cdaf-4755-8bf5-76c522fd63b7" width = "400px">
   </p>
 </details>
 
