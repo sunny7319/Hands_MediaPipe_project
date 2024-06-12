@@ -116,7 +116,7 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 <img alt="Anaconda" src ="https://img.shields.io/badge/Anaconda-44A833.svg?&style=for-the-badge&logo=Anaconda&logoColor=black"/>
 <img alt="Flask" src ="https://img.shields.io/badge/Flask-000000.svg?&style=for-the-badge&logo=Flask&logoColor=white"/>
 <img alt="postgresql" src ="https://img.shields.io/badge/postgresql-4169E1.svg?&style=for-the-badge&logo=postgresql&logoColor=white"/>
-<img alt="sqlalchemy" src ="https://img.shields.io/badge/sqlalchemy-#D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white">
+<img alt="sqlalchemy" src ="https://img.shields.io/badge/sqlalchemy-#D71F00&style=for-the-badge&logo=sqlalchemy&logoColor=white">
 
 </p>
 </details>
