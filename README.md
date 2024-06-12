@@ -118,6 +118,7 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 <img alt="postgresql" src ="https://img.shields.io/badge/postgresql-4169E1.svg?&style=for-the-badge&logo=postgresql&logoColor=white"/>
 <img alt="SQLAlchemy" src ="https://img.shields.io/badge/SQLAlchemy-D71F00.svg?&style=for-the-badge&logo=SQLAlchemy&logoColor=white"/>
 <img src = "https://img.shields.io/badge/visualstudiocode-007ACC.svg?&style=for-the-badge&logo=visualstudiocode&logoColor=white"/>
+<img alt="Github" src = "https://img.shields.io/badge/github-181717.svg?&style=for-the-badge&logo=Github&logoColor=white"/>
 
 </p>
 </details>
