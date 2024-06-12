@@ -163,10 +163,13 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 <details>
 <summary><b>🏃 How-to-Run</b></summary>
 
+  ### conda install
+  미니콘다(혹은 아나콘다) 설치(Just me)
+  링크: https://docs.anaconda.com/free/miniconda/
+  ### conda venv create(가상환경 이름: venv_ai)
   
-  ### venv install
-  ```bash
-  conda create -n (이름) python==3.12.3 numpy==1.26.4 flask==3.0.3 flask-sqlalchemy==3.1.1 psycopg2==2.9.9 watchdog==4.0.1
+  ```cmd
+  conda create -n venv_ai python==3.12.3 numpy==1.26.4 flask==3.0.3 flask-sqlalchemy==3.1.1 psycopg2==2.9.9 watchdog==4.0.1 pip
   ```
 
   ### Folder Movement
