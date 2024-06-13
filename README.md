@@ -127,7 +127,6 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 
 
 
-- - -
 ## **🩶 개발환경 및 실행 방법**
 <details>
 <summary><b>📄Requirements</b></summary>
