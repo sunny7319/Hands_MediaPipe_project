@@ -171,28 +171,39 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 
   ### 윈도우 시스템 환경변수 편집
   > WIN 키 -> "시스템 환경 변수 편집" 검색 -> 시스템 속성 창 하단 "환경 변수(N)"
-  > -> 하단 시스템 변수(S) 중 "Path" 더블클릭 -> 새로만들기 "C:\Users\USER\miniconda3\Scripts"
-  >                                                  & "C:\Users\USER\miniconda3\Library\bin"
+  > -> 하단 시스템 변수(S) 중 "Path" 더블클릭 -> 새로만들기
+  > -> "C:\Users\USER\miniconda3\Scripts" & "C:\Users\USER\miniconda3\Library\bin"
+  > 입력 후 모든 창 "확인" 눌러 닫기
   
-  ### conda venv create(가상환경 이름: venv_ai)
-  
+  ### 콘다 가상환경 만들기1 (가상환경 이름: venv_ai)
+  CMD 창 열고 아래와 같이 입력, 설치 중간에 "y" 입력(엔터), 설치 완료 후 CMD 닫기
   ```cmd
   conda create -n venv_ai python==3.12.3 numpy==1.26.4 flask==3.0.3 flask-sqlalchemy==3.1.1 psycopg2==2.9.9 watchdog==4.0.1 pip
   ```
-
-  ### Folder Movement
-  ```bash
-  cd anaconda3\envs\venv_ai\Hands_MediaPipe_project
+  다시 CMD 창 열고 아래와 같이 입력 후 완료 시 닫기
+  ```cmd
+  conda init
   ```
 
-  ### pakeage install
-  `Hands_MediaPipe_project` 디렉토리에서
-  ```bash
-  -m pip install -r requirements.txt
+  ### 콘다 가상환경 만들기2 (나머지 패키지 설치)
+  CMD 창 열고 아래와 같이 입력
+  ```cmd
+  pip install opencv-python==4.9.0.80 mediapipe==0.10.14 cvzone==1.6.1 tensorflow==2.16.1 apscheduler==3.10.4 torch==2.3.0 torchvision==0.18.0
   ```
+
+  ### 가상 환경에서 실행 시키기
+  git pull, clone 등의 방법으로 main 브랜치 로컬에 저장 후  
+  Hands_MediaPipe_project 폴더 들어가서 폴더 상단 주소창에 CMD 입력, CMD 창 띄운 후
+  ```cmd
+  conda activate venv_ai
+  ```
+  ```cmd
+  python
+  ```
+
 
   ### App run 
-  `Hands_MediaPipe_project` 디렉토리에서
+  `Hands_MediaPipe_project` 디렉토리 안에서
   ```bash
   python server.py
   ```
@@ -200,7 +211,6 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
   <br>
 
 </details>
-
 - - -
 ## **🖤 콘텐츠 미리보기**
 <details>
