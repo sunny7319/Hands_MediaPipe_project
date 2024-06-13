@@ -258,6 +258,10 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 - Kim, Kuyng-chul, Oh, Ah-reum, “A Study on the imaginative narratives of children using Augmented Reality (AR)-based 
 educational play content”, Journal of Children's Media & Education , Vol. 20, No. 1, 169-195, Mar 2021.  이하 Kim, Oh. 
 - 아시아경제) 투자 혹한기에도 에듀테크 기업엔 수백억대 뭉칫돈 몰린다   https://cm.asiae.co.kr/article/2022112508303826390 
-- 이투데이) 국내 에듀테크 시장 2026년 11조원 전망…"공교육과 결합 추진"   https://www.etoday.co.kr/news/view/2285141 
-- Kim, Oh.
+- 이투데이) 국내 에듀테크 시장 2026년 11조원 전망…"공교육과 결합 추진"  https://www.etoday.co.kr/news/view/2285141 
+- https://www.flaticon.com/kr/free-icons/
+- https://www.home-learn.co.kr/homelearn/cust1/learning-machine.htm
+- https://m.wjthinkbig.com/brand/brand_09.do
+- https://www.segye.com/newsView/20230801511739
+- https://i.milkt.co.kr/Main/frm_Main.aspx?partnercoopid=ISPGO210624N&linkseq=7&utm_source=google&utm_medium=cpc&utm_campaign=%23%EB%B0%80%ED%81%ACT%EC%95%84%EC%9D%B4_%23%EA%B2%80%EC%83%89%EA%B4%91%EA%B3%A0_4)%20%EC%9D%BC%EB%B0%98&utm_adgroup=%EC%9D%BC%EB%B0%98_%ED%95%99%EC%8A%B5%EC%A7%80&utm_term=%EC%96%B4%EB%A6%B0%EC%9D%B4%ED%95%99%EC%8A%B5%EC%A7%80&gad_source=1&gclid=CjwKCAjwjqWzBhAqEiwAQmtgT-8JQ62gKqpq5X4CSS4yrWlP22N8fobAUNsRamCmsaBt47Nflnw34xoCLJEQAvD_BwE
 </details>
