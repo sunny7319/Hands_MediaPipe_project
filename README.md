@@ -157,7 +157,8 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
   <br>
     - torchvision==0.18.0
   <br>
-
+    - watchdog==4.0.1
+  <br>
   </details>
 
 <details>
