@@ -182,7 +182,7 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 
   ### Folder Movement
   ```bash
-  cd anaconda3\envs\(이름)\Hands_MediaPipe_project
+  cd anaconda3\envs\venv_ai\Hands_MediaPipe_project
   ```
 
   ### pakeage install
