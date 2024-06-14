@@ -23,10 +23,8 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 
 <br>
 <p align="left">
-  <img src=https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/b554d8c6-7b6c-4d5a-9b91-c6f864487d60 width = "630px">
+  <img src=https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/27609c4e-7ec6-4556-9169-3ddb4962aa9d width = "630px">
 
-
-</p>
 
 - - -
 
