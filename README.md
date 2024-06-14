@@ -1,4 +1,4 @@
- # 빅데이터 7기 중간프로젝트 i-SON 👋
+# 빅데이터 7기 중간프로젝트 i-SON 👋
 - - -
 ## **❤️‍🔥 천재교육 빅데이터 7기 i-SON(아이손) 팀입니다! ❤️‍🔥** 
 
@@ -213,13 +213,13 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 <details>
   <summary><b>🎭 따라해! 놀이터</b></summary>
   <p align='left'>
-    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/b11b513b-a5f8-4c3f-be94-f3416fda1e2a" width="400px">
-    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/ba513746-2b2e-40d3-a921-6aac039dabf7" width="400px">
-    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/672430ba-5263-4385-a487-63d5a7da06a2" width="400px">
-    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/5de352bd-bafd-46f0-b4d6-ce5814557235" width="400px">
-    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/95b9efe2-c945-4970-ae55-d575c09d4e6a" width="400px">
-    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/8d53f9b1-a962-41da-94c9-c44f4f2013a6" width="400px">
-    <img src="https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/1fed8379-ac87-4f0c-9b00-0377a2150e89" width="400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/a8ad6457-9605-4ddf-a8e5-1b1c01593b7f" width="400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/0c52f251-2884-41e4-b65d-612cac8bb7cc" width="400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/6693f6f8-14df-481e-8b68-d02a9a179f8e" width="400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/29450373-63f5-47e3-b071-d1ac2fc127ac" width="400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/438ed6fa-52c4-4393-855c-591090ba2c85" width="400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/cac8e55d-a747-40be-bcd0-f911e4f80b8f" width="400px">
+    <img src = "https://github.com/sunny7319/Hands_MediaPipe_project/assets/112309620/68a240de-2c35-48af-8f7a-8c6015a72bd8" width="400px">
   </p>
 </details>
 
