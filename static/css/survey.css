@@ -1,0 +1,168 @@
+@font-face {
+	font-family: 'yg-jalnan';
+	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cafe24Ssurround';
+	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'KyoboHand';
+	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MaplestoryOTFBold';
+	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Katuri';
+	src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+	font-weight: lighter;
+	font-style: normal;
+}
+
+
+html,
+body {
+	width: 1920px;
+	height: 1080px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #3da7ee38;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1920px;
+	height: 1080px;
+}
+
+/* #loading-screen {
+  position: fixed;
+  width: 1920px;
+  height: 1080px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff8f;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Katuri';
+  font-size: 4em;
+  flex-direction: column;
+} */
+/* .loading-img {
+  height: 500px;
+} */
+
+/* .spinner {
+  border: 16px solid #f3f3f3; Light grey
+  border-top: 16px solid #3498db; Blue
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: 30px;
+  margin-bottom: -10px;
+  animation: spin 2s linear infinite;
+} */
+
+/* @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} */
+
+.header {
+	height: 200px;
+    width: 1920px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description {
+	font-family: 'Cafe24Ssurround';
+	font-size: 75px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 75px;
+	margin-top: 55px;
+}
+
+.back-button {
+    height: 100px;
+    margin-left: 100px;
+}
+
+.home-button {
+    height: 100px;
+    margin-right: 100px;
+}
+
+.main {
+	background-color: #ffffff8f;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 864px;
+}
+
+.button-group {
+	text-align: center;
+	display: flex;
+}
+
+.survey {
+	height: 400px;
+}
+
+.button1 {
+	margin-top:50px;
+	margin-right: 200px;
+	justify-content: left;
+	cursor: pointer;
+}
+
+.button2 {
+	margin-top: 50px;
+	margin-left: 200px;
+	justify-content: right;
+	cursor: pointer;
+}
+
+.button-group img {
+	height: 600px;
+}
+
+.button-text {
+	font-family: 'Cafe24Ssurround';
+    font-size: 50px;
+	margin-top: -20px;
+}
+
+.character {
+	position: fixed;
+	top: 650px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+	animation: float 3s ease-in-out infinite;
+	height: 800px;
+}

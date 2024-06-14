@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Katuri';
+    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+html, body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(146, 139, 144, 0.08);
+}
+
+.top {
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 432px;  /* 1080 x 40% */
+}
+
+.logo {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 640px;  1920 ÷ 3 */
+    height: 200px;
+    margin-bottom: -200px;
+} 
+
+.logo h1 {
+    /* background-color: blueviolet; */
+    font-family: 'yg-jalnan';
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-right: 70px;
+}
+
+.buttons {
+    /* background-color: burlywood; */
+    display: flex;
+    justify-content: center;
+    height: 648px;  /* 1080 x 60% */
+    padding-top: 50px;
+}
+
+.buttons a {
+    text-decoration: none;
+    width: 450px;
+    height: 240px;
+    margin: 0 30px;
+}
+
+button {
+    border-radius: 50px;
+    /* border: 1px solid #c8edfd;
+    background-color: #c8edfd; */
+    color: #ffffff;
+    font-family: 'Cafe24Ssurround';
+    font-size: 70px;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* transition: transform 0.2s; */
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 20px #eee; */
+    background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+}
+
+button:hover {
+    /* transform: scale(1.1); */
+    /* background-color: white;
+    color: black;
+    cursor: pointer; */
+    background-position: right center;
+}
+
+button:focus {
+    outline: none;
+}

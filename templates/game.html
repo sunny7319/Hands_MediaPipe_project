@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ game.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+    <style>
+        body {
+            /* background-image: url("{{ url_for('static', filename='img/game3_background.webp') }}"); */
+            background-image: url("{{ url_for('static', filename=game.background) }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #loading-screen {
+            background-image: url("{{ url_for('static', filename='img/loading_page.webp') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <img src="{{ url_for('static', filename='img/animated_character.gif') }}" alt='마스코트' class="loading-img">
+        <div class="spinner"></div>
+        <p>잠시만 기다려주세요~!</p>
+    </div>
+    <div id="content" style="display: none;">
+        <div class="header">
+            <a href="{{ url_for('main') }}">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            </a>
+            <h1>{{ game.title }}</h1>
+        </div>
+        <div class="main">
+            <div class="video">
+                <!-- <p class="toggle-display">Toggle: 0</p>  Toggle 값을 표시하는 요소 -->
+                <video src="{{ url_for('static', filename='video/orora.mp4') }}" id="preview-video" muted controls autoplay loop>
+            </div>
+            <div class="play">
+                <p class="description">{{ game.description }}</p>
+                <a href="{{ url_for('game_play', game_name=game.title) }}">
+                    <img src="{{ url_for('static', filename='img/start.png') }}" alt="시작" class="play-button">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+</body>
+</html>

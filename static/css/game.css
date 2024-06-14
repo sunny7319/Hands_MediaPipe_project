@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Katuri';
+    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+
+html, body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3da7ee38;
+}
+
+#loading-screen {
+    position: fixed;
+    width: 1920px;
+    height: 1080px;
+    top: 0;
+    left: 0;
+    background-color: #ffffff8f;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Katuri';
+    font-size: 60px;
+    flex-direction: column;
+}
+
+.loading-img {
+    height: 700px;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.header {
+    background-color: #ffffff8f;
+    height: 216px;
+}
+
+.back-button {
+    justify-content: left;
+    height: 80px;
+    margin-top: 50px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+h1 {
+    font-family: 'Cafe24Ssurround';
+    font-size: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 152px;
+    margin-top: -4px;
+}
+
+.main {
+    background-color: #ffffff8f;
+    display: flex;
+    flex-direction: column;
+    height: 864px;
+}
+
+.video {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 564px;
+    margin-top: 40px;
+}
+
+/* .toggle-display {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+} */
+
+#preview-video {
+    display: flex;
+    height: 514px;
+}
+
+.play {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.description {
+    font-family: 'MaplestoryOTFBold';
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 75px;
+    margin-top: 50px;
+}
+
+.play-button {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 150px;
+    margin-top: -30px;
+    margin-bottom: 100px;
+    cursor: pointer;
+}
+

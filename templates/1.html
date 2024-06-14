@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>따라해! 놀이터</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/1.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='img/game1_background.webp') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #loading-screen {
+            background-image: url("{{ url_for('static', filename='img/loading_page.webp') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .moving-img {
+            position: absolute;
+            width: 100px; /* 기본 크기, 필요에 따라 조정 */
+        }
+    </style>
+    <script>
+        const quizImages = {
+            0: '{{ url_for("static", filename="img/game1/quiz_sun.png") }}',
+            1: '{{ url_for("static", filename="img/game1/quiz_dog.png") }}',
+            2: '{{ url_for("static", filename="img/game1/quiz_cat.png") }}',
+            3: '{{ url_for("static", filename="img/game1/quiz_heart.png") }}',
+            4: '{{ url_for("static", filename="img/game1/quiz_butterfly.png") }}',
+            5: '{{ url_for("static", filename="img/game1/quiz_flower.png") }}',
+            6: '{{ url_for("static", filename="img/game1/quiz_tree.png") }}'
+        };
+    </script>
+</head>
+<body>
+    <div id="loading-screen">
+        <img src="{{ url_for('static', filename='img/animated_character.gif') }}" alt='마스코트' class="loading-img">
+        <div class="spinner"></div>
+        <p>잠시만 기다려주세요~!</p>
+    </div>
+    <div id="content" style="display: none;">
+        <div class="header">
+            <a href="{{ url_for('game', game_name='따라해! 놀이터') }}">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            </a>
+            <h1>따라해! 놀이터</h1>
+            <a href="{{ url_for('main') }}">
+                <img src="{{ url_for('static', filename='img/home.png') }}" alt="메인화면" class="home-button">
+            </a>
+        </div>
+        <div class="main">
+            <div class="description">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='img/cliped_character.png') }}" alt="character image" class="character-img" id="cci">
+                    <img id="quizImage" src="{{ url_for('static', filename='img/game1/quiz_sun.png') }}" alt="quiz image" class="quiz-img">
+                </div>
+                <div class="stage" id="stage">  <!-- 버튼 대신 게임 stage 부분 구현 -->
+                </div>
+            </div>
+            <div class="video">
+                <img src="{{ url_for('game1_feed') }}" id="webcam" autoplay>
+                <!-- <div id="overlay">
+                    <div id="overlay-hint" class="hint-text"></div>
+                    <img id="overlay-img" src="{{ url_for('static', filename='img/animated_character.gif') }}" alt='마스코트' class="overlay-img">
+                    <div id="overlay-wait" class="wait-text"></div>
+                </div> -->
+            </div>
+        </div>
+        <!-- 마지막 게임 끝나고 survey 창으로 넘어가기 전(넣어도 되고 안넣어도 됨) -->
+        <!-- <div id="overlay-last">  
+            <img id="last-img" src="{{ url_for('static', filename='img/animated_character.gif') }}" alt='마스코트'>
+        </div> -->
+    </div>
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game1.js') }}"></script>
+</body>
+</html>

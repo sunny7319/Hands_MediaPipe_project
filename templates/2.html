@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>잡아라! 두더지</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/2.css') }}">
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #loading-screen {
+            background-image: url("{{ url_for('static', filename='img/loading_page.webp') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 880px;
+        }
+        .video-container img {
+            width: 880px;
+            height: auto;
+        }
+        .info-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .info {
+            font-size: 1.5em;
+            margin: 10px;
+        } */
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <img src="{{ url_for('static', filename='img/animated_character.gif') }}" alt='마스코트' class="loading-img">
+        <div class="spinner"></div>
+        <p>잠시만 기다려주세요~!</p>
+    </div>
+    <div id="content" style="display: none;">
+        <div class="header">
+            <a href="{{ url_for('game', game_name='잡아라! 두더지') }}">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            </a>
+            <h1>잡아라! 두더지</h1>
+            <a href="{{ url_for('main') }}">
+                <img src="{{ url_for('static', filename='img/home.png') }}" alt="메인화면" class="home-button">
+            </a>
+        </div>
+        <div class="main">
+            <div class="description">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='img/cliped_character.png') }}" alt="character image" class="character-img" id="cci">
+                    <div class="info-container">
+                        <div class="info2" id="stage">Stage </div>
+                        <hr>
+                        <div class="info1" id="question"></div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="info2" id="time">Time: </div>
+                    <div class="info2" id="score">Score: </div>
+                </div>
+            </div>
+            <div class="video-container">
+                <img src="{{ url_for('game2_feed') }}" alt="Game Feed" id="videoFeed">
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game2.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Katuri';
+    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+html, body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #d5f3ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    padding: 10px;
+    margin: 20px;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    height: 170px;
+}
+
+.title-bar {
+    position: relative;
+    left: auto;
+    padding-top: 20px;
+}
+
+.title {
+    font-family: 'yg-jalnan';
+    font-size: 150px;
+}
+
+.discription {
+    font-family: 'Katuri';
+    font-size: 50px;
+}
+
+img {
+    background-size: contain;
+    position: relative;
+    right: auto;
+    margin-top: 60px;
+    /* margin-left: 30px; */
+    height: 310px;
+}
+
+.user {
+    margin-top: -70px;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
+
+.user-image {
+	height: 70px;
+    cursor: pointer;
+}
+
+.sidebar {
+    height: auto;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    z-index: 1001; /* 다른 요소 위에 표시되도록 */
+    display: none;
+}
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.category {
+    font-family: 'yg-jalnan';
+    font-size: 60px;
+    margin-top: 220px;
+    text-align: center;
+}
+
+.main-button {
+    display: flex;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    align-items: center;
+}
+
+.main-button a {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.button-white {
+    background-color: #ffffff;
+    text-align: center;
+    font-family: 'Cafe24Ssurround';
+    font-size: 75px;
+    margin: 0 30px;
+    height: 500px;
+    border-radius: 40px;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-white:hover {
+    background-color: #bfdff0;
+    cursor: pointer;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>i-SON</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <style>
+            body {
+                /* background-image: url("{{ url_for('static', filename='img/gpt_background2.webp') }}"); */
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <div class="title-bar">
+                <p class="title">i-SON</p>
+                <p class="discription">지금 바로 시작해보세요!</p>
+            </div>
+            <img src="{{ url_for('static', filename='img/character.png') }}" alt="Logo">
+        </div>
+        <div class="user" onclick="openNav()">
+            <img src="{{ url_for('static', filename='img/user.png') }}" alt="User" class="user-image">
+        </div>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="javascript:void(0)" onclick="openCameraPopup()">카메라 확인</a>
+            <a href="{{ url_for('index') }}">로그아웃</a>
+        </div>
+        <p class="category"><b>Game Categories</b></p>
+        <div class="main-button">
+            <a href="{{ url_for('game', game_name='따라해! 놀이터') }}">
+                <button type="button" class="button-white">따라해!<br>놀이터</button>
+            </a>
+            <a href="{{ url_for('game', game_name='잡아라! 두더지') }}">
+                <button type="button" class="button-white">잡아라!<br>두더지</button>
+            </a>
+            <a href="{{ url_for('game', game_name='맞춰라! 색종이') }}">
+                <button type="button" class="button-white">맞춰라!<br>색종이</button>
+            </a>
+        </div>
+        <script>
+            function openNav() {
+                var sidebar = document.getElementById("mySidebar");
+                sidebar.style.display = "block";
+                setTimeout(function() {
+                    sidebar.style.width = "250px";
+                }, 10); // 짧은 지연 후에 너비를 설정
+            }
+
+            function closeNav() {
+                var sidebar = document.getElementById("mySidebar");
+                sidebar.style.width = "0";
+                setTimeout(function() {
+                    sidebar.style.display = "none";
+                }, 500); // 너비 애니메이션이 끝난 후 display를 none으로 설정
+            }
+
+            function openCameraPopup() {
+                window.open("/check_video", "Camera Check", "width=640,height=480");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i-SON</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div class="top">
+        <div class="logo">
+            <h1>i-SON</h1>
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+        </div>
+    </div>
+    <div class="buttons">
+        <a href="{{ url_for('login') }}">
+            <button type="button">로그인</button>
+        </a>
+        <a href="{{ url_for('signup') }}">
+            <button type="button">회원가입</button>
+        </a>
+    </div>
+</body>
+</html>

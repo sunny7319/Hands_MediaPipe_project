@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>만족도 조사</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/survey.css') }}">
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* 크기를 키우는 애니메이션 */
+        .enlarge {
+            animation: enlarge 0.5s forwards;
+        }
+
+        @keyframes enlarge {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="header">
+            <a href="{{ url_for('game', game_name='맞춰라! 색종이') }}">
+                <img src="{{ url_for('static', filename='img/back.png') }}" alt="뒤로가기" class="back-button">
+            </a>
+            <p class="description">게임은 어떠셨나요?</p>
+            <a href="{{ url_for('main') }}">
+                <img src="{{ url_for('static', filename='img/home.png') }}" alt="메인화면" class="home-button">
+            </a>
+        </div>
+        <div class="main">
+            <div class="button-group">
+                <div class="button1" onclick="sendFeedback(0)">
+                    <img src="{{ url_for('static', filename='img/survey_like.png') }}" alt='좋아요' class="survey">
+                    <p class="button-text">좋아요</p>
+                </div>
+                <div class="button2" onclick="sendFeedback(1)">
+                    <img src="{{ url_for('static', filename='img/survey_verylike.png') }}" alt='아주좋아요' class="survey">
+                    <p class="button-text">아주 좋아요</p>
+                </div>
+            </div>
+            <!-- <img src="{{url_for('static', filename='img/character.png') }}" alt='마스코트' class="character"> -->
+        </div>
+    </div>
+    <script>
+        function sendFeedback(feedback) {
+            const button = event.currentTarget;
+            fetch('/survey3', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ feedback: feedback })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                triggerAnimation(feedback, button);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+        // function triggerAnimation() {
+        //     const buttons = document.querySelectorAll('.button1, .button2');
+        //     buttons.forEach(button => button.classList.add('shake'));
+        //     setTimeout(() => {
+        //         window.location.href = "{{ url_for('main') }}";
+        //     }, 1000); // 1초 후 페이지 이동
+        // }
+
+        function triggerAnimation(feedback) {
+            const button = feedback === 0 ? document.querySelector('.button1') : document.querySelector('.button2');
+            button.classList.add('enlarge');
+            // 애니메이션 끝난 후 shake 클래스 제거
+            button.addEventListener('animationend', () => {
+                button.classList.remove('shake');
+                window.location.href = "{{ url_for('main') }}";
+            }, { once: true });
+        }
+
+        
+
+    </script>
+</body>
+</html>
