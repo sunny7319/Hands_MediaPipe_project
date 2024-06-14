@@ -185,6 +185,9 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
   ### 콘다 가상환경 만들기2 (나머지 패키지 설치)
   CMD 창 열고 아래와 같이 입력
   ```cmd
+  conda activate venv_ai 
+  ```
+  ```cmd
   pip install opencv-python==4.9.0.80 mediapipe==0.10.14 cvzone==1.6.1 tensorflow==2.16.1 apscheduler==3.10.4 torch==2.3.0 torchvision==0.18.0
   ```
 
@@ -195,13 +198,6 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
   conda activate venv_ai
   ```
   ```cmd
-  python
-  ```
-
-
-  ### App run 
-  `Hands_MediaPipe_project` 디렉토리 안에서
-  ```bash
   python server.py
   ```
 
@@ -257,7 +253,7 @@ i-son은 5-6세 유아들의 학습 경험을 향상시키기 위해 설계된 �
 - 백정열 (2018). 에듀테크의 기술 및 콘텐츠 동향. 정보통신기술진흥센터(1855), 14-28. 
 - 김진수, 박남제 (2019). 게이미피케이션을 활용한 초등학생 블록체인기술 핵심원리 교육 탐구. 정보교육학회논문지, 23(2), 
 141-148. 
-- Kim, Kuyng-chul, Oh, Ah-reum, “A Study on the imaginative narratives of children using Augmented Reality (AR)-based 
+- Kim, Kyung-chul, Oh, Ah-reum, “A Study on the imaginative narratives of children using Augmented Reality (AR)-based 
 educational play content”, Journal of Children's Media & Education , Vol. 20, No. 1, 169-195, Mar 2021.  이하 Kim, Oh. 
 - 아시아경제) 투자 혹한기에도 에듀테크 기업엔 수백억대 뭉칫돈 몰린다   https://cm.asiae.co.kr/article/2022112508303826390 
 - 이투데이) 국내 에듀테크 시장 2026년 11조원 전망…"공교육과 결합 추진"  https://www.etoday.co.kr/news/view/2285141 
